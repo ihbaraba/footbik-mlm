@@ -1,0 +1,14 @@
+.test {
+  background: #123123;
+  @include row-flex();
+  @include size(12);
+  @include size-xs(4);
+  margin: 0 auto;
+}
+
+.papapa {
+  display: inline;
+  @include row-flex();
+  @include size(12);
+  @include size-xs(4);
+}
