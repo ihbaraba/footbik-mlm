@@ -8,6 +8,8 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     gcmq = require('gulp-group-css-media-queries'),
     rename = require("gulp-rename"),
+    gulpCopy = require('gulp-copy'),
+    gulpSequence = require('gulp-sequence'),
     htmlImport = require('gulp-html-import');
 
 
@@ -25,22 +27,24 @@ let config = {
         layouts: '/layouts/',
         src: '/src/*.html'
     },
-    libs: '/libs/',
+    libs: {
+        folder: '/libs',
+        node_modules: '/node_modules/'
+    },
     js: {
         dest: '/js'
     },
-    watcher:{
-        src:'/src/*.html',
+    watcher: {
+        src: '/src/*.html',
         import: '/layouts/*.html',
-        js:'/js/*.js'
+        js: '/js/*.js'
     }
-
 };
 
 gulp.task('js-libs', function () {
     return gulp.src([
-        config.node_modules + 'jquery/dist/jquery.js',
-        config.node_modules + 'bootstrap/dist/js/bootstrap.js'
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery/dist/jquery.js',
+        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js'
 
     ])
         .pipe(concat('libs.min.js'))
@@ -51,21 +55,49 @@ gulp.task('js-libs', function () {
         }));
 });
 
-gulp.task('css-libs', ['sass'], function () {
-    return gulp.src(config.app + config.css.dest + config.css.libs)
+
+
+// add new libs here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+gulp.task('copy-modules', function () {
+    return gulp
+        .src([
+            config.node_modules + 'bootstrap/**/*',
+            config.node_modules + 'jquery/**/*'
+        ])
+        .pipe(gulpCopy(config.app + config.libs.folder));
+});
+// add new libs here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+// add new css lib below
+
+gulp.task('css-libs', function () {
+    return gulp.src([
+        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/css/bootstrap.css'
+    ])
+        .pipe(concat('libs.min.css'))
+        .pipe(cleanCSS({keepBreaks: false}))
         .pipe(gulp.dest(config.app + config.css.dest))
-        .pipe(cleanCSS())
-        .pipe(rename({suffix: '.min'}))
+});
+
+gulp.task('js-libs', function () {
+    return gulp.src([
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery/dist/jquery.js',
+        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js'
+    ])
+        .pipe(concat('libs.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(config.app + config.js.dest))
         .pipe(browserSync.reload({
             stream: true
         }));
 });
-gulp.task('css-libs', ['sass'], function() {
-    return gulp.src('app/css/libs.css')
-        .pipe(cssnano())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('app/css'));
-});
+
+
+// use gulp.libs for copy new modules and refresh lib files
+
+gulp.task('libs',  gulpSequence('copy-modules', 'css-libs', 'js-libs'));
 
 
 gulp.task('css-build', function () {
@@ -77,13 +109,14 @@ gulp.task('css-build', function () {
             cascade: false
         }))
         .pipe(gcmq())
-        .pipe(cleanCSS({keepBreaks: false}))
+        // .pipe(cleanCSS({keepBreaks: false}))
         .pipe(sourcemaps.write('app/css', {addComment: true}))
         .pipe(gulp.dest(config.app + config.css.dest))
         .pipe(browserSync.reload({
             stream: true
         }));
 });
+
 
 gulp.task('import', function () {
     gulp.src(config.app + config.html.src)
@@ -95,14 +128,14 @@ gulp.task('import', function () {
 });
 
 
-gulp.task('watch', ['browser-sync'], function () {
+gulp.task('watch', ['browser-sync', 'import'], function () {
     gulp.watch(config.app + config.css.src, ['css-build']);
-
-
-    gulp.watch(config.app + config.watcher.import, ['import']);
+    gulp.watch('app/src/*.html', ['import']);
     gulp.watch('app/layouts/*.html', ['import']);
     gulp.watch(config.app + config.watcher.import, browserSync.reload);
     gulp.watch(config.app + config.watcher.js, browserSync.reload);
+    gulp.watch('app/layouts/*.html', browserSync.reload);
+    gulp.watch('app/src/*.html', browserSync.reload);
 });
 
 gulp.task('browser-sync', function () {
@@ -112,9 +145,3 @@ gulp.task('browser-sync', function () {
         }
     });
 });
-//
-// gulp.task('qwe', function() {
-//     gulp.src('./app/css/main.css')
-//         .pipe(cleanCSS({keepBreaks: false}))
-//         .pipe(gulp.dest('./app/css/test'));
-// });

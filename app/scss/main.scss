@@ -1,6 +1,8 @@
 @import "variables-functions-and-mixins";
 @import "fonts";
-
+@import "smart-grid.sass";
+@import "header.scss";
+@import "index.scss";
 * {
   //font-family: $main-font, Serif;
   box-sizing: border-box;
@@ -16,8 +18,5 @@
   clear: both;
 }
 
-@import "libs.scss";
 
-@import "smart-grid.sass";
-@import "header.scss";
-@import "index.scss";
+
