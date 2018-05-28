@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>A13B6316-6EB5-415B-8084-613E8B510797</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="22.5" cy="22.5" r="22.5"></circle>
+        <filter x="-55.6%" y="-108.9%" width="322.2%" height="322.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="25" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.729562953 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-428.000000, -682.000000)">
+            <g id="1" transform="translate(-142.000000, -7.000000)">
+                <g id="content" transform="translate(520.000000, 17.000000)">
+                    <g id="smm-icons" transform="translate(37.000000, 659.000000)">
+                        <g id="ic_fb">
+                            <g id="Oval-3" opacity="0.185858243">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="#26D5A3" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                            <path d="M30.5210156,13.75 L14.4795312,13.75 C14.0764844,13.75 13.75,14.0764844 13.75,14.4789844 L13.75,30.5210156 C13.75,30.9235156 14.0764844,31.25 14.4795312,31.25 L23.046875,31.25 L23.046875,24.6875 L20.859375,24.6875 L20.859375,21.953125 L23.046875,21.953125 L23.046875,19.765625 C23.046875,17.5053906 24.4780469,16.3930469 26.494375,16.3930469 C27.4601563,16.3930469 28.2903125,16.4652344 28.5320313,16.4969531 L28.5320313,18.8594531 L27.1336719,18.86 C26.0371875,18.86 25.78125,19.3811719 25.78125,20.1457031 L25.78125,21.953125 L28.515625,21.953125 L27.96875,24.6875 L25.78125,24.6875 L25.825,31.25 L30.5210156,31.25 C30.9235156,31.25 31.25,30.9235156 31.25,30.5210156 L31.25,14.4789844 C31.25,14.0764844 30.9235156,13.75 30.5210156,13.75" id="fb_ic" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

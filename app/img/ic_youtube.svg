@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="17px" viewBox="0 0 23 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>94B2D4A9-FEA2-4DF0-9F1F-3DF7DA3D25C6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <circle id="path-1" cx="22.5" cy="22.5" r="22.5"></circle>
+        <filter x="-55.6%" y="-108.9%" width="322.2%" height="322.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="25" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="12.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.729562953 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-741.000000, -683.000000)">
+            <g id="1" transform="translate(-142.000000, -7.000000)">
+                <g id="content" transform="translate(520.000000, 17.000000)">
+                    <g id="smm-icons" transform="translate(37.000000, 659.000000)">
+                        <g id="ic_youtube" transform="translate(314.400000, 0.000000)">
+                            <g id="Oval-3-Copy-3" opacity="0.185858243">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="#26D5A3" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            </g>
+                            <path d="M20.9309375,25.2292187 L20.9302734,19.2586328 L26.6717578,22.2542187 L20.9309375,25.2292187 Z M33.5375,18.2240234 C33.5375,18.2240234 33.3296484,16.7597656 32.6928125,16.1149609 C31.8846484,15.2682812 30.9788672,15.2642969 30.5638281,15.2151562 C27.5901562,15 23.1296484,15 23.1296484,15 L23.1203516,15 C23.1203516,15 18.6598437,15 15.6861719,15.2151562 C15.2704687,15.2642969 14.3653516,15.2682812 13.5565234,16.1149609 C12.9196875,16.7597656 12.7125,18.2240234 12.7125,18.2240234 C12.7125,18.2240234 12.5,19.9439453 12.5,21.6632031 L12.5,23.2755469 C12.5,24.9954688 12.7125,26.7147266 12.7125,26.7147266 C12.7125,26.7147266 12.9196875,28.1789844 13.5565234,28.8237891 C14.3653516,29.6704687 15.4271875,29.6439063 15.9,29.7322266 C17.6,29.8955859 23.125,29.9460547 23.125,29.9460547 C23.125,29.9460547 27.5901562,29.9394141 30.5638281,29.7242578 C30.9788672,29.6744531 31.8846484,29.6704687 32.6928125,28.8237891 C33.3296484,28.1789844 33.5375,26.7147266 33.5375,26.7147266 C33.5375,26.7147266 33.75,24.9954688 33.75,23.2755469 L33.75,21.6632031 C33.75,19.9439453 33.5375,18.2240234 33.5375,18.2240234 L33.5375,18.2240234 Z" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
