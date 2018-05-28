@@ -10,6 +10,7 @@ const gulp = require('gulp'),
     rename = require("gulp-rename"),
     gulpCopy = require('gulp-copy'),
     gulpSequence = require('gulp-sequence'),
+    clean = require('gulp-clean'),
     htmlImport = require('gulp-html-import');
 
 
@@ -19,7 +20,7 @@ let config = {
     css: {
         src: '/scss/**/*.scss',
         dest: '/css',
-        libs: '/libs.css',
+        libs: '/libs.min.css',
         scss: '/scss',
         main_scss: '/main.scss'
     },
@@ -41,30 +42,16 @@ let config = {
     }
 };
 
-gulp.task('js-libs', function () {
-    return gulp.src([
-        config.app + config.libs.folder + config.libs.node_modules + 'jquery/dist/jquery.js',
-        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js'
-
-    ])
-        .pipe(concat('libs.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(config.app + config.js.dest))
-        .pipe(browserSync.reload({
-            stream: true
-        }));
-});
-
-
 
 // add new libs here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 gulp.task('copy-modules', function () {
     return gulp
         .src([
-            config.node_modules + 'bootstrap/**/*',
+            // config.node_modules + 'bootstrap/**/*',
             config.node_modules + 'jquery/**/*'
         ])
         .pipe(gulpCopy(config.app + config.libs.folder));
+
 });
 // add new libs here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -77,7 +64,6 @@ gulp.task('css-libs', function () {
         config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/css/bootstrap.css'
     ])
         .pipe(concat('libs.min.css'))
-        .pipe(cleanCSS({keepBreaks: false}))
         .pipe(gulp.dest(config.app + config.css.dest))
 });
 
@@ -94,10 +80,18 @@ gulp.task('js-libs', function () {
         }));
 });
 
+gulp.task('clean-css-libs', function () {
+    return gulp.src(config.app + config.css.dest + config.css.libs)
+        .pipe(clean());
+});
+gulp.task('clean-js-libs', function () {
+    return gulp.src(config.app + config.js.dest + '/libs.min.js')
+        .pipe(clean());
+});
 
 // use gulp.libs for copy new modules and refresh lib files
 
-gulp.task('libs',  gulpSequence('copy-modules', 'css-libs', 'js-libs'));
+gulp.task('libs',  gulpSequence('clean-css-libs', 'clean-js-libs', 'copy-modules', 'css-libs', 'js-libs'));
 
 
 gulp.task('css-build', function () {
@@ -109,13 +103,16 @@ gulp.task('css-build', function () {
             cascade: false
         }))
         .pipe(gcmq())
-        // .pipe(cleanCSS({keepBreaks: false}))
+        .pipe(cleanCSS({keepBreaks: false}))
         .pipe(sourcemaps.write('app/css', {addComment: true}))
+
         .pipe(gulp.dest(config.app + config.css.dest))
+
         .pipe(browserSync.reload({
             stream: true
         }));
 });
+
 
 
 gulp.task('import', function () {

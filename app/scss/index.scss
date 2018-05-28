@@ -1,18 +1,20 @@
-.test {
-  background: #123123;
-  @include row-flex();
-  @include size(12);
-  @include size-xs(4);
-  margin: 0 auto;
-  color: red;
+.custom__progress {
+  width: 100%;
+  height: 14px;
+}
+.custom__progress-wrap {
+  background: #f80;
+  margin: 20px 0;
+  overflow: hidden;
+  position: relative;
+  .custom__progress-bar {
+    background: #ddd;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
 }
 
-.papapa {
-  display: inline;
-  @include row-flex();
-  @include size(12);
-  @include size-xs(4);
-}
-.indigo{
-  background: red;
+body{
+  font-family: $main-font;
 }
