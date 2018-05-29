@@ -573,8 +573,9 @@ body, a, p, div {
   padding: 21px 24px;
   display: inline-block;
   text-align: center;
-  box-shadow: inset -1px 1px 15px 0 rgba(255, 255, 255, 0.5), 9px 10px 8px 0 rgba(0, 0, 0, 0.15);
+  box-shadow:inset -1px 1px 15px 0 rgba(255,255,255,.5), -1px 7px 8px 0 rgba(0,0,0,.15);
   border-radius: 9px;
+
 }
 
 .btn-wrapper {
@@ -640,12 +641,23 @@ body, a, p, div {
   top: -130px;
   left: 0;
 }
-.my-flipster{
-  margin-top: 36px ;
+.bg-four {
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
+
+.my-flipster {
+  margin-top: 36px;
+}
+
 .video {
   position: relative;
-  &:after{
+  &:after {
 
   }
   &__item {
@@ -656,14 +668,16 @@ body, a, p, div {
     max-width: 300px;
   }
 }
-.section{
-  &__text{
+
+.section {
+  &__text {
     font-size: $big-size;
     text-align: center;
     line-height: $big-height;
     font-family: $bold-font;
   }
 }
+
 .relation {
   position: relative;
   max-width: 600px;
@@ -681,7 +695,7 @@ body, a, p, div {
   height: 100%;
   top: 0;
   left: 0;
-  background: red;
+  //background: red;
 }
 
 //==================================================flipster slider=====================================================================
@@ -700,26 +714,89 @@ body, a, p, div {
   overflow: hidden;
 }
 
-.flipster__nav__link{
+.flipster__nav__link {
   font-size: 0px;
   height: 10px;
   width: 10px;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 100px;
-  &:hover{
+  &:hover {
     background: (255, 255, 255, 0.8);
   }
 }
-li.flipster__nav__item.flipster__nav__item--current{
+
+li.flipster__nav__item.flipster__nav__item--current {
   background: #ffffff;
   border-radius: 100px;
 }
+
 .flipster__nav__item {
   display: inline-block;
   margin: 0 15px;
 }
-.flipster__nav{
+
+.flipster__nav {
   //margin: 0px;
 }
 
 //==================================================flipster slider=====================================================================
+
+.product {
+  position: relative;
+  background-image: url("../img/img_gress.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-top: 60px;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+  &__text {
+    font-size: $main-size;
+    letter-spacing: 1.18px;
+    line-height: 22px;
+    padding: 0px;
+  }
+  &__head {
+    font-family: $bold-font;
+    font-size: $medium-size;
+    line-height: 35px;
+    margin-bottom: 35px;
+  }
+  &__item {
+    .btn-wrapper{
+      font-family: $bold-font;
+    }
+    padding: 45px 20px 30px 20px;
+    max-width: 350px;
+    background: red;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 2px 20px 46px 0 rgba(0, 0, 0, 0.14);
+    background: linear-gradient(331.03deg, #26D5A3 0%, #26CFB5 31.71%, #27C2DD 100%);
+    &-centered {
+      background: blue;
+      z-index: 2;
+      margin: -20px;
+      padding: 55px 40px 30px 40px;
+      max-width: 420px;
+      background: linear-gradient(331.03deg, #26D5A3 0%, #26CFB5 31.71%, #27C2DD 100%);
+      //transform: scale(1.1);
+    }
+  }
+  &__link{
+    &__wrapper{
+      display: block;
+      padding: 70px 0px 50px 0px;
+    }
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    color: #27C6D1;
+    text-decoration: underline;
+  }
+}
