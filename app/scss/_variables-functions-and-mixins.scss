@@ -3,7 +3,7 @@ $main-font: 'HelveticaRegular';
 $bold-font: 'HelveticaBold';
 $main-size: 17px;
 $medium-size: 25px;
-$big-size: 45px;
+$big-size: 54px;
 $main-color: #ffffff;
 
 $custom-height: 18px;
@@ -24,7 +24,7 @@ $cards-color: rgba(38, 198, 206, 0.44);
   color: $main-color;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: $main-size;
+  font-size: 14px;
   display: inline-block;
   letter-spacing: 1.42px;
   &:hover,

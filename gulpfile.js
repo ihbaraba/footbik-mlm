@@ -48,7 +48,10 @@ gulp.task('copy-modules', function () {
     return gulp
         .src([
             // config.node_modules + 'bootstrap/**/*',
-            config.node_modules + 'jquery/**/*'
+            config.node_modules + 'jquery/**/*',
+            config.node_modules + 'jquery-countdown/**/*',
+            config.node_modules + 'jquery.flipster/**/*'
+
         ])
         .pipe(gulpCopy(config.app + config.libs.folder));
 
@@ -61,7 +64,8 @@ gulp.task('copy-modules', function () {
 
 gulp.task('css-libs', function () {
     return gulp.src([
-        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/css/bootstrap.css'
+        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/css/bootstrap.css',
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.css'
     ])
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest(config.app + config.css.dest))
@@ -70,7 +74,14 @@ gulp.task('css-libs', function () {
 gulp.task('js-libs', function () {
     return gulp.src([
         config.app + config.libs.folder + config.libs.node_modules + 'jquery/dist/jquery.js',
-        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js'
+        config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js',
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery-countdown/dist/jquery.countdown.min.js',
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.min.js'
+
+
+
+
+
     ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())

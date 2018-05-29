@@ -23,9 +23,7 @@ $( document ).ready(function() {
             create a new DIV that will act as an option item:*/
             c = document.createElement("a");
             c.setAttribute("href", selElmnt[j].getAttribute('data-url'));
-            console.log(selElmnt[j])
             c.innerHTML = selElmnt.options[j].innerHTML;
-            // console.log(c);
             // c.setAttribute("data-language", selElmnt.options[j].innerHTML);
             c.addEventListener("click", function(e) {
                 /*when an item is clicked, update the original select box,
@@ -44,13 +42,11 @@ $( document ).ready(function() {
                         this.setAttribute("class", "same-as-selected");
                         h.setAttribute("data-language", i);
                         // this.setAttribute("href", $(i).data('url'));
-                        console.log(i);
 
                         break;
                     }
                 }
                 h.click();
-                console.log(h);
             });
             b.appendChild(c);
         }
@@ -111,5 +107,16 @@ $( document ).ready(function() {
         }, animationLength);
     }
     // =================================================== progressbar ===================================================
+
+
+    $('.my-flipster').flipster({
+        // buttons: true,
+        // click: 'false',
+        start: 'center',
+        touch: true,
+        loop: true,
+        nav: 'after',
+        scrollwheel: false
+    });
 
 });
