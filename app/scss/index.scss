@@ -51,7 +51,7 @@ table {
 //reset
 
 header {
-  padding: 40px 0px;
+  padding: 30px 0px 10px 0px;
 }
 
 .custom__progress {
@@ -130,6 +130,9 @@ body, a, p, div {
   @include wrapper;
   @include md(max-width, 970px);
   @include sm(max-width, 750px);
+  display: block;
+  z-index: 2;
+  position: relative;
 }
 
 .rowz {
@@ -142,7 +145,7 @@ body, a, p, div {
 .logo {
   &__wrapper {
     //@include col();
-    margin-bottom: 15px;
+    //margin-bottom: 15px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -170,7 +173,10 @@ body, a, p, div {
 }
 
 .bounty {
+  line-height: 13px;
   //margin-right: 88px;
+  padding: 10px 23px;
+  font-family: $bold-font;
 }
 
 //==================================================select=====================================================================
@@ -362,22 +368,21 @@ body, a, p, div {
 .first-block {
   background-repeat: no-repeat;
   background-position: right top;
-  //background-image: url(../img/bg_footb.png);
+  background-image: url(../img/bg_footb.png);
   position: relative;
-  background-size: 75%;
+  background-size: inherit;
   &:after {
     position: absolute;
     content: '';
-    width: 100%;
     bottom: 0;
-    left: 0;
     right: 0;
-    height: 100%;
-    background-size: cover;
+    left: 0;
+    top: 0;
+    background-size: inherit;
     background-repeat: no-repeat;
-    background-position: top left;
+    background-position: right bottom -10px;
     z-index: -1;
-    //background-image: url("../img/gamma-bg-1.png");
+    background-image: url("../img/gamma-bg-1.png");
   }
 }
 
@@ -402,7 +407,7 @@ body, a, p, div {
 .start {
   @include row-flex();
   align-items: flex-end;
-  padding-bottom: 235px;
+  padding-bottom: 255px;
 }
 
 .tokens {
@@ -436,7 +441,7 @@ body, a, p, div {
     font-family: $bold-font;
     font-size: $big-size;
     line-height: $big-height;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     letter-spacing: 1.77px;
     //margin: 20px 0 15px 0;
   }
@@ -462,7 +467,7 @@ body, a, p, div {
     border-radius: 8px;
     @include size(5);
     @include col();
-    padding: 30px 60px 15px 60px;
+    padding: 30px 60px 0px 60px;
     position: relative;
   }
   &__head {
@@ -489,10 +494,13 @@ body, a, p, div {
     }
   }
   &__foot {
+    background-color: rgba(0, 0, 0, 0.09);
     &__text {
       text-align: center;
     }
-    margin-top: 40px;
+    padding: 20px 60px;
+    margin: 20px -60px 0px -60px;
+
   }
   &__bar {
     margin: 0px -15px;
@@ -538,8 +546,8 @@ body, a, p, div {
   &__number {
     border: 1px solid $opacity-border-color;
     border-radius: 12px;
-    padding: 15px 15px 5px 15px;
-    font-size: 55px;
+    padding: 15px 12px 5px 12px;
+    font-size: 60px;
     margin-bottom: 20px;
     //line-height: $big-height;
 
@@ -573,7 +581,7 @@ body, a, p, div {
   padding: 21px 24px;
   display: inline-block;
   text-align: center;
-  box-shadow:inset -1px 1px 15px 0 rgba(255,255,255,.5), -1px 7px 8px 0 rgba(0,0,0,.15);
+  box-shadow: inset -1px 1px 15px 0 rgba(255, 255, 255, .5), -1px 7px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 9px;
 
 }
@@ -641,6 +649,7 @@ body, a, p, div {
   top: -130px;
   left: 0;
 }
+
 .bg-four {
   display: block;
   position: absolute;
@@ -657,6 +666,10 @@ body, a, p, div {
 
 .video {
   position: relative;
+  background-image: url("../img/gamma-galax.png");
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: left top;
   &:after {
 
   }
@@ -742,12 +755,27 @@ li.flipster__nav__item.flipster__nav__item--current {
 //==================================================flipster slider=====================================================================
 
 .product {
+  &:after {
+    background-image: url("../img/gamma-bg-2.png");
+    position: absolute;
+    content: '';
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center bottom -10px;
+    //z-index: -1;
+  }
   position: relative;
-  background-image: url("../img/img_gress.png");
-  background-size: cover;
+  //background-image: url("../img/img_gress.png");
+  background-size: inherit;
   background-repeat: no-repeat;
   background-position: bottom;
-  padding-top: 60px;
+  padding-top: 45px;
+  //z-index: -1;
+  background: #263b5d url(../img/img_gress.png);
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -768,7 +796,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin-bottom: 35px;
   }
   &__item {
-    .btn-wrapper{
+    .btn-wrapper {
       font-family: $bold-font;
     }
     padding: 45px 20px 30px 20px;
@@ -788,10 +816,10 @@ li.flipster__nav__item.flipster__nav__item--current {
       //transform: scale(1.1);
     }
   }
-  &__link{
-    &__wrapper{
+  &__link {
+    &__wrapper {
       display: block;
-      padding: 70px 0px 50px 0px;
+      padding: 70px 0px 45px 0px;
     }
     display: block;
     font-size: 18px;
@@ -799,4 +827,159 @@ li.flipster__nav__item.flipster__nav__item--current {
     color: #27C6D1;
     text-decoration: underline;
   }
+}
+
+//==================================================tabs=====================================================================
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+
+.nav > li > a {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1.18px;
+  font-family: $bold-font;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+.nav-pills > li > a {
+  border-radius: 0px;
+}
+
+.tabs {
+  padding: 0px 15px;
+}
+
+.tab-content {
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 50px 40px;
+  border-radius: 8px;
+}
+
+//==================================================tabs=====================================================================
+
+.localisation {
+  padding-bottom: 75px;
+  &__wrapper {
+    display: flex;
+    margin-top: 40px;
+    //margin-bottom: 300px;
+    //flex-wrap: wrap;
+  }
+  padding-top: 100px;
+  &__tabs {
+    //width: 100%;
+    max-width: 390px;
+  }
+  &__map {
+    margin-left: -60px;
+  }
+}
+
+.clubs {
+  &__item {
+    margin-bottom: 15px;
+  }
+  &__link {
+    font-size: $main-size;
+    line-height: 22px;
+    letter-spacing: 0.9px;
+    display: flex;
+    align-items: center;
+  }
+  &__img {
+    border-radius: 100px;
+    margin-right: 20px;
+  }
+}
+.advantages{
+
+  max-width: 1500px;
+  display: block;
+  padding-top: 50px;
+  padding-bottom: 45px;
+  margin: 0 auto;
+  background-image: url("../img/advantages__bg.png");
+  background-repeat: no-repeat;
+  background-size: inherit;
+  //margin-top: -230px;
+  position: relative;
+  z-index: 2;
+  //margin-top: -380px;
+  &__wrapper{
+    margin-top: 50px;
+    @include row-flex();
+  }
+  &__item{
+    @include col();
+    @include size(4);
+    padding: 0 12px;
+    & img{
+      display: block;
+      margin: 0 auto;
+      border-radius: 100px;
+      max-width: 100%;
+      width: 85px;
+      margin-bottom: 45px;
+      height: 85px;
+    }
+    & p {
+      font-size: $main-size;
+      letter-spacing: 1.18px;
+      text-align: center;
+      line-height: 22px;
+    }
+  }
+}
+.sell-advantages{
+  //background: #2A324D;
+  margin-top: -290px;
+  //z-index: -1;
+  display: block;
+  position: relative;
+  padding-top: 290px;
+  padding-bottom: 140px;
+  background: #2A324D url("../img/gamma-galaxx.png");
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: bottom 40px right;
+}
+.sell{
+  margin-top: 65px;
+  &__item{
+
+  }
+  &__wrapper{
+    @include row-flex();
+    margin-top: 90px;
+    align-items: stretch;
+  }
+  &__price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include col();
+    @include size(4);
+  }
+  &__chart{
+    @include col();
+    @include size(8);
+  }
+  &__maintext{
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 1.24px;
+    font-family: $bold-font;
+  }
+  &__text{
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.78px;
+  }
+}
+.roadmap{
+  padding-top: 75px;
 }
