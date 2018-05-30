@@ -50,7 +50,9 @@ gulp.task('copy-modules', function () {
             // config.node_modules + 'bootstrap/**/*',
             config.node_modules + 'jquery/**/*',
             config.node_modules + 'jquery-countdown/**/*',
-            config.node_modules + 'jquery.flipster/**/*'
+            config.node_modules + 'jquery.flipster/**/*',
+            config.node_modules + 'owl.carousel/**/*'
+
 
         ])
         .pipe(gulpCopy(config.app + config.libs.folder));
@@ -65,7 +67,9 @@ gulp.task('copy-modules', function () {
 gulp.task('css-libs', function () {
     return gulp.src([
         config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/css/bootstrap.css',
-        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.css'
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.css',
+        config.app + config.libs.folder + config.libs.node_modules + 'owl.carousel/dist/assets/owl.carousel.css'
+
     ])
         .pipe(concat('libs.min.css'))
         .pipe(gulp.dest(config.app + config.css.dest))
@@ -76,7 +80,9 @@ gulp.task('js-libs', function () {
         config.app + config.libs.folder + config.libs.node_modules + 'jquery/dist/jquery.js',
         config.app + config.libs.folder + config.libs.node_modules + 'bootstrap/dist/js/bootstrap.js',
         config.app + config.libs.folder + config.libs.node_modules + 'jquery-countdown/dist/jquery.countdown.min.js',
-        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.min.js'
+        config.app + config.libs.folder + config.libs.node_modules + 'jquery.flipster/dist/jquery.flipster.min.js',
+        config.app + config.libs.folder + config.libs.node_modules + 'owl.carousel/dist/owl.carousel.js'
+
 
 
 

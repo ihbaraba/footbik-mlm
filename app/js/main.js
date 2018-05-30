@@ -87,28 +87,28 @@ $( document ).ready(function() {
 
     // =================================================== progressbar ===================================================
     // on page load...
-    moveProgressBar();
+    moveProgressBar($('.custom__progress-wrap'));
     // on browser resize...
     $(window).resize(function() {
-        moveProgressBar();
+        moveProgressBar($('.custom__progress-wrap'));
     });
 
     // SIGNATURE PROGRESS
-    function moveProgressBar() {;
-        var getPercent = ($('.custom__progress-wrap').data('progress-percent') / 100);
-        var getProgressWrapWidth = $('.custom__progress-wrap').width();
+    function moveProgressBar(selector) {
+        var getPercent = (selector.data('progress-percent') / 100);
+        var getProgressWrapWidth = selector.width();
         var progressTotal = getPercent * getProgressWrapWidth;
-        var animationLength = 2000;
 
+        var animationLength = 2000;
         // on page load, animate percentage bar to data percentage length
         // .stop() used to prevent animation queueing
-        $('.custom__progress-bar').stop().animate({
+        selector.find('.custom__progress-bar').stop().animate({
             left: progressTotal
         }, animationLength);
     }
     // =================================================== progressbar ===================================================
 
-
+    // =================================================== videoslider ===================================================
     $('.my-flipster').flipster({
         // buttons: true,
         // click: 'false',
@@ -119,4 +119,19 @@ $( document ).ready(function() {
         scrollwheel: false
     });
 
+    // =================================================== videoslider ===================================================
+
+
+
+    // =================================================== owl carousel ===================================================
+
+    $('.stages__slider').owlCarousel({
+        items: 5,
+        nav: true,
+        margin: 22,
+        navText: ["<img src='../img/ar2.png'>","<img src='../img/ar.png'>"],
+        dots: false
+    });
+
+    // =================================================== owl carousel ===================================================
 });
