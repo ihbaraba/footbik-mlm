@@ -127,19 +127,41 @@ $(document).ready(function () {
 
     // =================================================== owl carousel ===================================================
 
+    $('.tab-content > .tab-pane.fade').each(function(){
+        if( $(this).hasClass('active') ){
+            $(this).addClass('firstt');
+            $('.tab-content > .tab-pane.fade').addClass('active');
+            $('.clubs__slider').owlCarousel({
+                items: 1,
+                nav: true,
+                margin: 0,
+                navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
+                dots: false
+            });
+            $('.tab-content > .tab-pane.fade').removeClass('active');
+            $('.tab-content > .tab-pane.fade.firstt').addClass('active in');
+        }
+    });
+
+
+
+
     $('.stages__slider').owlCarousel({
         items: 5,
         nav: true,
         navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
         dots: false
     });
-    $('.clubs__slider').owlCarousel({
-        items: 1,
-        nav: true,
+
+    $('.news__slider').owlCarousel({
+        items: 3,
+        // nav: true,
+        // arrows: false,
         margin: 0,
-        navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
-        dots: false
+        dotsEach: true,
+        dots: true
     });
+
 
     // =================================================== owl carousel ===================================================
 
@@ -150,13 +172,13 @@ $(document).ready(function () {
 
     var humanSingle = $('.team__human');
 
-    for(var i=0;i<human.length;i++){
+    for (var i = 0; i < human.length; i++) {
         $(human[i]).attr('data-id', i);
     }
-    for(var i=0;i<humanSingle.length;i++){
+    for (var i = 0; i < humanSingle.length; i++) {
         $(humanSingle[i]).attr('data-id', i);
     }
-   
+
     $(document).on('click', '.team__item', function (e) {
 
         var index = $(this).data('id');
@@ -164,12 +186,29 @@ $(document).ready(function () {
         humanSingle.removeClass('active');
         human.removeClass('active');
 
-        $('.team__human[data-id="'+index+'"]').addClass('active');
-        $('.team__item[data-id="'+index+'"]').addClass('active');
+        $('.team__human[data-id="' + index + '"]').addClass('active');
+        $('.team__item[data-id="' + index + '"]').addClass('active');
 
     });
 
     // =================================================== team logic ===================================================
+
+
+    // =================================================== dropdown logic ===================================================
+
+    $(document).on('click', '.faq__item', function (e) {
+
+        $('.faq__item').not($(this)).removeClass('active');
+
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active');
+        } else{
+            $(this).removeClass('active');
+        }
+
+    });
+
+    // =================================================== dropdown logic ===================================================
 
 
 });
