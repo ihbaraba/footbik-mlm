@@ -1,5 +1,5 @@
 "use strict";
-$( document ).ready(function() {
+$(document).ready(function () {
     // =================================================== select language ===================================================
 
     var x, i, j, selElmnt, a, b, c;
@@ -25,7 +25,7 @@ $( document ).ready(function() {
             c.setAttribute("href", selElmnt[j].getAttribute('data-url'));
             c.innerHTML = selElmnt.options[j].innerHTML;
             // c.setAttribute("data-language", selElmnt.options[j].innerHTML);
-            c.addEventListener("click", function(e) {
+            c.addEventListener("click", function (e) {
                 /*when an item is clicked, update the original select box,
                 and the selected item:*/
                 var y, i, k, s, h;
@@ -51,7 +51,7 @@ $( document ).ready(function() {
             b.appendChild(c);
         }
         x[i].appendChild(b);
-        a.addEventListener("click", function(e) {
+        a.addEventListener("click", function (e) {
             /*when the select box is clicked, close any other select boxes,
             and open/close the current select box:*/
             e.stopPropagation();
@@ -60,6 +60,7 @@ $( document ).ready(function() {
             this.classList.toggle("select-arrow-active");
         });
     }
+
     function closeAllSelect(elmnt) {
         /*a function that will close all select boxes in the document,
         except the current select box:*/
@@ -79,6 +80,7 @@ $( document ).ready(function() {
             }
         }
     }
+
     /*if the user clicks anywhere outside the select box,
     then close all select boxes:*/
     document.addEventListener("click", closeAllSelect);
@@ -89,7 +91,7 @@ $( document ).ready(function() {
     // on page load...
     moveProgressBar($('.custom__progress-wrap'));
     // on browser resize...
-    $(window).resize(function() {
+    $(window).resize(function () {
         moveProgressBar($('.custom__progress-wrap'));
     });
 
@@ -106,6 +108,7 @@ $( document ).ready(function() {
             left: progressTotal
         }, animationLength);
     }
+
     // =================================================== progressbar ===================================================
 
     // =================================================== videoslider ===================================================
@@ -122,22 +125,51 @@ $( document ).ready(function() {
     // =================================================== videoslider ===================================================
 
 
-
     // =================================================== owl carousel ===================================================
 
     $('.stages__slider').owlCarousel({
         items: 5,
         nav: true,
-        navText: ["<img src='../img/ar2.png'>","<img src='../img/ar.png'>"],
+        navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
         dots: false
     });
     $('.clubs__slider').owlCarousel({
         items: 1,
         nav: true,
         margin: 0,
-        navText: ["<img src='../img/ar2.png'>","<img src='../img/ar.png'>"],
+        navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
         dots: false
     });
 
     // =================================================== owl carousel ===================================================
+
+
+    // =================================================== team logic ===================================================
+
+    var human = $('.team__item');
+
+    var humanSingle = $('.team__human');
+
+    for(var i=0;i<human.length;i++){
+        $(human[i]).attr('data-id', i);
+    }
+    for(var i=0;i<humanSingle.length;i++){
+        $(humanSingle[i]).attr('data-id', i);
+    }
+   
+    $(document).on('click', '.team__item', function (e) {
+
+        var index = $(this).data('id');
+
+        humanSingle.removeClass('active');
+        human.removeClass('active');
+
+        $('.team__human[data-id="'+index+'"]').addClass('active');
+        $('.team__item[data-id="'+index+'"]').addClass('active');
+
+    });
+
+    // =================================================== team logic ===================================================
+
+
 });
