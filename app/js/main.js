@@ -128,7 +128,13 @@ $( document ).ready(function() {
     $('.stages__slider').owlCarousel({
         items: 5,
         nav: true,
-        margin: 22,
+        navText: ["<img src='../img/ar2.png'>","<img src='../img/ar.png'>"],
+        dots: false
+    });
+    $('.clubs__slider').owlCarousel({
+        items: 1,
+        nav: true,
+        margin: 0,
         navText: ["<img src='../img/ar2.png'>","<img src='../img/ar.png'>"],
         dots: false
     });
