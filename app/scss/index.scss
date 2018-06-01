@@ -1410,8 +1410,10 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__human {
-    @include col();
-    @include size(6);
+    &_all{
+      @include col();
+      @include size(6);
+    }
     &__wrapper {
       background-color: rgba(0, 0, 0, 0.44);
       border: 2px solid rgba(255, 255, 255, 0.11);
@@ -1420,12 +1422,12 @@ li.flipster__nav__item.flipster__nav__item--current {
       text-align: center;
     }
     display: none;
-    opacity: 1;
-    transition: 0.2s;
+    opacity: 0;
+    transition: 0.9s;
     &.active {
       display: block;
       opacity: 1;
-      transition: 0.2s;
+      transition: 0.9s;
     }
   }
   &__list {

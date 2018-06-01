@@ -237,10 +237,26 @@ $(document).ready(function () {
 
         var index = $(this).data('id');
 
-        humanSingle.removeClass('active');
+        humanSingle.css('display', 'none');
+
+        setTimeout(function(){
+            humanSingle.removeClass('active');
+        }, 100);
+
+
+        // humanSingle.slideUp(300);
+
         human.removeClass('active');
 
-        $('.team__human[data-id="' + index + '"]').addClass('active');
+        // $('.team__human[data-id="' + index + '"]').css('display', 'block').addClass('active');
+
+        $('.team__human[data-id="' + index + '"]').css('display', 'block');
+
+        setTimeout(function(){
+            $('.team__human[data-id="' + index + '"]').addClass('active');
+        }, 100);
+
+
         $('.team__item[data-id="' + index + '"]').addClass('active');
 
     });
