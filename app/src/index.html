@@ -1,7 +1,6 @@
 @import "head.html"
 @import "header.html"
 <div class="wrapper">
-
     <main class="start">
         <div class="tokens__wrapper">
             <div class="tokens__badge">
@@ -120,7 +119,7 @@
 </div>
 <!--1st block ends here-->
 </section>
-<section class="video">
+<section class="video cd-section" id="section2">
     <img src="../img/gamma-galax.png" class="bg-three" alt="">
     <div class="wrapper">
         <p class="section__text">
@@ -160,7 +159,7 @@
         </div>
     </div>
 </section>
-<section class="product">
+<section class="product cd-section" id="section3">
     <!--<img src="../img/gamma-bg-2.png" class="bg-four" alt="">-->
     <div class="wrapper">
         <p class="section__text">
@@ -223,7 +222,7 @@
         </div>
     </div>
 </section>
-<section class="localisation">
+<section class="localisation cd-section" id="section4">
     <div class="wrapper">
         <p class="section__text">
             ЛОКАЛИЗАЦИЯ
@@ -367,7 +366,7 @@
         </div>
     </div>
 </section>
-<div class="advantages">
+<div class="advantages cd-section" id="section5">
     <p class="section__text">
         ПРЕИМУЩЕСТВА
     </p>
@@ -422,46 +421,48 @@
     </div>
 </div>
 <section class="sell-advantages">
-    <div class="wrapper">
-        <div class="sell">
-            <p class="section__text">
-                ПУБЛИЧНАЯ ПРОДАЖА
-            </p>
-            <div class="sell__wrapper">
-                <div class="sell__price">
-                    <div class="sell__item">
-                        <p class="sell__maintext">
-                            1 токен = $0,20
-                        </p>
-                        <p class="sell__text">
-                            Во время продажи
-                        </p>
+    <section class="cd-section" id="section6">
+        <div class="wrapper">
+            <div class="sell">
+                <p class="section__text ">
+                    ПУБЛИЧНАЯ ПРОДАЖА
+                </p>
+                <div class="sell__wrapper">
+                    <div class="sell__price">
+                        <div class="sell__item">
+                            <p class="sell__maintext">
+                                1 токен = $0,20
+                            </p>
+                            <p class="sell__text">
+                                Во время продажи
+                            </p>
+                        </div>
+                        <div class="sell__item">
+                            <p class="sell__maintext">
+                                34% BONUS
+                            </p>
+                            <p class="sell__text">
+                                На текущей стадии
+                            </p>
+                        </div>
+                        <div class="sell__item">
+                            <p class="sell__maintext">
+                                $100
+                            </p>
+                            <p class="sell__text">
+                                Минимальный платеж
+                            </p>
+                        </div>
                     </div>
-                    <div class="sell__item">
-                        <p class="sell__maintext">
-                            34% BONUS
-                        </p>
-                        <p class="sell__text">
-                            На текущей стадии
-                        </p>
+                    <div class="sell__chart">
+                        <img src="../img/Diagr.png" class="custom-img">
                     </div>
-                    <div class="sell__item">
-                        <p class="sell__maintext">
-                            $100
-                        </p>
-                        <p class="sell__text">
-                            Минимальный платеж
-                        </p>
-                    </div>
-                </div>
-                <div class="sell__chart">
-                    <img src="../img/Diagr.png" class="custom-img">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </section>
-<section class="roadmap">
+<section class="roadmap cd-section" id="section7">
     <div class="wrapper">
         <p class="section__text">
             ROAD MAP
@@ -517,7 +518,7 @@
         </div>
     </div>
 </section>
-<section class="stages">
+<section class="stages cd-section" id="section8">
     <div class="wrapper">
         <p class="section__text">
             TOKEN SALE STAGES
@@ -615,7 +616,7 @@
         </div>
     </div>
 </section>
-<section class="team">
+<section class="team cd-section" id="section9">
     <div class="wrapper">
         <p class="section__text">
             НАША КОМАНДА
@@ -988,7 +989,7 @@
         </div>
     </div>
 </section>
-<section class="partners">
+<section class="partners cd-section" id="section10">
     <div class="wrapper">
         <p class="section__text">
              ПАРТНЕРЫ
@@ -1060,7 +1061,7 @@
         </div>
     </div>
 </section>
-<section class="news">
+<section class="news cd-section" id="section11">
     <div class="wrapper">
         <p class="section__text">
              FOOTBIK В СМИ
@@ -1146,7 +1147,7 @@
         </div>
     </div>
 </section>
-<section class="faq">
+<section class="faq cd-section" id="section12">
     <div class="wrapper">
         <p class="section__text">
              FAQ
@@ -1357,7 +1358,7 @@
         </div>
     </div>
 </section>
-<section class="contact">
+<section class="contact cd-section" id="section13">
     <div class="wrapper">
         <p class="section__text">
             СВЯЖИТЕСЬ С НАМИ
@@ -1438,7 +1439,88 @@
         </div>
     </div>
 </section>
-
+<nav class="navigation" id="main__nav">
+    <ul class="navigation__list">
+        <li class="navigation__item">
+            <a href="#section1" data-number="1">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Main</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section2" data-number="2">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Видео</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section3" data-number="3">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Продукт</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section4" data-number="4">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Локализация</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section5" data-number="5">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Преимущества</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section6" data-number="6">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Публичная продажа</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section7" data-number="7">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Road map</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section8" data-number="8">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Token sales stages</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section9" data-number="9">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Наша команда</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section10" data-number="10">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Партнеры</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section11" data-number="11">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Footbik в СМИ</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section12" data-number="12">
+                <span class="cd-dot"></span>
+                <span class="cd-label">FAQ</span>
+            </a>
+        </li>
+        <li class="navigation__item">
+            <a href="#section13" data-number="13">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Контакты</span>
+            </a>
+        </li>
+    </ul>
+</nav>
 @import "foot.html"
 @import "footer.html"
 <script>

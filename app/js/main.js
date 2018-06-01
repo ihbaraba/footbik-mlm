@@ -1,5 +1,63 @@
 "use strict";
+
+
+
 $(document).ready(function () {
+
+    // =================================================== menu ===================================================
+
+    var contentSections = $('.cd-section'),
+        navigationItems = $('#main__nav a');
+
+    updateNavigation();
+    $(window).on('scroll', function(){
+        updateNavigation();
+    });
+
+    //smooth scroll to the section
+    navigationItems.on('click', function(event){
+        event.preventDefault();
+        smoothScroll($(this.hash));
+    });
+
+    //smooth scroll to second section
+    // $('.cd-scroll-down').on('click', function(event){
+    //     event.preventDefault();
+    //     smoothScroll($(this.hash));
+    // });
+
+    //open-close navigation on touch devices
+    $('.cd-nav-trigger').on('click', function(){
+        $('#main__nav').toggleClass('open');
+
+    });
+    //close navigation on touch devices when selectin an elemnt from the list
+    // $('.touch #main__nav a').on('click', function(){
+    //     $('.touch #main__nav').removeClass('open');
+    // });
+
+    function updateNavigation() {
+        contentSections.each(function(){
+            var $this = $(this);
+            var activeSection = $('#main__nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
+            if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
+                navigationItems.eq(activeSection).addClass('is-selected');
+            }else {
+                navigationItems.eq(activeSection).removeClass('is-selected');
+            }
+        });
+    }
+
+    function smoothScroll(target) {
+        $('body,html').stop().animate(
+            {'scrollTop':target.offset().top},
+            900
+        );
+    }
+
+    // =================================================== menu ===================================================
+
+
     // =================================================== select language ===================================================
 
     var x, i, j, selElmnt, a, b, c;
@@ -220,3 +278,4 @@ $(document).ready(function () {
 
 
 });
+
