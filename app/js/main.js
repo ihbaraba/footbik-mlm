@@ -49,7 +49,7 @@ $(document).ready(function () {
 
     function smoothScroll(target) {
         $('body,html').stop().animate(
-            {'scrollTop': target.offset().top},
+            {'scrollTop': target.offset().top -  $('header').outerHeight()},
             900
         );
     }
@@ -150,6 +150,7 @@ $(document).ready(function () {
     // on browser resize...
     $(window).resize(function () {
         moveProgressBar($('.custom__progress-wrap'));
+        $('.first-block').css('padding-top', $('header').outerHeight());
     });
 
     // SIGNATURE PROGRESS
@@ -185,9 +186,10 @@ $(document).ready(function () {
     // =================================================== owl carousel ===================================================
 
     $('.tab-content > .tab-pane.fade').each(function () {
+
         if ($(this).hasClass('active')) {
             $(this).addClass('firstt');
-            $('.tab-content > .tab-pane.fade').addClass('active');
+            $(this).closest('.tab-content').find('.tab-pane').addClass('active');
             $('.clubs__slider').owlCarousel({
                 items: 1,
                 nav: true,
@@ -204,7 +206,18 @@ $(document).ready(function () {
         items: 5,
         nav: true,
         navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
-        dots: false
+        dots: false,
+        responsive:{
+            320: {
+                items:2
+            },
+            768: {
+                items:3
+            },
+            1200: {
+                items:5
+            }
+        }
     });
 
     $('.news__slider').owlCarousel({
@@ -239,7 +252,7 @@ $(document).ready(function () {
 
         humanSingle.css('display', 'none');
 
-        setTimeout(function(){
+        setTimeout(function () {
             humanSingle.removeClass('active');
         }, 100);
 
@@ -252,7 +265,7 @@ $(document).ready(function () {
 
         $('.team__human[data-id="' + index + '"]').css('display', 'block');
 
-        setTimeout(function(){
+        setTimeout(function () {
             $('.team__human[data-id="' + index + '"]').addClass('active');
         }, 100);
 
@@ -284,7 +297,7 @@ $(document).ready(function () {
     // =================================================== form ===================================================
 
 
-    function removePopup(){
+    function removePopup() {
 
         $('.mail-popup__wrapper').hide(300).removeClass('visible error success');
         $('.mail-popup__error').hide(300);
@@ -309,18 +322,18 @@ $(document).ready(function () {
                 dataType: 'html',
                 async: false,
                 success: function (result) {
-                    $('.mail-popup__wrapper').css('display','flex').addClass('visible success');
+                    $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
                     $('.mail-popup').show(300);
                     $('.mail-popup__success').show(300);
                 },
                 error: function (result) {
-                    $('.mail-popup__wrapper').css('display','flex').addClass('visible error');
+                    $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
                     $('.mail-popup').show(300);
                     $('.mail-popup__error').show(300);
                 }
             });
         } else {
-            $('.mail-popup__wrapper').css('display','flex').addClass('visible error');
+            $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
             $('.mail-popup').show(300);
             $('.mail-popup__error').show(300);
         }
@@ -356,30 +369,32 @@ $(document).ready(function () {
 
     // =================================================== header ===================================================
 
-    jQuery('img.svg').each(function(){
+
+    // =================================================== svg fill ===================================================
+    jQuery('img.svg').each(function () {
         var $img = jQuery(this);
         var imgID = $img.attr('id');
         var imgClass = $img.attr('class');
         var imgURL = $img.attr('src');
 
-        jQuery.get(imgURL, function(data) {
+        jQuery.get(imgURL, function (data) {
             // Get the SVG tag, ignore the rest
             var $svg = jQuery(data).find('svg');
 
             // Add replaced image's ID to the new SVG
-            if(typeof imgID !== 'undefined') {
+            if (typeof imgID !== 'undefined') {
                 $svg = $svg.attr('id', imgID);
             }
             // Add replaced image's classes to the new SVG
-            if(typeof imgClass !== 'undefined') {
-                $svg = $svg.attr('class', imgClass+' replaced-svg');
+            if (typeof imgClass !== 'undefined') {
+                $svg = $svg.attr('class', imgClass + ' replaced-svg');
             }
 
             // Remove any invalid XML tags as per http://validator.w3.org
             $svg = $svg.removeAttr('xmlns:a');
 
             // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-            if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
+            if (!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
                 $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
             }
 
@@ -389,7 +404,7 @@ $(document).ready(function () {
         }, 'xml');
 
     });
-
+// =================================================== svg fill ===================================================
 
 });
 
