@@ -127,8 +127,8 @@ $(document).ready(function () {
 
     // =================================================== owl carousel ===================================================
 
-    $('.tab-content > .tab-pane.fade').each(function(){
-        if( $(this).hasClass('active') ){
+    $('.tab-content > .tab-pane.fade').each(function () {
+        if ($(this).hasClass('active')) {
             $(this).addClass('firstt');
             $('.tab-content > .tab-pane.fade').addClass('active');
             $('.clubs__slider').owlCarousel({
@@ -138,13 +138,10 @@ $(document).ready(function () {
                 navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
                 dots: false
             });
-            $('.tab-content > .tab-pane.fade').removeClass('active');
-            $('.tab-content > .tab-pane.fade.firstt').addClass('active in');
+            $(this).closest('.tab-content').find('.tab-pane').removeClass('active');
+            $(this).closest('.tab-content').find('.tab-pane.firstt').addClass('active in');
         }
     });
-
-
-
 
     $('.stages__slider').owlCarousel({
         items: 5,
@@ -202,13 +199,24 @@ $(document).ready(function () {
 
         if (!$(this).hasClass('active')) {
             $(this).addClass('active');
-        } else{
+        } else {
             $(this).removeClass('active');
         }
 
     });
 
     // =================================================== dropdown logic ===================================================
+
+
+    // =================================================== form ===================================================
+
+    $(document).on('click', '.contact__form button', function (e) {
+        e.preventDefault();
+        console.log('test');
+    });
+
+
+    // =================================================== form ===================================================
 
 
 });
