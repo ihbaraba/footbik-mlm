@@ -32,7 +32,10 @@ body {
   display: block;
 
 }
-
+a:hover, a:focus {
+  color: #feec02;
+  text-decoration: underline;
+}
 .document__wrapper {
   overflow: hidden;
 }
@@ -130,6 +133,7 @@ header {
     padding: 10px 12px;
     background-color: transparent;
     border: 1px solid $main-color;
+    transition: 0.3s;
     &-dark {
       background-color: $dark-color;
       border: 1px solid transparent;
@@ -143,6 +147,12 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s;
+    &:hover {
+      transition: 0.3s;
+      color: #232b43;
+      background-color: #ffffff;
+    }
   }
 }
 
@@ -630,6 +640,7 @@ body, a, p, div {
   box-shadow: inset -1px 1px 15px 0 rgba(255, 255, 255, .5), -1px 7px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 9px;
 
+
 }
 
 .btn-wrapper {
@@ -661,6 +672,11 @@ body, a, p, div {
     & img {
       display: block;
       margin: 0 auto;
+    }
+    transition: 0.3s;
+    &:hover{
+      transition: 0.3s;
+      background-color: #3b7a80;
     }
   }
 }
@@ -810,6 +826,13 @@ li.flipster__nav__item.flipster__nav__item--current {
 //==================================================flipster slider=====================================================================
 
 .product {
+  & .button-invite{
+    transition: 0.3s;
+    &:hover{
+      transition: 0.3s;
+      padding: 21px 30px;
+    }
+  }
   &:after {
     background-image: url("../img/gamma-bg-2.png");
     position: absolute;
@@ -1230,6 +1253,11 @@ li.flipster__nav__item.flipster__nav__item--current {
       font-size: 14px;
       padding: 12px 28px;
       line-height: 13px;
+      transition: 0.3s;
+      &:hover{
+        padding: 12px 32px;
+        transition: 0.3s;
+      }
     }
     &-gone {
       opacity: 0.2;
@@ -1410,7 +1438,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__human {
-    &_all{
+    &_all {
       @include col();
       @include size(6);
     }
@@ -1694,6 +1722,11 @@ li.flipster__nav__item.flipster__nav__item--current {
         border: none;
         outline: none;
       }
+      transition: 0.3s;
+      &:hover {
+        transition: 0.3s;
+        padding: 20px 50px;
+      }
     }
   }
   &__mail {
@@ -1703,6 +1736,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    transition: 0.3s;
   }
   &__link {
     display: flex;
@@ -1711,6 +1745,18 @@ li.flipster__nav__item.flipster__nav__item--current {
     & img {
       padding-right: 13px;
       display: block;
+    }
+    svg path{
+      fill: #ffffff;
+    }
+    svg{
+      margin-right: 10px;
+    }
+    &:hover{
+      transition: 0.3s;
+      svg path{
+        fill: #feec02;
+      }
     }
   }
   &__item {
@@ -1896,7 +1942,7 @@ span.cd-label {
     align-items: center;
     justify-content: center;
     &.visible {
-      & .mail-popup{
+      & .mail-popup {
         opacity: 1;
       }
       display: flex;
@@ -1904,7 +1950,7 @@ span.cd-label {
         .mail-popup__success {
           //display: block;
         }
-        & .mail-popup{
+        & .mail-popup {
           background: rgba(0, 142, 25, 0.91);
         }
       }
@@ -1912,7 +1958,7 @@ span.cd-label {
         .mail-popup__error {
           //display: block;
         }
-        & .mail-popup{
+        & .mail-popup {
           background: rgba(255, 57, 20, 0.9);
         }
       }
@@ -1923,5 +1969,6 @@ span.cd-label {
   color: #ffffff;
   padding: 40px;
   opacity: 0;
-  
+
 }
+
