@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 $(document).ready(function () {
 
     // =================================================== menu ===================================================
@@ -10,12 +9,12 @@ $(document).ready(function () {
         navigationItems = $('#main__nav a');
 
     updateNavigation();
-    $(window).on('scroll', function(){
+    $(window).on('scroll', function () {
         updateNavigation();
     });
 
     //smooth scroll to the section
-    navigationItems.on('click', function(event){
+    navigationItems.on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
     });
@@ -27,7 +26,7 @@ $(document).ready(function () {
     // });
 
     //open-close navigation on touch devices
-    $('.cd-nav-trigger').on('click', function(){
+    $('.cd-nav-trigger').on('click', function () {
         $('#main__nav').toggleClass('open');
 
     });
@@ -37,12 +36,12 @@ $(document).ready(function () {
     // });
 
     function updateNavigation() {
-        contentSections.each(function(){
+        contentSections.each(function () {
             var $this = $(this);
-            var activeSection = $('#main__nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-            if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
+            var activeSection = $('#main__nav a[href="#' + $this.attr('id') + '"]').data('number') - 1;
+            if (($this.offset().top - $(window).height() / 2 < $(window).scrollTop()) && ($this.offset().top + $this.height() - $(window).height() / 2 > $(window).scrollTop())) {
                 navigationItems.eq(activeSection).addClass('is-selected');
-            }else {
+            } else {
                 navigationItems.eq(activeSection).removeClass('is-selected');
             }
         });
@@ -50,7 +49,7 @@ $(document).ready(function () {
 
     function smoothScroll(target) {
         $('body,html').stop().animate(
-            {'scrollTop':target.offset().top},
+            {'scrollTop': target.offset().top},
             900
         );
     }
@@ -268,14 +267,78 @@ $(document).ready(function () {
 
     // =================================================== form ===================================================
 
+
+    function removePopup(){
+
+        $('.mail-popup__wrapper').hide(300).removeClass('visible error success');
+        $('.mail-popup__error').hide(300);
+        $('.mail-popup__success').hide(300);
+
+    }
+
     $(document).on('click', '.contact__form button', function (e) {
+
         e.preventDefault();
-        console.log('test');
+
+        var url = $(this).data('url');
+
+        var value = $(this).closest('form').find('input').val();
+
+        var pattern = new RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$');
+
+        if (pattern.test(value)) {
+            $.ajax({
+                url: url,
+                method: 'GET',
+                dataType: 'html',
+                async: false,
+                success: function (result) {
+                    $('.mail-popup__wrapper').css('display','flex').addClass('visible success');
+                    $('.mail-popup').show(300);
+                    $('.mail-popup__success').show(300);
+                },
+                error: function (result) {
+                    $('.mail-popup__wrapper').css('display','flex').addClass('visible error');
+                    $('.mail-popup').show(300);
+                    $('.mail-popup__error').show(300);
+                }
+            });
+        } else {
+            $('.mail-popup__wrapper').css('display','flex').addClass('visible error');
+            $('.mail-popup').show(300);
+            $('.mail-popup__error').show(300);
+        }
+
+        setTimeout(removePopup, 3000);
+
+
     });
 
 
     // =================================================== form ===================================================
 
+
+    // =================================================== header ===================================================
+
+
+    function stickyHead() {
+        if ($(window).scrollTop() > 1) {
+            $('header').addClass('active');
+        } else {
+            $('header').removeClass('active');
+        }
+    }
+
+    stickyHead();
+
+    $(window).scroll(function () {
+        stickyHead();
+    });
+
+
+    $('body').css('padding-top', $('header').outerHeight());
+
+    // =================================================== header ===================================================
 
 });
 
