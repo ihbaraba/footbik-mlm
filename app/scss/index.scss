@@ -72,6 +72,9 @@ header {
   left: 0;
   right: 0;
   z-index: 9999999;
+  @include mobile-block {
+    padding: 10px 0px;
+  }
   &.active {
     background: rgba(0, 0, 0, 0.7);
     transition: 0.4s;
@@ -210,6 +213,21 @@ body, a, p, div {
     @include sm-block {
       //margin-top: -46px;
     }
+    @include mobile-block {
+      display: none;
+    }
+    &-mobile {
+      display: none;
+      @include mobile-block {
+        display: flex;
+        flex-wrap: wrap;
+        order: 1;
+        & img {
+          width: 70px;
+          height: auto;
+        }
+      }
+    }
   }
   &__text {
     margin-left: 6px;
@@ -230,6 +248,12 @@ body, a, p, div {
   flex-wrap: wrap;
   align-items: stretch;
   //margin-left: auto;
+  @include mobile-block {
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
   & > * {
     margin-left: 22px;
     @include md-block {
@@ -243,6 +267,9 @@ body, a, p, div {
   //margin-right: 88px;
   padding: 10px 23px;
   font-family: $bold-font;
+  @include mobile-block {
+    display: none;
+  }
 }
 
 //==================================================select=====================================================================
@@ -486,6 +513,9 @@ body, a, p, div {
     padding-bottom: 30px;
     margin-top: 0;
   }
+  @include mobile-block {
+    padding-bottom: 0px;
+  }
 }
 
 .tokens {
@@ -510,6 +540,10 @@ body, a, p, div {
       right: 0px;
       padding: 26px 24px;
     }
+    @include mobile-block {
+      padding: 16px 14px;
+      top: -70px;
+    }
     &__text {
       font-size: 15px;
       text-align: right;
@@ -517,6 +551,9 @@ body, a, p, div {
     }
     &__number {
       font-size: 45px;
+      @include mobile-block {
+        font-size: 40px;
+      }
     }
   }
 
@@ -557,6 +594,7 @@ body, a, p, div {
     @include xs-block {
       padding-right: 0;
     }
+
     & > a {
       //@include size(4);
       //@include col();
@@ -565,6 +603,10 @@ body, a, p, div {
       margin-right: 60px;
       //   @include size(4);
       @include col();
+      @include mobile-block {
+        width: 100%;
+        margin-bottom: 10px;
+      }
 
     }
   }
@@ -587,6 +629,9 @@ body, a, p, div {
     @include xs-block {
       padding: 20px 10px;
       margin-top: -10px;
+    }
+    @include mobile-block {
+      margin-top: 70px;
     }
 
   }
@@ -611,6 +656,9 @@ body, a, p, div {
       }
       @include xs-block {
         width: 100%;
+      }
+      @include mobile-block {
+        font-size: 38px
       }
       &-withborder {
         @include md-block {
@@ -644,7 +692,9 @@ body, a, p, div {
     }
     padding: 20px 60px;
     margin: 20px -60px 0px -60px;
-
+    @include mobile-block {
+      margin: 0px -60px 0 -60px;
+    }
   }
   &__bar {
     margin: 0px -15px;
@@ -703,6 +753,7 @@ body, a, p, div {
   @include xs-block {
     @include size-xs(6);
   }
+  @include size-mobile(12);
 }
 
 .timer {
@@ -713,7 +764,10 @@ body, a, p, div {
     font-size: 60px;
     margin-bottom: 20px;
     //line-height: $big-height;
-
+    @include mobile-block {
+      padding: 8px 6px 0px 6px;
+      font-size: 46px;
+    }
   }
 }
 
@@ -733,10 +787,14 @@ body, a, p, div {
       @include md-block {
         margin: 0px 20px;
       }
+      @include mobile-block {
+        margin: 0 5px;
+      }
     }
     @include md-block {
       justify-content: center;
     }
+
   }
 }
 
@@ -752,7 +810,9 @@ body, a, p, div {
   text-align: center;
   box-shadow: inset -1px 1px 15px 0 rgba(255, 255, 255, .5), -1px 7px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 9px;
-
+  @include mobile-block {
+    padding: 21px 16px;
+  }
 }
 
 .btn-wrapper {
@@ -808,6 +868,11 @@ body, a, p, div {
   transition: 0.2s;
   display: flex;
   align-items: center;
+  @include mobile-block {
+    order: 3;
+    width: 100%;
+    margin-top: -18px;
+  }
   & img {
     max-width: 100%;
     width: 37px;
@@ -883,6 +948,10 @@ body, a, p, div {
       font-size: 35px;
       line-height: 40px;
     }
+    @include mobile-block {
+      font-size: 26px;
+      line-height: 30px;
+    }
   }
 }
 
@@ -891,6 +960,10 @@ body, a, p, div {
   max-width: 600px;
   margin: 0 auto;
   width: 600px;
+  @include mobile-block {
+    width: 300px;
+    max-width: 300px;
+  }
 }
 
 .relation__ration {
@@ -1088,6 +1161,9 @@ li.flipster__nav__item.flipster__nav__item--current {
 
 .tabs {
   padding: 0px 15px;
+  @include mobile-block {
+    padding: 0 0;
+  }
   &-big {
     margin-bottom: 40px;
     padding: 0 0;
@@ -1115,6 +1191,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   overflow: hidden;
   max-height: 450px;
   overflow: hidden;
+  @include mobile-block {
+    padding: 10px;
+  }
 
 }
 
@@ -1129,10 +1208,24 @@ li.flipster__nav__item.flipster__nav__item--current {
   flex-wrap: wrap;
 }
 
+.nav > li > a {
+  @include mobile-block {
+    padding: 10px 2px;
+  }
+}
+
+.nav-justified > li {
+  display: block;
+  width: auto
+}
+
 //==================================================tabs=====================================================================
 
 .localisation {
   padding-bottom: 75px;
+  @include mobile-block {
+  }
+  padding-bottom: 20px;
   &__wrapper {
     display: flex;
     margin-top: 40px;
@@ -1215,9 +1308,15 @@ li.flipster__nav__item.flipster__nav__item--current {
   @include xs-block {
     padding-top: 40px;
   }
+  @include mobile-block {
+    padding-bottom: 40px;
+  }
   &__wrapper {
     margin-top: 80px;
     @include row-flex();
+    @include mobile-block {
+      margin-top: 20px;
+    }
   }
 
   &__item {
@@ -1316,6 +1415,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     line-height: 48px;
     letter-spacing: 1.24px;
     font-family: $bold-font;
+    @include xs-block {
+      font-size: 30px;
+    }
   }
   &__text {
     font-size: 25px;
@@ -1330,11 +1432,11 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-size: inherit;
   background-repeat: no-repeat;
   @include xs-block {
-    padding-top: 40px;
+    padding-top: 20px;
   }
   &__wrapper {
     @include md-block {
-      padding-top: 60px;
+      //padding-top: 60px;
       padding-bottom: 35px;
     }
     @include row-flex();
@@ -1377,6 +1479,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       width: 160px;
       height: 160px;
       background-image: url("../img/Soccer_ball.png");
+      @include mobile-block {
+        display: none;
+      }
     }
     &:before {
       opacity: 0;
@@ -1393,6 +1498,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       background-image: url(../img/shadow_white.png);
       background-size: contain;
       background-repeat: no-repeat;
+      @include mobile-block {
+        display: none;
+      }
     }
     &:hover {
       &:after {
@@ -1406,6 +1514,17 @@ li.flipster__nav__item.flipster__nav__item--current {
         width: 160px;
         height: 160px;
         background-image: url("../img/Soccer_ball.png");
+        @include md-block{
+          top: -130px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 140px;
+          background-position: center center;
+        }
+        @include mobile-block {
+          display: none;
+        }
       }
       &:before {
         opacity: 1;
@@ -1422,6 +1541,17 @@ li.flipster__nav__item.flipster__nav__item--current {
         background-image: url(../img/shadow_white.png);
         background-size: contain;
         background-repeat: no-repeat;
+        @include md-block{
+          top: -120px;
+          left: -50%;
+          z-index: -1;
+          right: 0;
+          width: 180%;
+          height: 80%;
+        }
+        @include mobile-block {
+          display: none;
+        }
       }
     }
   }
@@ -1438,6 +1568,10 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include xs-block {
       margin-right: 0px;
       margin-left: 0px;
+    }
+    @include mobile-block {
+      font-size: 14px;
+      margin-top: 10px;
     }
   }
   &__tshirt {
@@ -1460,7 +1594,13 @@ li.flipster__nav__item.flipster__nav__item--current {
       font-size: 25px;
       color: #000000;
       font-family: $bold-font;
-
+      @include mobile-block {
+        bottom: 32px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 16px;
+      }
     }
   }
 }
@@ -1483,7 +1623,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       margin-left: 0px;
       margin-right: 0px;
     }
-    @include xs-block{
+    @include xs-block {
       padding-bottom: 40px;
     }
   }
@@ -1567,7 +1707,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   @include lg-block {
     left: -20px;
   }
-  @include xs-block{
+  @include xs-block {
     left: -8px;
   }
 }
@@ -1581,7 +1721,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   @include lg-block {
     right: -20px;
   }
-  @include xs-block{
+  @include xs-block {
     right: -8px;
   }
 }
@@ -1634,7 +1774,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     padding-top: 40px;
     padding-bottom: 20px;
   }
-  @include xs-block{
+  @include xs-block {
     background-position: bottom;
     background-size: cover;
   }
@@ -1665,7 +1805,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include sm-block {
         padding: 25px;
       }
-      @include xs-block{
+      @include xs-block {
         padding: 40px 25px;
       }
       &:hover {
@@ -1692,10 +1832,13 @@ li.flipster__nav__item.flipster__nav__item--current {
         border-right: solid 55px transparent;
         transition: 0.2s;
         @include sm-block {
+          //display: none;
           border-left: solid 75px transparent;
           border-right: solid 75px transparent;
         }
-        @include xs-block{
+        @include xs-block {
+          display: none;
+
           border-left: solid 105px transparent;
           border-right: solid 105px transparent;
         }
@@ -1734,7 +1877,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include sm-block {
       font-size: 18px;
     }
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
     &-big {
@@ -1812,7 +1955,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin-bottom: 60px;
     text-align: center;
     cursor: pointer;
-    @include xs-block{
+    @include xs-block {
       margin-bottom: 30px;
     }
   }
@@ -1851,6 +1994,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__slider {
     display: flex;
     align-content: stretch;
+    //margin: 0 -22px;
   }
   padding-top: 70px;
   padding-bottom: 60px;
@@ -1871,7 +2015,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     background-color: rgba(0, 0, 0, 0.25);
     box-shadow: 1px 1px 8px 0 #000;
     border-radius: 8px;
-    margin: 5px;
+    margin: 0 22px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1883,8 +2027,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       width: 62px !important;
       height: auto;
     }
-    @include xs-block{
+    @include xs-block {
       width: 100%;
+      margin: 0 0;
     }
   }
   &__description {
@@ -1927,7 +2072,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     & * {
       transition: 0.2s;
     }
-    @include xs-block{
+    @include xs-block {
       margin-top: 40px;
     }
   }
@@ -1978,7 +2123,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
         transition: 0s;
-        &:after{
+        &:after {
           transition: .2s;
           content: '';
           height: 10px;
@@ -2013,7 +2158,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     background-repeat: no-repeat;
     border-radius: 8px;
     transition: 0.2s;
-    @include xs-block{
+    @include xs-block {
       padding-right: 60px;
     }
     &:after {
@@ -2071,7 +2216,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin: 0 auto;
     text-align: center;
     margin-top: 80px;
-    @include xs-block{
+    @include xs-block {
       margin-top: 20px;
     }
     & input {
@@ -2086,8 +2231,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       border-radius: 8px;
       background-color: rgba(255, 255, 255, 0.58);
       outline: none;
-      width: 100%;
-      max-width: 380px;
+      //width: 100%;
+      flex-basis: 380px;
+      //max-width: 380px;
       display: inline-block;
       vertical-align: middle;
       &:active, &:focus {
@@ -2108,7 +2254,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       margin-top: 0px;
       margin-left: -20px;
       vertical-align: middle;
-      @include xs-block{
+      @include mobile-block {
         margin-left: 0px;
         margin-top: 20px;
       }
@@ -2134,7 +2280,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include sm-block {
       justify-content: space-between;
     }
-    @include xs-block{
+    @include xs-block {
       justify-content: center;
       margin-top: 40px;
     }
@@ -2166,7 +2312,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include sm-block {
       margin: 0 0;
     }
-    @include xs-block{
+    @include xs-block {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -2201,15 +2347,31 @@ li.flipster__nav__item.flipster__nav__item--current {
     &__item {
       flex-basis: 33%;
       text-align: center;
-      @include xs-block{
+      @include xs-block {
         line-height: 24px;
       }
     }
-    @include xs-block{
+    @include xs-block {
       margin-bottom: 20px;
     }
   }
 }
+
+.form{
+  &__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @include xs-block{
+      flex-wrap: nowrap;
+    }
+    @include mobile-block{
+      flex-wrap: wrap;
+    }
+  }
+}
+
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #222A43;

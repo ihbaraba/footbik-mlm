@@ -5,18 +5,21 @@ $break_lg: 1600px
 $break_md: 1200px
 $break_sm: 992px
 $break_xs: 768px
+$break_mobile: 500px
 
 $offset: 35px
 $offset_lg: $offset
 $offset_md: $offset
 $offset_sm: $offset
 $offset_xs: $offset
+$offset_mobile: $offset
 
 $offset_one_side: ($offset / 2)
 $offset_lg_one_side: ($offset_lg / 2)
 $offset_md_one_side: ($offset_md / 2)
 $offset_sm_one_side: ($offset_sm / 2)
 $offset_xs_one_side: ($offset_xs / 2)
+$offset_mobile_one_side: ($offset_mobile / 2)
 
 $fields: 15px
 
@@ -84,6 +87,10 @@ $fields: 15px
 =size-xs($n)
     $val: 100% / $columns * $n
     +xs(width, #{calc(#{$val} - #{$offset_xs})})
+
+=size-mobile($n)
+    $val: 100% / $columns * $n
+    +mobile(width, #{calc(#{$val} - #{$offset_mobile})})
 
 =shift($n)
     $val: 100% / $columns * $n
@@ -215,6 +222,32 @@ $fields: 15px
     $val: 100% / $columns * $n
     +xs(padding-right, #{calc(#{$val} + #{$offset_xs_one_side})})
 
+=shift-mobile($n)
+    $val: 100% / $columns * $n
+    +mobile(margin-left, #{calc(#{$val} + #{$offset_mobile_one_side})})
+    +mobile(margin-right, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
+=shift-mobile-left($n)
+    $val: 100% / $columns * $n
+    +mobile(margin-left, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
+=shift-mobile-right($n)
+    $val: 100% / $columns * $n
+    +mobile(margin-right, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
+=shift-mobile-padding($n)
+    $val: 100% / $columns * $n
+    +mobile(padding-left, #{calc(#{$val} + #{$offset_mobile_one_side})})
+    +mobile(padding-right, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
+=shift-mobile-padding-left($n)
+    $val: 100% / $columns * $n
+    +mobile(padding-left, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
+=shift-mobile-padding-right($n)
+    $val: 100% / $columns * $n
+    +mobile(padding-right, #{calc(#{$val} + #{$offset_mobile_one_side})})
+
 =lg($name, $value)
     @media screen and (max-width: $break_lg)
         #{$name}: $value
@@ -245,6 +278,14 @@ $fields: 15px
 
 =xs-block()
     @media screen and (max-width: $break_xs)
+        @content
+
+=mobile($name, $value)
+    @media screen and (max-width: $break_mobile)
+        #{$name}: $value
+
+=mobile-block()
+    @media screen and (max-width: $break_mobile)
         @content
 
 =from($min_width)

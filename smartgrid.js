@@ -22,6 +22,9 @@ const settings = {
         },
         xs: {
             width: '768px'
+        },
+        mobile: {
+            width: '500px'
         }
         /*
         We can create any quantity of break points.

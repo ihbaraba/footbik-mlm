@@ -209,9 +209,12 @@ $(document).ready(function () {
         dots: false,
         responsive:{
             320: {
-                items:2
+                items:1
             },
-            768: {
+            500: {
+                items: 2
+            },
+            769: {
                 items:3
             },
             1200: {
@@ -231,14 +234,11 @@ $(document).ready(function () {
             320: {
                 items:1
             },
-            768: {
-                items:1
-            },
-            992:{
-                items:3
+            769: {
+                items:2
             },
             1200: {
-                items:4
+                items:3
             }
         }
     });
