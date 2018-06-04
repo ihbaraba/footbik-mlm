@@ -226,7 +226,21 @@ $(document).ready(function () {
         // arrows: false,
         margin: 0,
         dotsEach: true,
-        dots: true
+        dots: true,
+        responsive:{
+            320: {
+                items:1
+            },
+            768: {
+                items:1
+            },
+            992:{
+                items:3
+            },
+            1200: {
+                items:4
+            }
+        }
     });
 
 

@@ -148,6 +148,9 @@ header {
       display: flex;
       align-items: center;
       text-align: center;
+      @include xs-block {
+        min-width: inherit;
+      }
     }
     display: flex;
     align-items: center;
@@ -204,7 +207,7 @@ body, a, p, div {
     flex-wrap: wrap;
     align-items: center;
     order: 0;
-    @include sm-block{
+    @include sm-block {
       //margin-top: -46px;
     }
   }
@@ -439,6 +442,8 @@ body, a, p, div {
   background-image: url(../img/bg_footb.png);
   position: relative;
   background-size: inherit;
+  @include xs-block {
+  }
   &:after {
     position: absolute;
     content: '';
@@ -498,6 +503,13 @@ body, a, p, div {
       right: 40px;
       top: -40px;
     }
+    @include sm-block {
+      top: -90px;
+    }
+    @include xs-block {
+      right: 0px;
+      padding: 26px 24px;
+    }
     &__text {
       font-size: 15px;
       text-align: right;
@@ -514,8 +526,8 @@ body, a, p, div {
     @include size(7);
     @include col();
     @include size-md(12);
-    @include md-block{
-      order:2;
+    @include md-block {
+      order: 2;
       margin-top: 60px;
     }
   }
@@ -530,6 +542,10 @@ body, a, p, div {
       text-align: center;
       line-height: 62px;
     }
+    @include xs-block {
+      font-size: 35px;
+      line-height: 40px;
+    }
   }
   &__buttons {
     @include row-flex();
@@ -537,6 +553,9 @@ body, a, p, div {
     padding-right: 40px;
     @include md-block {
       justify-content: center;
+    }
+    @include xs-block {
+      padding-right: 0;
     }
     & > a {
       //@include size(4);
@@ -546,6 +565,7 @@ body, a, p, div {
       margin-right: 60px;
       //   @include size(4);
       @include col();
+
     }
   }
 }
@@ -555,6 +575,8 @@ body, a, p, div {
     order: 2;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    padding: 30px 60px 0px 60px;
+    position: relative;
     @include size(5);
     @include col();
     @include size-md(12);
@@ -562,8 +584,11 @@ body, a, p, div {
       margin-top: 20px;
       order: 1;
     }
-    padding: 30px 60px 0px 60px;
-    position: relative;
+    @include xs-block {
+      padding: 20px 10px;
+      margin-top: -10px;
+    }
+
   }
   &__head {
     display: flex;
@@ -584,12 +609,19 @@ body, a, p, div {
         font-size: 45px;
         line-height: 40px;
       }
+      @include xs-block {
+        width: 100%;
+      }
       &-withborder {
         @include md-block {
           margin-right: 80px;
           &:before {
             //display: none;
           }
+        }
+        @include xs-block {
+          margin-right: 0px;
+          margin-bottom: 20px;
         }
         position: relative;
         &:before {
@@ -616,6 +648,9 @@ body, a, p, div {
   }
   &__bar {
     margin: 0px -15px;
+    @include xs-block {
+      margin: 0 0;
+    }
     &__text {
       font-size: 20px;
       display: block;
@@ -635,14 +670,17 @@ body, a, p, div {
     border-radius: 12px;
     padding: 15px;
     margin-top: 20px;
-    @include md-block{
+    @include md-block {
       padding: 40px 15px;
+    }
+    @include xs-block {
+      padding: 20px 15px;
     }
   }
 }
 
 .rating {
-  @include md-block{
+  @include md-block {
     //padding-bottom: 80px;
   }
   &__wrapper {
@@ -662,6 +700,9 @@ body, a, p, div {
   width: 25%;
   box-shadow: inset 0 1px 3px 0 rgba(255, 255, 255, 0.5), 25px 1px 25px 0 rgba(0, 0, 0, 0.23);
   padding: 20px 16px 10px 16px;
+  @include xs-block {
+    @include size-xs(6);
+  }
 }
 
 .timer {
@@ -719,7 +760,7 @@ body, a, p, div {
 }
 
 .social {
-  @include sm-block{
+  @include sm-block {
     display: none;
   }
   display: flex;
@@ -838,6 +879,10 @@ body, a, p, div {
     line-height: $big-height;
     font-family: $bold-font;
     letter-spacing: 1.77px;
+    @include xs-block {
+      font-size: 35px;
+      line-height: 40px;
+    }
   }
 }
 
@@ -933,13 +978,16 @@ li.flipster__nav__item.flipster__nav__item--current {
   padding-top: 45px;
   //z-index: -1;
   background: #263b5d url(../img/img_gress.png);
+  @include sm-block {
+    background: #263b5d;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 60px;
-    @include sm-block{
+    @include sm-block {
       //@include row-flex();
       //justify-content: center;
       //align-items: stretch;
@@ -977,12 +1025,10 @@ li.flipster__nav__item.flipster__nav__item--current {
         margin: -30px;
       }
     }
-    @include sm-block{
-      //@include col();
-      //@include size(6);
-      max-width: inherit;
+    @include sm-block {
+      max-width: 420px;
       margin-bottom: 50px;
-      &-centered{
+      &-centered {
         margin: inherit;
       }
     }
@@ -995,10 +1041,10 @@ li.flipster__nav__item.flipster__nav__item--current {
       max-width: 420px;
       background: linear-gradient(331.03deg, #26D5A3 0%, #26CFB5 31.71%, #27C2DD 100%);
       //transform: scale(1.1);
-      @include sm-block{
+      @include sm-block {
         margin-top: 0;
         margin-bottom: 20px;
-        max-width: inherit;
+        max-width: 420px;
       }
     }
   }
@@ -1009,7 +1055,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include md-block {
         padding: 70px 0 8px 0;
       }
-      @include sm-block{
+      @include sm-block {
         padding: 10px 0 40px 0;
       }
     }
@@ -1077,6 +1123,12 @@ li.flipster__nav__item.flipster__nav__item--current {
   color: rgba(255, 255, 255, 0.63);
 }
 
+.nav-justified {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 //==================================================tabs=====================================================================
 
 .localisation {
@@ -1091,7 +1143,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   padding-top: 100px;
   &__tabs {
     max-width: 380px;
-    @include sm-block{
+    @include sm-block {
       width: 100%;
       max-width: 100%;
     }
@@ -1100,11 +1152,11 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include md-block {
       width: 100%;
     }
-    @include sm-block{
+    @include sm-block {
       display: none;
     }
     & img {
-      @include md-block{
+      @include md-block {
         width: 100%;
       }
     }
@@ -1160,6 +1212,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   position: relative;
   z-index: 2;
   //margin-top: -380px;
+  @include xs-block {
+    padding-top: 40px;
+  }
   &__wrapper {
     margin-top: 80px;
     @include row-flex();
@@ -1168,15 +1223,19 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__item {
     @include col();
     @include size(4);
+    @include size-xs(12);
+    @include xs-block {
+      margin-bottom: 20px;
+    }
     padding: 0 12px;
     & img {
       display: block;
       margin: 0 auto;
-      //border-radius: 100px;
       max-width: 100%;
-      //width: 85px;
       margin-bottom: 28px;
-      //height: 85px;
+      @include xs-block {
+        margin-bottom: 20px;
+      }
     }
     & p {
       font-size: 14px;
@@ -1188,6 +1247,9 @@ li.flipster__nav__item.flipster__nav__item--current {
         line-height: 22px;
         letter-spacing: 1.18px;
         margin-bottom: 25px;
+        @include xs-block {
+          font-size: 20px;
+        }
       }
     }
   }
@@ -1206,8 +1268,11 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom 40px right;
-  @include sm-block{
+  @include sm-block {
     padding-bottom: 40px;
+  }
+  @include xs-block {
+    margin-top: -310px;
   }
 }
 
@@ -1220,7 +1285,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include row-flex();
     margin-top: 90px;
     align-items: stretch;
-    @include sm-block{
+    @include sm-block {
       text-align: center;
       justify-content: center;
       margin-top: 20px;
@@ -1233,8 +1298,11 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include col();
     @include size(4);
     @include size-sm(12);
-    @include sm-block{
+    @include sm-block {
       margin-bottom: 20px;
+    }
+    @include xs-block {
+      margin-top: 20px;
     }
   }
   &__chart {
@@ -1261,6 +1329,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   background: #313c61 url(../img/roadmap__bg.png);
   background-size: inherit;
   background-repeat: no-repeat;
+  @include xs-block {
+    padding-top: 40px;
+  }
   &__wrapper {
     @include md-block {
       padding-top: 60px;
@@ -1291,6 +1362,10 @@ li.flipster__nav__item.flipster__nav__item--current {
     position: relative;
     @include size(2);
     @include size-sm(3);
+    @include size-xs(6);
+    @include xs-block {
+      margin-bottom: 20px;
+    }
     &:after {
       opacity: 0;
       transition: 0.2s;
@@ -1360,12 +1435,20 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include md-block {
       margin-top: 30px;
     }
+    @include xs-block {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
   }
   &__tshirt {
     position: relative;
     & img {
       @include md-block {
         width: 100%;
+      }
+      @include xs-block {
+        width: 70%;
+        max-width: 100%;
       }
     }
     &__text {
@@ -1400,10 +1483,13 @@ li.flipster__nav__item.flipster__nav__item--current {
       margin-left: 0px;
       margin-right: 0px;
     }
+    @include xs-block{
+      padding-bottom: 40px;
+    }
   }
   &__wrapper {
     padding-top: 90px;
-    @include sm-block{
+    @include sm-block {
       padding-top: 20px;
     }
   }
@@ -1481,6 +1567,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   @include lg-block {
     left: -20px;
   }
+  @include xs-block{
+    left: -8px;
+  }
 }
 
 .owl-carousel .owl-nav button.owl-next {
@@ -1491,6 +1580,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   @include lg-block {
     right: -20px;
+  }
+  @include xs-block{
+    right: -8px;
   }
 }
 
@@ -1517,6 +1609,19 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-color: #ffffff;
 }
 
+.owl-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+.owl-carousel .owl-item {
+  float: none;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 //==================================================owl=====================================================================
 
 .team {
@@ -1525,12 +1630,19 @@ li.flipster__nav__item.flipster__nav__item--current {
   background: url("/img/Futbolnoe-pole-nochyu.png");
   background-repeat: no-repeat;
   background-size: inherit;
+  @include sm-block {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  @include xs-block{
+    background-position: bottom;
+    background-size: cover;
+  }
   //background-position: bottom 40px right;
   &__wrapper {
     @include row-flex();
     //align-items: center;
     margin-top: 40px;
-
   }
   &__img {
     border-radius: 200px;
@@ -1538,6 +1650,10 @@ li.flipster__nav__item.flipster__nav__item--current {
     height: 65px;
     margin: 0 auto;
     display: block;
+    @include sm-block {
+      width: 75px;
+      height: 75px;
+    }
     &-wrapper {
       background-color: rgba(0, 0, 0, 0.21);
       padding: 15px;
@@ -1546,6 +1662,12 @@ li.flipster__nav__item.flipster__nav__item--current {
       transition: 0.2s;
       border-bottom-left-radius: 2px;
       border-bottom-right-radius: 2px;
+      @include sm-block {
+        padding: 25px;
+      }
+      @include xs-block{
+        padding: 40px 25px;
+      }
       &:hover {
         transition: 0.2s;
         background-color: rgba(248, 231, 28, 0.11);
@@ -1569,6 +1691,14 @@ li.flipster__nav__item.flipster__nav__item--current {
         border-left: solid 55px transparent;
         border-right: solid 55px transparent;
         transition: 0.2s;
+        @include sm-block {
+          border-left: solid 75px transparent;
+          border-right: solid 75px transparent;
+        }
+        @include xs-block{
+          border-left: solid 105px transparent;
+          border-right: solid 105px transparent;
+        }
       }
     }
     &-big {
@@ -1576,6 +1706,10 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 140px;
       border: 20px solid rgba(0, 0, 0, 0.13);
       box-sizing: content-box;
+      @include sm-block {
+        width: 100px;
+        height: auto;
+      }
     }
 
   }
@@ -1597,7 +1731,12 @@ li.flipster__nav__item.flipster__nav__item--current {
     letter-spacing: 1.18px;
     margin-top: 35px;
     margin-bottom: 6px;
-    //font-family: $bold-font;
+    @include sm-block {
+      font-size: 18px;
+    }
+    @include xs-block{
+      margin-top: 20px;
+    }
     &-big {
       font-size: 20px;
       line-height: 24px;
@@ -1615,6 +1754,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include col();
       @include size(6);
       @include size-md(5);
+      @include size-sm(12);
     }
     &__wrapper {
       background-color: rgba(0, 0, 0, 0.44);
@@ -1624,6 +1764,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       text-align: center;
       @include md-block {
         padding: 40px 30px;
+      }
+      @include sm-block {
+        padding: 20px 20px;
       }
     }
     display: none;
@@ -1639,15 +1782,19 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include col();
     @include size(6);
     @include size-md(7);
+    @include size-sm(12);
     &__panel {
       @include row-flex();
+    }
+    @include sm-block {
+      margin-top: 20px;
     }
   }
   &__item {
     &.active {
       .team__img-wrapper {
         background-color: rgba(248, 231, 28, 0.21);
-        padding: 15px;
+        //padding: 15px;
         position: relative;
         border-radius: 4px;
         transition: 0.2s;
@@ -1661,9 +1808,13 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
     @include size(3);
     @include col();
+    @include size-xs(6);
     margin-bottom: 60px;
     text-align: center;
     cursor: pointer;
+    @include xs-block{
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -1684,19 +1835,34 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include row-flex();
   }
   &__item {
+    margin: 20px 0px;
     @include col();
     @include size(2);
-    margin: 20px 0px;
+
+    @include size-sm(3);
+    justify-content: center;
+    & img {
+      max-width: 100%;
+    }
   }
 }
 
 .news {
+  &__slider {
+    display: flex;
+    align-content: stretch;
+  }
   padding-top: 70px;
   padding-bottom: 60px;
   background: url("/img/blockchain.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom right;
+  @include sm-block {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    background-position: top;
+  }
   &__wrapper {
     margin-top: 80px;
   }
@@ -1706,13 +1872,19 @@ li.flipster__nav__item.flipster__nav__item--current {
     box-shadow: 1px 1px 8px 0 #000;
     border-radius: 8px;
     margin: 5px;
-    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    //max-width: 350px;
     & img {
       margin: 0 auto;
       display: block;
       margin-bottom: 22px;
       width: 62px !important;
       height: auto;
+    }
+    @include xs-block{
+      width: 100%;
     }
   }
   &__description {
@@ -1726,6 +1898,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__author {
     &__wrapper {
       text-align: right;
+      margin-top: auto;
     }
     letter-spacing: 1.05px;
     line-height: 19px;
@@ -1745,11 +1918,17 @@ li.flipster__nav__item.flipster__nav__item--current {
 .faq {
   padding-top: 25px;
   background-color: #253A5D;
+  display: block;
+  position: relative;
+  z-index: 3;
   &__wrapper {
     margin-top: 80px;
     @include row-flex();
     & * {
       transition: 0.2s;
+    }
+    @include xs-block{
+      margin-top: 40px;
     }
   }
   &__item {
@@ -1759,6 +1938,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     position: relative;
     @include size(4);
     @include size-md(6);
+    @include size-xs(12);
     &:not(.active):hover {
       z-index: 2;
       transition: 0.2s;
@@ -1798,7 +1978,20 @@ li.flipster__nav__item.flipster__nav__item--current {
         border-bottom-right-radius: 8px;
         border-bottom-left-radius: 8px;
         transition: 0s;
-
+        &:after{
+          transition: .2s;
+          content: '';
+          height: 10px;
+          width: 100%;
+          left: 0;
+          right: 0;
+          background: #13a5d5;
+          opacity: 1;
+          position: absolute;
+          bottom: 0px;
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
       }
       & .faq__question {
         background: #2b334d url("/img/ar2w.svg") center right 20px;
@@ -1820,6 +2013,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     background-repeat: no-repeat;
     border-radius: 8px;
     transition: 0.2s;
+    @include xs-block{
+      padding-right: 60px;
+    }
     &:after {
       transition: 0.2s;
       content: '';
@@ -1851,6 +2047,8 @@ li.flipster__nav__item.flipster__nav__item--current {
     transition: 0s;
     & > p {
       color: #222a43;
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }
@@ -1861,12 +2059,21 @@ li.flipster__nav__item.flipster__nav__item--current {
   background: url("/img/background_footer.png");
   background-repeat: no-repeat;
   background-size: inherit;
+  display: block;
+  position: relative;
+  z-index: 2;
   background-position: bottom;
+  @include sm-block {
+    padding-bottom: 20px;
+  }
   &__form {
     display: block;
     margin: 0 auto;
     text-align: center;
     margin-top: 80px;
+    @include xs-block{
+      margin-top: 20px;
+    }
     & input {
       text-align: left;
       font-family: $main-font;
@@ -1901,6 +2108,10 @@ li.flipster__nav__item.flipster__nav__item--current {
       margin-top: 0px;
       margin-left: -20px;
       vertical-align: middle;
+      @include xs-block{
+        margin-left: 0px;
+        margin-top: 20px;
+      }
       &:active, &:focus {
         border: none;
         outline: none;
@@ -1920,6 +2131,13 @@ li.flipster__nav__item.flipster__nav__item--current {
     flex-wrap: wrap;
     justify-content: center;
     transition: 0.3s;
+    @include sm-block {
+      justify-content: space-between;
+    }
+    @include xs-block{
+      justify-content: center;
+      margin-top: 40px;
+    }
   }
   &__link {
     display: flex;
@@ -1945,6 +2163,14 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__item {
     margin: 0px 65px;
     line-height: 42px;
+    @include sm-block {
+      margin: 0 0;
+    }
+    @include xs-block{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
     &-center {
       position: relative;
       &:after {
@@ -1959,6 +2185,9 @@ li.flipster__nav__item.flipster__nav__item--current {
         bottom: 0;
         border-right: 1px solid $opacity-border-color;
         border-left: 1px solid $opacity-border-color;
+        @include sm-block {
+          display: none;
+        }
       }
     }
   }
@@ -1972,6 +2201,12 @@ li.flipster__nav__item.flipster__nav__item--current {
     &__item {
       flex-basis: 33%;
       text-align: center;
+      @include xs-block{
+        line-height: 24px;
+      }
+    }
+    @include xs-block{
+      margin-bottom: 20px;
     }
   }
 }
@@ -2023,7 +2258,7 @@ nav {
   position: fixed;
   left: -20px;
   top: 150px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, .7);
   z-index: 9999999999;
   border-radius: 16px;
   max-width: 300px;
