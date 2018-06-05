@@ -463,7 +463,7 @@ html{
       content: '';
     }
   }
-  & > a[href="/index.html"] {
+  & > a[href="/"] {
     position: relative;
     &:after {
       background-image: url("../img/uk.png");
