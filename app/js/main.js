@@ -17,6 +17,7 @@ $(document).ready(function () {
     navigationItems.on('click', function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
+        $('#main__nav').removeClass('open');
     });
 
     //smooth scroll to second section
@@ -45,6 +46,7 @@ $(document).ready(function () {
                 navigationItems.eq(activeSection).removeClass('is-selected');
             }
         });
+
     }
 
     function smoothScroll(target) {

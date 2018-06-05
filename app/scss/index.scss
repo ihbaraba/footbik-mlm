@@ -39,6 +39,7 @@ a:hover, a:focus {
 }
 
 .document__wrapper {
+  position: relative;
   overflow: hidden;
 }
 
@@ -200,6 +201,9 @@ body, a, p, div {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include mobile-block{
+
+  }
 }
 
 .logo {
@@ -223,9 +227,13 @@ body, a, p, div {
         flex-wrap: wrap;
         order: 1;
         & img {
-          width: 70px;
+          width: 55px;
           height: auto;
+          margin: -10px;
         }
+      }
+      & .logo {
+        margin-left: 0;
       }
     }
   }
@@ -235,6 +243,9 @@ body, a, p, div {
     font-size: $mini-size;
     line-height: $custom-height;
     font-family: $bold-font;
+    @include mobile-block{
+      display: none;
+    }
   }
   margin-left: -15px;
 
@@ -250,9 +261,9 @@ body, a, p, div {
   //margin-left: auto;
   @include mobile-block {
     order: 2;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    //display: flex;
+    //justify-content: flex-end;
+    //width: 100%;
   }
   & > * {
     margin-left: 22px;
@@ -810,8 +821,14 @@ body, a, p, div {
   text-align: center;
   box-shadow: inset -1px 1px 15px 0 rgba(255, 255, 255, .5), -1px 7px 8px 0 rgba(0, 0, 0, .15);
   border-radius: 9px;
+  transition: 0.3s;
   @include mobile-block {
     padding: 21px 16px;
+  }
+  &:hover {
+    color: #000000;
+    padding: 21px 28px;
+    transition: 0.3s;
   }
 }
 
@@ -871,7 +888,7 @@ body, a, p, div {
   @include mobile-block {
     order: 3;
     width: 100%;
-    margin-top: -18px;
+    margin-top: 8px;
   }
   & img {
     max-width: 100%;
@@ -925,6 +942,7 @@ body, a, p, div {
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: left top;
+  padding-top: 20px;
   &:after {
 
   }
@@ -1180,6 +1198,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       letter-spacing: 0.98px;
       font-family: $bold-font;
     }
+    @include xs-block{
+      margin-bottom: 5px;
+    }
   }
 }
 
@@ -1223,7 +1244,8 @@ li.flipster__nav__item.flipster__nav__item--current {
 
 .localisation {
   padding-bottom: 75px;
-  @include mobile-block {
+  @include sm-block {
+    padding-top: 40px;
   }
   padding-bottom: 20px;
   &__wrapper {
@@ -1367,12 +1389,16 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom 40px right;
+  @include md-block {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
   @include sm-block {
     padding-bottom: 40px;
   }
-  @include xs-block {
-    margin-top: -310px;
-  }
+  //@include xs-block {
+  //  margin-top: -310px;
+  //}
 }
 
 .sell {
@@ -1435,15 +1461,18 @@ li.flipster__nav__item.flipster__nav__item--current {
     padding-top: 20px;
   }
   &__wrapper {
+    padding-top: 150px;
+    justify-content: space-between;
+    padding-bottom: 115px;
+    position: relative;
     @include md-block {
       //padding-top: 60px;
       padding-bottom: 35px;
     }
     @include row-flex();
-    padding-top: 150px;
-    justify-content: space-between;
-    padding-bottom: 115px;
-    position: relative;
+    @include mobile-block {
+      padding-top: 20px;
+    }
     &:before {
       position: absolute;
       bottom: 0;
@@ -1514,7 +1543,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         width: 160px;
         height: 160px;
         background-image: url("../img/Soccer_ball.png");
-        @include md-block{
+        @include md-block {
           top: -130px;
           left: 0;
           right: 0;
@@ -1541,7 +1570,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         background-image: url(../img/shadow_white.png);
         background-size: contain;
         background-repeat: no-repeat;
-        @include md-block{
+        @include md-block {
           top: -120px;
           left: -50%;
           z-index: -1;
@@ -1806,7 +1835,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         padding: 25px;
       }
       @include xs-block {
-        padding: 40px 25px;
+        padding: 20px 35px;
       }
       &:hover {
         transition: 0.2s;
@@ -1909,7 +1938,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         padding: 40px 30px;
       }
       @include sm-block {
-        padding: 20px 20px;
+        padding:0px 10px 10px 10px;
       }
     }
     display: none;
@@ -1974,8 +2003,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   &__wrapper {
     margin-top: 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
     @include row-flex();
+
   }
   &__item {
     margin: 20px 0px;
@@ -2003,17 +2033,20 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-size: inherit;
   background-position: bottom right;
   @include sm-block {
-    padding-top: 70px;
+    padding-top: 30px;
     padding-bottom: 40px;
     background-position: top;
   }
   &__wrapper {
     margin-top: 80px;
+    @include sm-block {
+      margin-top: 20px;
+    }
   }
   &__item {
     padding: 30px 40px;
     background-color: rgba(0, 0, 0, 0.25);
-    box-shadow: 1px 1px 8px 0 #000;
+    box-shadow: 0px 0px 6px 0 #0000005e;
     border-radius: 8px;
     margin: 0 22px;
     display: flex;
@@ -2026,6 +2059,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       margin-bottom: 22px;
       width: 62px !important;
       height: auto;
+    }
+    @include md-block {
+      padding: 20px 40px;
     }
     @include xs-block {
       width: 100%;
@@ -2350,6 +2386,11 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include xs-block {
         line-height: 24px;
       }
+      @include mobile-block {
+        width: 100%;
+        display: block;
+        flex-basis: 100%;
+      }
     }
     @include xs-block {
       margin-bottom: 20px;
@@ -2357,21 +2398,26 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
 }
 
-.form{
-  &__wrapper{
+.form {
+  &__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    @include xs-block{
+    @include xs-block {
       flex-wrap: nowrap;
     }
-    @include mobile-block{
+    @include mobile-block {
       flex-wrap: wrap;
     }
   }
 }
 
+#section6 {
+  @include md-block {
+    padding-top: 10px;
+  }
+}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #222A43;
@@ -2419,13 +2465,23 @@ a {
 nav {
   position: fixed;
   left: -20px;
-  top: 150px;
+  top: 180px;
   background-color: rgba(0, 0, 0, .7);
   z-index: 9999999999;
   border-radius: 16px;
   max-width: 300px;
   width: 100%;
   padding: 20px 20px 20px 60px;
+
+  //@include md-block{
+  //  padding: 10px 20px 10px 60px;
+  //}
+  //@include sm-block{
+  //  display: flex;
+  //  flex-wrap: wrap;
+  //  justify-content: flex-start;
+  //  align-items: center;
+  //}
   & .cd-dot {
     align-items: center;
     margin-right: 10px;
@@ -2452,6 +2508,12 @@ nav {
     display: flex;
     padding: 7px 0px;
     position: relative;
+    @include md-block {
+      padding: 5px 0;
+    }
+    @include mobile-block {
+      padding: 4px 0;
+    }
     &:focus {
       color: #ffffff;
     }
@@ -2499,7 +2561,21 @@ span.cd-label {
     opacity: 1;
     transform: translateX(0);
     transition: 0.3s;
+    @include xs-block {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      top: 0 !important;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: inherit;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, .85);
+      border-radius: 0;
+    }
   }
+
 }
 
 .mail-popup {
@@ -2518,9 +2594,13 @@ span.cd-label {
     background: rgba(0, 0, 0, 0.3);
     z-index: 999999999999;
     display: none;
-
     align-items: center;
     justify-content: center;
+    @include sm-block{
+      left: 10px;
+      right: 10px;
+      width: auto;
+    }
     &.visible {
       & .mail-popup {
         opacity: 1;
@@ -2552,3 +2632,43 @@ span.cd-label {
 
 }
 
+@media (max-height: 600px) {
+  #main__nav.open {
+    top: 70px;
+    & a {
+      padding: 4px 0;
+    }
+  }
+}
+
+@media (max-height: 500px) {
+
+  #main__nav.open {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    max-width: inherit;
+    border-radius: 0;
+    & a {
+      padding: 0 0;
+    }
+  }
+
+  .roadmap {
+    &__wrapper {
+      padding-top: 20px;
+    }
+    &__item {
+      &:hover {
+        &:after, &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
