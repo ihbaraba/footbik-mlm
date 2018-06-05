@@ -447,18 +447,18 @@ $(document).ready(function () {
     // ===================================================  product item click @watch@ ===================================================
 
 
-    $('.product__item').on('click', function (e) {
+    $('.product__item .button-invite').on('click', function (e) {
 
         e.preventDefault();
 
 
-        $('.product__item').not($(this)).removeClass('active').addClass('invisible-block');
+        $('.product__item').not($(this).closest('.product__item')).removeClass('active').addClass('invisible-block');
 
-        if (!$(this).hasClass('active')) {
-            $(this).removeClass('invisible-block');
-            $(this).addClass('active');
+        if (!$(this).closest('.product__item').hasClass('active')) {
+            $(this).closest('.product__item').removeClass('invisible-block');
+            $(this).closest('.product__item').addClass('active');
         } else {
-            $(this).removeClass('active');
+            $(this).closest('.product__item').removeClass('active');
             $('.product__item').removeClass('invisible-block');
         }
 

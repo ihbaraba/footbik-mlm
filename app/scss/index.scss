@@ -301,23 +301,22 @@ body, a, p, div {
   display: none; /*hide original SELECT element:*/
 }
 
-
-html{
-  &[lang="en"]{
+html {
+  &[lang="en"] {
     .select-selected {
       &:before {
         background-image: url("../img/uk.png");
       }
     }
   }
-  &[lang="ua"]{
+  &[lang="ua"] {
     .select-selected {
       &:before {
         background-image: url("../img/ua.png");
       }
     }
   }
-  &[lang="ru"]{
+  &[lang="ru"] {
     .select-selected {
       &:before {
         background-image: url("../img/ru.png");
@@ -325,7 +324,6 @@ html{
     }
   }
 }
-
 
 .select-selected {
   width: 100%;
@@ -619,11 +617,12 @@ html{
     @include xs-block {
       font-size: 35px;
       line-height: 40px;
+      padding-top: 20px;
     }
   }
   &__buttons {
     @include row-flex();
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-right: 40px;
     @include md-block {
       justify-content: center;
@@ -1074,7 +1073,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     transition: 0.3s;
     &:hover {
       transition: 0.3s;
-      padding: 21px 30px;
+      padding: 14px 40px;
     }
   }
   &:after {
@@ -1105,7 +1104,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     margin-top: 60px;
     @include sm-block {
       //@include row-flex();
@@ -1120,6 +1119,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     letter-spacing: 1.18px;
     line-height: 22px;
     padding: 0px;
+    &-full {
+      display: none;
+    }
   }
   &__head {
     font-family: $bold-font;
@@ -1128,72 +1130,32 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin-bottom: 35px;
   }
   &__item {
-    transition: 0.3s;
-    & .button-invite {
-      display: block;
-      &-close {
-        display: none;
-        width: 100%;
-        max-width: 350px;
-        @include mobile-block {
-          display: none;
-        }
-      }
-      @include mobile-block {
-        display: none;
-      }
-    }
-    &.active {
-      transition: 0.3s;
-      z-index: 5;
-      transform: scale(1.2);
-      opacity: 1;
-      @include mobile-block {
-        transform: scale(1);
-      }
-      & .button-invite {
-        display: none;
-        &-close {
-          display: inline-block;
-          @include mobile-block {
-            display: none;
-          }
-        }
-      }
-    }
-    &.invisible-block {
-      transition: 0.3s;
-      //display: none;
-      opacity: 0.6;
-      z-index: 2;
-      transform: scale(1);
-      @include mobile-block {
-        opacity: 1;
-      }
-
-    }
-    .btn-wrapper {
-      font-family: $bold-font;
-    }
+    width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 45px 20px 30px 20px;
-    max-width: 350px;
+    //max-width: 350px;
     background: red;
     border-radius: 8px;
     text-align: center;
     box-shadow: 2px 20px 46px 0 rgba(0, 0, 0, 0.14);
     @include md-block {
       padding: 35px 10px 25px 10px;
-      max-width: 280px;
+      //max-width: 280px;
       &-centered {
         margin: -30px;
       }
     }
     @include sm-block {
-      max-width: 420px;
+      //max-width: 420px;
+      width: 100%;
       margin-bottom: 50px;
       &-centered {
         margin: inherit;
       }
+
     }
     background: linear-gradient(331.03deg, #26D5A3 0%, #26CFB5 31.71%, #27C2DD 100%);
     &-centered {
@@ -1201,14 +1163,47 @@ li.flipster__nav__item.flipster__nav__item--current {
       z-index: 2;
       margin: -20px;
       padding: 55px 40px 30px 40px;
-      max-width: 420px;
+      //max-width: 420px;
       background: linear-gradient(331.03deg, #26D5A3 0%, #26CFB5 31.71%, #27C2DD 100%);
       //transform: scale(1.1);
       @include sm-block {
         margin-top: 0;
         margin-bottom: 20px;
-        max-width: 420px;
+        //width: 100%;
+        //max-width: 420px;
       }
+    }
+    & .button-invite {
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 14px 34px;
+      &-close {
+        display: none;
+        @include mobile-block {
+          display: none;
+        }
+      }
+    }
+    &.active {
+      width: 100%;
+      & .button-invite {
+        display: none;
+        &-close {
+          display: inline-block;
+        }
+      }
+      & .product__text-full {
+        display: block;
+      }
+    }
+    &.invisible-block {
+      display: none;
+      @include sm-block{
+        display: inherit;
+      }
+    }
+    .btn-wrapper {
+      font-family: $bold-font;
     }
   }
   &__link {
@@ -1536,8 +1531,8 @@ li.flipster__nav__item.flipster__nav__item--current {
     padding-top: 20px;
   }
   &__wrapper {
-    padding-top: 150px;
-    justify-content: space-between;
+    //padding-top: 150px;
+    justify-content: center;
     padding-bottom: 115px;
     position: relative;
     @include md-block {
@@ -1564,16 +1559,20 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__item {
+    margin-top: 130px;
     cursor: pointer;
     transition: 0.2s;
     @include col();
     text-align: center;
     position: relative;
     @include size(2);
+    @include size-md(3);
     @include size-sm(3);
     @include size-xs(6);
+
     @include xs-block {
       margin-bottom: 20px;
+      margin-top: 20px;
       &:hover {
       }
       &:after, &:before {
@@ -1657,12 +1656,13 @@ li.flipster__nav__item.flipster__nav__item--current {
         background-size: contain;
         background-repeat: no-repeat;
         @include md-block {
-          top: -120px;
-          left: -50%;
+          top: -50%;
+          left: 0;
           z-index: -1;
           right: 0;
-          width: 180%;
+          width: 100%;
           height: 80%;
+          background-position: center;
         }
         @include mobile-block {
           display: none;
@@ -1675,8 +1675,8 @@ li.flipster__nav__item.flipster__nav__item--current {
     font-size: $main-size;
     letter-spacing: 0.98px;
     line-height: 18px;
-    margin-left: -15px;
-    margin-right: -15px;
+    //margin-left: -15px;
+    //margin-right: -15px;
     @include md-block {
       margin-top: 30px;
     }
@@ -1797,6 +1797,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     letter-spacing: 0.94px;
     display: block;
     margin-bottom: 5px;
+    @include md-block {
+    }
+    font-size: 60px;
   }
 }
 
@@ -2195,6 +2198,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin-top: 80px;
     position: relative;
     @include row-flex();
+    align-items: stretch;
     & * {
       transition: 0.2s;
     }
@@ -2203,6 +2207,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__item {
+    align-self: flex-start;
     transition: 0s;
     @include col();
     margin-bottom: 50px;
@@ -2307,7 +2312,8 @@ li.flipster__nav__item.flipster__nav__item--current {
       padding: 20px;
       display: block;
       font-size: 18px;
-      @include md-block{
+      padding-right: 50px;
+      @include md-block {
         padding: 12px 20px;
       }
     }
@@ -2726,7 +2732,7 @@ span.cd-label {
 }
 
 .whitelist {
-  &__cross{
+  &__cross {
     cursor: pointer;
     position: absolute;
     top: 30px;
@@ -2770,7 +2776,7 @@ span.cd-label {
           margin: 0;
           margin-right: 10px;
         }
-        @include mobile-block{
+        @include mobile-block {
           font-size: 14px;
         }
       }
@@ -2836,7 +2842,8 @@ span.cd-label {
     }
   }
 }
-.modal-open{
+
+.modal-open {
   overflow: hidden;
 }
 
