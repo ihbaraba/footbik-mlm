@@ -33,7 +33,7 @@ body {
 
 }
 
-a:hover, a:focus {
+a:hover {
   color: #feec02;
   text-decoration: underline;
 }
@@ -201,7 +201,7 @@ body, a, p, div {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  @include mobile-block{
+  @include mobile-block {
 
   }
 }
@@ -243,7 +243,7 @@ body, a, p, div {
     font-size: $mini-size;
     line-height: $custom-height;
     font-family: $bold-font;
-    @include mobile-block{
+    @include mobile-block {
       display: none;
     }
   }
@@ -737,7 +737,7 @@ body, a, p, div {
     @include xs-block {
       padding: 20px 15px;
     }
-    @include mobile-block{
+    @include mobile-block {
       padding: 20px 0px;
     }
   }
@@ -1102,7 +1102,50 @@ li.flipster__nav__item.flipster__nav__item--current {
     margin-bottom: 35px;
   }
   &__item {
+    transition: 0.3s;
+    & .button-invite {
+      display: block;
+      &-close {
+        display: none;
+        width: 100%;
+        max-width: 350px;
+        @include mobile-block {
+          display: none;
+        }
+      }
+      @include mobile-block {
+        display: none;
+      }
+    }
+    &.active {
+      transition: 0.3s;
+      z-index: 5;
+      transform: scale(1.2);
+      opacity: 1;
+      @include mobile-block {
+        transform: scale(1);
+      }
+      & .button-invite {
+        display: none;
+        &-close {
+          display: inline-block;
+          @include mobile-block {
+            display: none;
+          }
+        }
+      }
+    }
+    &.invisible-block {
+      transition: 0.3s;
+      //display: none;
+      opacity: 0.6;
+      z-index: 2;
+      transform: scale(1);
+      @include mobile-block {
+        opacity: 1;
+      }
 
+    }
     .btn-wrapper {
       font-family: $bold-font;
     }
@@ -1195,7 +1238,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include md-block {
         font-size: 24px;
       }
-      @include mobile-block{
+      @include mobile-block {
         font-size: 18px;
       }
       color: #ffffff;
@@ -1204,7 +1247,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       letter-spacing: 0.98px;
       font-family: $bold-font;
     }
-    @include xs-block{
+    @include xs-block {
       margin-bottom: 5px;
     }
   }
@@ -1476,6 +1519,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       padding-bottom: 35px;
     }
     @include row-flex();
+    @include xs-block {
+      padding-top: 20px;
+    }
     @include mobile-block {
       padding-top: 20px;
     }
@@ -1502,6 +1548,11 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include size-xs(6);
     @include xs-block {
       margin-bottom: 20px;
+      &:hover {
+      }
+      &:after, &:before {
+        display: none;
+      }
     }
     &:after {
       opacity: 0;
@@ -1514,6 +1565,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       width: 160px;
       height: 160px;
       background-image: url("../img/Soccer_ball.png");
+      background-repeat: no-repeat;
       @include mobile-block {
         display: none;
       }
@@ -1531,6 +1583,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       width: 260%;
       height: 100%;
       background-image: url(../img/shadow_white.png);
+
       background-size: contain;
       background-repeat: no-repeat;
       @include mobile-block {
@@ -1549,6 +1602,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         width: 160px;
         height: 160px;
         background-image: url("../img/Soccer_ball.png");
+        background-repeat: no-repeat;
         @include md-block {
           top: -130px;
           left: 0;
@@ -1843,7 +1897,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include xs-block {
         padding: 20px 35px;
       }
-      @include mobile-block{
+      @include mobile-block {
         padding: 20px 15px;
       }
       &:hover {
@@ -1947,7 +2001,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         padding: 40px 30px;
       }
       @include sm-block {
-        padding:0px 10px 10px 10px;
+        padding: 0px 10px 10px 10px;
       }
     }
     display: none;
@@ -2227,11 +2281,14 @@ li.flipster__nav__item.flipster__nav__item--current {
       padding: 20px;
       display: block;
       font-size: 18px;
+      @include md-block{
+        padding: 12px 20px;
+      }
     }
   }
   &__answer {
     padding: 20px;
-    background: #efeff4;
+    background: #8fe7ff;
     opacity: 0;
     display: none;
     z-index: 123;
@@ -2606,7 +2663,7 @@ span.cd-label {
     display: none;
     align-items: center;
     justify-content: center;
-    @include sm-block{
+    @include sm-block {
       left: 10px;
       right: 10px;
       width: auto;
@@ -2640,6 +2697,76 @@ span.cd-label {
   padding: 40px;
   opacity: 0;
 
+}
+
+.whitelist {
+  &__cross{
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    font-size: 36px;
+    right: 30px;
+  }
+  &__checkbox {
+    //display: block;
+    //margin: 0 auto;
+    width: 100%;
+    font-size: 24px;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+  }
+  &__form {
+    &.contact__form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 15px;
+      max-width: 500px;
+      & .button-invite {
+        display: block;
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+      }
+      & input {
+        display: block;
+        width: 100%;
+        flex-basis: 100%;
+        margin-bottom: 20px;
+        line-height: 18px;
+        padding: 10px 20px;
+        &[type="checkbox"] {
+          height: 20px;
+          flex-basis: inherit;
+          width: 20px;
+          display: block;
+          margin: 0;
+        }
+        @include mobile-block{
+          font-size: 14px;
+        }
+      }
+    }
+    &__wrapper {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #263b5d;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 9999999999999999999;
+      &.active {
+        display: flex;
+        opacity: 1;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }
 
 @media (max-height: 600px) {
@@ -2682,3 +2809,8 @@ span.cd-label {
     }
   }
 }
+.modal-open{
+  overflow: hidden;
+}
+
+

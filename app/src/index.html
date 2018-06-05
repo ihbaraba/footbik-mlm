@@ -21,10 +21,7 @@
             </p>
             <div class="tokens__buttons">
                 <a class="custom__btn custom__btn-big">
-                    ONEPAGER
-                </a>
-                <a class="custom__btn custom__btn-big">
-                    LITEPAPER
+                    LIGHTPAPER
                 </a>
                 <a class="custom__btn custom__btn-big">
                     WHITEPAPER
@@ -95,7 +92,7 @@
                 </div>
             </div>
             <div class="btn-wrapper">
-                <a class="button-invite" href="#">
+                <a class="button-invite whitelist" href="#">
                     ДОБАВИТЬ В ВАЙТЛИСТ
                 </a>
             </div>
@@ -179,6 +176,9 @@
                     <a class="button-invite" href="#">
                         СМОТРЕТЬ
                     </a>
+                    <a class="button-invite button-invite-close" href="#">
+                        СКРЫТЬ
+                    </a>
                 </div>
             </div>
             <div class="product__item product__item-centered">
@@ -194,6 +194,9 @@
                 <div class="btn-wrapper">
                     <a class="button-invite" href="#">
                         СМОТРЕТЬ
+                    </a>
+                    <a class="button-invite button-invite-close" href="#">
+                        СКРЫТЬ
                     </a>
                 </div>
             </div>
@@ -211,13 +214,16 @@
                     <a class="button-invite" href="#">
                         СМОТРЕТЬ
                     </a>
+                    <a class="button-invite button-invite-close" href="#">
+                        СКРЫТЬ
+                    </a>
                 </div>
             </div>
         </div>
         <div class="product__link__wrapper">
-            <a href="#" class="product__link">
-                Перейти на сайт
-            </a>
+            <!--<a href="#" class="product__link">-->
+            <!--Перейти на сайт-->
+            <!--</a>-->
         </div>
     </div>
 </section>
@@ -534,7 +540,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -548,7 +554,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -562,7 +568,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -576,7 +582,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -590,7 +596,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -604,7 +610,7 @@
                     <span class="stages__percent">
                         10%
                     </span>
-                    <a class="button-invite" href="#">
+                    <a class="button-invite whitelist" href="#">
                         ОПЛАТИТЬ
                     </a>
                 </div>
@@ -1380,7 +1386,7 @@
             СВЯЖИТЕСЬ С НАМИ
         </p>
         <div class="contact__wrapper">
-            <div class="contact__form">
+            <div class="contact__form mail__form">
                 <form action="/">
                     <div class="form__wrapper">
                         <input type="email" placeholder="Введите email">
@@ -1545,13 +1551,29 @@
         <p class="mail-popup__error">Проверьте правильность данных</p>
     </div>
 </div>
+<div class="whitelist__form__wrapper">
+    <form class="whitelist__form contact__form">
+        <span class="whitelist__cross">
+            x
+        </span>
+        <input type="text" placeholder="Введите Ваш эфирный кошелёк" required="required">
+        <input type="email" placeholder="Введите Ваш Email" required="required">
+        <div class="whitelist__checkbox">
+            <input type="checkbox" id="subscribe" name="subscribeNews" value="" required="required">
+            <label for="subscribe">Я не с США</label>
+        </div>
+        <button type="submit" class="button-invite">Отправить</button>
+    </form>
+</div>
 @import "foot.html"
 @import "footer.html"
 <script>
     $(document).ready(function () {
         // =================================================== timer ===================================================
 
-        $('#timer__main').countdown('2018/06/01', function (event) {
+        // year month day
+
+        $('#timer__main').countdown('2018/10/07', function (event) {
 
             var day = event.strftime('%d');
             var hours = event.strftime('%H');

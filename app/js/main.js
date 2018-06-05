@@ -161,7 +161,8 @@ $(document).ready(function () {
                 $('body,html').stop().animate(
                     {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
                     400
-                );500
+                );
+                500
             }
         });
 
@@ -307,7 +308,8 @@ $(document).ready(function () {
             $('body,html').stop().animate(
                 {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
                 400
-            );500
+            );
+            500
         }
     });
 
@@ -316,7 +318,7 @@ $(document).ready(function () {
 
     // =================================================== dropdown logic ===================================================
 
-    $('.faq__item').on('click', function(){
+    $('.faq__item').on('click', function () {
         // alert('najal');
         $('.faq__item').not($(this)).removeClass('active');
 
@@ -342,7 +344,7 @@ $(document).ready(function () {
 
     }
 
-    $(document).on('click', '.contact__form button', function (e) {
+    $(document).on('click', '.mail__form button', function (e) {
 
         e.preventDefault();
 
@@ -441,7 +443,52 @@ $(document).ready(function () {
         }, 'xml');
 
     });
-// =================================================== svg fill ===================================================
+    // ===================================================  product item click @watch@ ===================================================
+
+
+    $('.product__item').on('click', function (e) {
+
+        e.preventDefault();
+
+
+        $('.product__item').not($(this)).removeClass('active').addClass('invisible-block');
+
+        if (!$(this).hasClass('active')) {
+            $(this).removeClass('invisible-block');
+            $(this).addClass('active');
+        } else {
+            $(this).removeClass('active');
+            $('.product__item').removeClass('invisible-block');
+        }
+
+
+    });
+
+    // =================================================== product item click @watch@ ===================================================
+
+
+    // =================================================== whitelist ===================================================
+
+    $('.whitelist').on('click', function (e) {
+
+        e.preventDefault();
+        $('body').addClass('modal-open');
+        $('.whitelist__form__wrapper').addClass('active');
+
+    });
+
+
+    $('.whitelist__cross').on('click', function (e) {
+
+        e.preventDefault();
+
+        $('body').removeClass('modal-open');
+        $('.whitelist__form__wrapper').removeClass('active');
+
+    });
+
+
+    // =================================================== whitelist ===================================================
 
 
 });
