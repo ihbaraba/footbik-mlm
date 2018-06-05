@@ -85,6 +85,7 @@ $(document).ready(function () {
             c.innerHTML = selElmnt.options[j].innerHTML;
             // c.setAttribute("data-language", selElmnt.options[j].innerHTML);
             c.addEventListener("click", function (e) {
+                $('.select-selected').css('display','none');
                 /*when an item is clicked, update the original select box,
                 and the selected item:*/
                 var y, i, k, s, h;

@@ -301,6 +301,32 @@ body, a, p, div {
   display: none; /*hide original SELECT element:*/
 }
 
+
+html{
+  &[lang="en"]{
+    .select-selected {
+      &:before {
+        background-image: url("../img/uk.png");
+      }
+    }
+  }
+  &[lang="ua"]{
+    .select-selected {
+      &:before {
+        background-image: url("../img/ua.png");
+      }
+    }
+  }
+  &[lang="ru"]{
+    .select-selected {
+      &:before {
+        background-image: url("../img/ru.png");
+      }
+    }
+  }
+}
+
+
 .select-selected {
   width: 100%;
   background-color: transparent;
@@ -422,7 +448,7 @@ body, a, p, div {
 }
 
 .select-items {
-  & > a:nth-child(1) {
+  & > a[href="/ru.html"] {
     position: relative;
     &:after {
       background-image: url("../img/ru.png");
@@ -437,7 +463,7 @@ body, a, p, div {
       content: '';
     }
   }
-  & > a:nth-child(2) {
+  & > a[href="/index.html"] {
     position: relative;
     &:after {
       background-image: url("../img/uk.png");
@@ -452,7 +478,7 @@ body, a, p, div {
       content: '';
     }
   }
-  & > a:nth-child(3) {
+  & > a[href="/ua.html"] {
     position: relative;
     &:after {
       background-image: url("../img/ua.png");
@@ -2742,6 +2768,7 @@ span.cd-label {
           width: 20px;
           display: block;
           margin: 0;
+          margin-right: 10px;
         }
         @include mobile-block{
           font-size: 14px;
