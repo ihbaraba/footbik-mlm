@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     function smoothScroll(target) {
         $('body,html').stop().animate(
-            {'scrollTop': target.offset().top -  $('header').outerHeight()},
+            {'scrollTop': target.offset().top - $('header').outerHeight()},
             900
         );
     }
@@ -152,7 +152,20 @@ $(document).ready(function () {
     // on browser resize...
     $(window).resize(function () {
         moveProgressBar($('.custom__progress-wrap'));
+
         $('.first-block').css('padding-top', $('header').outerHeight());
+
+        $(document).on('click', '.team__item', function (e) {
+            if ($(window).width() < 501) {
+
+                $('body,html').stop().animate(
+                    {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
+                    400
+                );500
+            }
+        });
+
+
     });
 
     // SIGNATURE PROGRESS
@@ -187,6 +200,9 @@ $(document).ready(function () {
 
     // =================================================== owl carousel ===================================================
 
+
+    // tabs + owl and tabs + reps
+
     $('.tab-content > .tab-pane.fade').each(function () {
 
         if ($(this).hasClass('active')) {
@@ -204,23 +220,26 @@ $(document).ready(function () {
         }
     });
 
+
+// tabs resp end
+
     $('.stages__slider').owlCarousel({
         items: 5,
         nav: true,
         navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
         dots: false,
-        responsive:{
+        responsive: {
             320: {
-                items:1
+                items: 1
             },
             500: {
                 items: 2
             },
             769: {
-                items:3
+                items: 3
             },
             1200: {
-                items:5
+                items: 5
             }
         }
     });
@@ -232,15 +251,15 @@ $(document).ready(function () {
         margin: 0,
         dotsEach: true,
         dots: true,
-        responsive:{
+        responsive: {
             320: {
-                items:1
+                items: 1
             },
             769: {
-                items:2
+                items: 2
             },
             1200: {
-                items:3
+                items: 3
             }
         }
     });
@@ -272,12 +291,7 @@ $(document).ready(function () {
             humanSingle.removeClass('active');
         }, 100);
 
-
-        // humanSingle.slideUp(300);
-
         human.removeClass('active');
-
-        // $('.team__human[data-id="' + index + '"]').css('display', 'block').addClass('active');
 
         $('.team__human[data-id="' + index + '"]').css('display', 'block');
 
@@ -288,6 +302,13 @@ $(document).ready(function () {
 
         $('.team__item[data-id="' + index + '"]').addClass('active');
 
+        if ($(window).width() < 501) {
+
+            $('body,html').stop().animate(
+                {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
+                400
+            );500
+        }
     });
 
     // =================================================== team logic ===================================================
@@ -295,8 +316,8 @@ $(document).ready(function () {
 
     // =================================================== dropdown logic ===================================================
 
-    $(document).on('click', '.faq__item', function (e) {
-
+    $('.faq__item').on('click', function(){
+        // alert('najal');
         $('.faq__item').not($(this)).removeClass('active');
 
         if (!$(this).hasClass('active')) {
@@ -421,6 +442,7 @@ $(document).ready(function () {
 
     });
 // =================================================== svg fill ===================================================
+
 
 });
 

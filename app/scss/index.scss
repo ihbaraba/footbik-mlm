@@ -737,6 +737,9 @@ body, a, p, div {
     @include xs-block {
       padding: 20px 15px;
     }
+    @include mobile-block{
+      padding: 20px 0px;
+    }
   }
 }
 
@@ -1191,6 +1194,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     .nav > li > a {
       @include md-block {
         font-size: 24px;
+      }
+      @include mobile-block{
+        font-size: 18px;
       }
       color: #ffffff;
       font-size: 30px;
@@ -1837,6 +1843,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       @include xs-block {
         padding: 20px 35px;
       }
+      @include mobile-block{
+        padding: 20px 15px;
+      }
       &:hover {
         transition: 0.2s;
         background-color: rgba(248, 231, 28, 0.11);
@@ -2104,6 +2113,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   z-index: 3;
   &__wrapper {
     margin-top: 80px;
+    position: relative;
     @include row-flex();
     & * {
       transition: 0.2s;
