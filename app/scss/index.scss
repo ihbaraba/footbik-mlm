@@ -555,6 +555,7 @@ html {
 
 .tokens {
   &__badge {
+    display: none !important;
     background-image: url("../img/bouble.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -2761,7 +2762,8 @@ span.cd-label {
         margin: 0;
         margin-top: 20px;
       }
-      & input {
+
+      & input:not([type="submit"]) {
         display: block;
         width: 100%;
         flex-basis: 100%;
@@ -2779,6 +2781,9 @@ span.cd-label {
         @include mobile-block {
           font-size: 14px;
         }
+      }
+      & input[type="submit"]{
+
       }
     }
     &__wrapper {
