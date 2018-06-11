@@ -1475,7 +1475,16 @@ li.flipster__nav__item.flipster__nav__item--current {
 .sell {
   margin-top: 65px;
   &__item {
-
+    width: 50%;
+    margin: 30px 0;
+    text-align: center;
+    @include sm-block{
+      width: 33%;
+    }
+    @include mobile-block{
+      width: 100%;
+      margin: 0 0 30px 0;
+    }
   }
   &__wrapper {
     @include row-flex();
@@ -1489,8 +1498,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   &__price {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    //flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     @include col();
     @include size(4);
     @include size-sm(12);
@@ -1508,18 +1518,33 @@ li.flipster__nav__item.flipster__nav__item--current {
 
   }
   &__maintext {
-    font-size: 40px;
-    line-height: 48px;
+    //font-size: 28px;
+    //line-height: 36px;
+    font-size: 50px;
     letter-spacing: 1.24px;
     font-family: $bold-font;
+    @include sm-block {
+      font-size: 40px;
+      line-height: 46px;
+    }
     @include xs-block {
       font-size: 30px;
     }
+    @include mobile-block{
+      font-size: 38px;
+    }
   }
   &__text {
-    font-size: 25px;
-    line-height: 30px;
-    letter-spacing: 0.78px;
+    //font-size: 25px;
+    //line-height: 30px;
+    //letter-spacing: 0.78px;
+    font-size: 18px;
+    font-family: 'HelveticaLight';
+    margin-top: 10px;
+    @include mobile-block{
+      margin-top: 4px;
+      font-size: 20px;
+    }
   }
 }
 
