@@ -1322,7 +1322,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       font-size: 20px;
     }
   }
-  @include mobile-block{
+  @include mobile-block {
     width: 100%;
     display: inline-block;
     text-align: center;
@@ -1349,6 +1349,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include md-block {
       align-items: center;
     }
+    @include sm-block{
+      flex-wrap: wrap;
+    }
   }
   padding-top: 100px;
   &__tabs {
@@ -1356,62 +1359,69 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include sm-block {
       width: 100%;
       max-width: 100%;
+      order: 2;
     }
   }
+
   &__map {
-    width: 100%;
-    height: auto;
+    //width: 100%;
+    //height: auto;
     text-align: center;
-    & .localisation__marker {
-      height: 40px;
-      cursor: pointer;
-      width: 30px;
-      background-image: url(/img/marker.png);
-      display: block;
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      &[data-value="kiev"] {
-        top: 30%;
-        left: 53%;
-        @include sm-block {
-          top: 27%;
-        }
-        @include xs-block {
-          top: 28%;
-        }
-      }
-      &:hover {
-        & .localisation__description {
-          opacity: 1;
-          z-index: 2;
-          transition: 0.3s;
-        }
-      }
-      & .localisation__description {
-        position: absolute;
-        bottom: 40px;
-        opacity: 0;
-        z-index: -2;
-        background-color: #F8E71C;
-        padding: 20px;
-        color: #000000;
-        border-radius: 14px;
-        transition: 0.3s;
-        @include mobile-block {
-          font-size: 14px;
-          padding: 10px;
-        }
-      }
-    }
-    @include md-block {
+    margin-left: -60px;
+
+    //& .localisation__marker {
+    //  height: 40px;
+    //  cursor: pointer;
+    //  width: 30px;
+    //  background-image: url(/img/marker.png);
+    //  display: block;
+    //  position: absolute;
+    //  background-size: contain;
+    //  background-repeat: no-repeat;
+    //  &[data-value="kiev"] {
+    //    top: 30%;
+    //    left: 53%;
+    //    @include sm-block {
+    //      top: 27%;
+    //    }
+    //    @include xs-block {
+    //      top: 28%;
+    //    }
+    //  }
+    //  &:hover {
+    //    & .localisation__description {
+    //      opacity: 1;
+    //      z-index: 2;
+    //      transition: 0.3s;
+    //    }
+    //  }
+    //  & .localisation__description {
+    //    position: absolute;
+    //    bottom: 40px;
+    //    opacity: 0;
+    //    z-index: -2;
+    //    background-color: #F8E71C;
+    //    padding: 20px;
+    //    color: #000000;
+    //    border-radius: 14px;
+    //    transition: 0.3s;
+    //    @include mobile-block {
+    //      font-size: 14px;
+    //      padding: 10px;
+    //    }
+    //  }
+    //}
+    @include sm-block {
       width: 100%;
+      margin-left: 0;
+      order: 0;
     }
     @include sm-block {
       //display: none;
     }
+
     & img {
-      @include md-block {
+      @include lg-block {
         width: 100%;
       }
     }
