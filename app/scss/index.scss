@@ -1322,6 +1322,15 @@ li.flipster__nav__item.flipster__nav__item--current {
       font-size: 20px;
     }
   }
+  @include mobile-block{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    max-width: 100%;
+    & a {
+      text-decoration: underline;
+    }
+  }
 }
 
 //==================================================tabs=====================================================================
@@ -1365,8 +1374,11 @@ li.flipster__nav__item.flipster__nav__item--current {
       &[data-value="kiev"] {
         top: 30%;
         left: 53%;
-        @include sm-block{
-          top: 33%;
+        @include sm-block {
+          top: 27%;
+        }
+        @include xs-block {
+          top: 28%;
         }
       }
       &:hover {
@@ -1386,7 +1398,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         color: #000000;
         border-radius: 14px;
         transition: 0.3s;
-        @include mobile-block{
+        @include mobile-block {
           font-size: 14px;
           padding: 10px;
         }
@@ -1542,7 +1554,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       width: 33%;
     }
     @include mobile-block {
-      width: 100%;
+      width: 50%;
       margin: 0 0 30px 0;
     }
   }
