@@ -2011,7 +2011,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   //background-position: bottom 40px right;
   &__wrapper {
     @include row-flex();
-    //align-items: center;
+    align-items: center;
     margin-top: 40px;
   }
   &__img {
@@ -2051,6 +2051,9 @@ li.flipster__nav__item.flipster__nav__item--current {
         &:before {
           transition: 0.2s;
           border-top: solid 15px rgba(248, 231, 28, 0.11);
+          @include sm-block{
+            border-top: solid 15px rgba(248,231,28,.21);
+          }
         }
       }
       &:before {
@@ -2068,10 +2071,15 @@ li.flipster__nav__item.flipster__nav__item--current {
         border-left: solid 55px transparent;
         border-right: solid 55px transparent;
         transition: 0.2s;
-        @include sm-block {
+        @include md-block {
           //display: none;
           border-left: solid 75px transparent;
           border-right: solid 75px transparent;
+        }
+        @include sm-block{
+          border-left: solid 110px transparent;
+          border-right: solid 110px transparent;
+
         }
         @include xs-block {
           display: none;
@@ -2106,7 +2114,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 
   }
   &__title {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     letter-spacing: 1.18px;
     margin-top: 35px;
@@ -2125,7 +2133,8 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   &__prof {
     font-size: 12px;
-    margin-top: auto;
+    //margin-top: auto;
+    line-height: 18px;
     &-big {
       margin-bottom: 10px;
       font-size: 14px;
@@ -2176,7 +2185,6 @@ li.flipster__nav__item.flipster__nav__item--current {
     &.active {
       .team__img-wrapper {
         background-color: rgba(248, 231, 28, 0.21);
-        //padding: 15px;
         position: relative;
         border-radius: 4px;
         transition: 0.2s;
@@ -2189,14 +2197,15 @@ li.flipster__nav__item.flipster__nav__item--current {
       }
     }
     @include size(3);
+    @include size-md(4);
     @include col();
     @include size-xs(6);
     margin-bottom: 20px;
     text-align: center;
     cursor: pointer;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    //flex-wrap: wrap;
+    //justify-content: space-between;
     flex-direction: column;
     @include md-block {
       margin-bottom: 40px;
