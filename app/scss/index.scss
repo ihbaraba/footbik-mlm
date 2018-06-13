@@ -500,7 +500,7 @@ html {
 
 .first-block {
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: right top -10px;
   background-image: url(../img/bg_footb.png);
   position: relative;
   background-size: inherit;
@@ -1951,7 +1951,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__wrapper {
-    padding-top: 90px;
+    padding-top: 40px;
     @include sm-block {
       padding-top: 20px;
     }
