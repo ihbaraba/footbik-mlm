@@ -1145,10 +1145,10 @@ li.flipster__nav__item.flipster__nav__item--current {
     text-align: center;
     box-shadow: 2px 20px 46px 0 rgba(0, 0, 0, 0.14);
     @include md-block {
-      padding: 35px 10px 25px 10px;
+      padding: 35px 20px 25px 20px;
       //max-width: 280px;
       &-centered {
-        margin: -30px;
+        margin: -10px;
       }
     }
     @include sm-block {
@@ -1337,45 +1337,180 @@ li.flipster__nav__item.flipster__nav__item--current {
 //==================================================tabs=====================================================================
 
 .localisation {
+  & .wrapper{
+    @include sm-block{
+      order: 2;
+      max-width: 100%;
+    }
+  }
+  padding-bottom: 20px;
+  padding-top: 50px;
+  overflow: hidden;
+  @include sm-block{
+    display: flex;
+    flex-direction: column;
+  }
   @include xs-block {
     padding-top: 40px;
-    background: url("/img/map.svg");
+    //background: url("/img/map.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding-bottom: 30px;
+    //padding-bottom: 30px;
   }
-  padding-bottom: 20px;
   &__wrapper {
+    position: relative;
     justify-content: space-between;
     align-items: center;
     display: flex;
-    margin-top: 40px;
+    margin-top: 80px;
+    padding-bottom: 40px;
     @include md-block {
       align-items: center;
     }
     @include sm-block {
       flex-wrap: wrap;
+      margin-top: 20px;
+
     }
   }
-  padding-top: 100px;
+  &__img {
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    transform: translateX(14vw);
+    margin-bottom: 40px;
+    @include sm-block{
+      display: block;
+      width: 100%;
+      position: relative;
+      transform: none;
+      order: 1;
+      margin-top: 40px;
+    }
+    @include xs-block{
+      transform: translateX(-10%);
+      width: 150%;
+    }
+  }
+  & .section__text{
+    @include xs-block{
+      order: 0;
+    }
+  }
   &__tabs {
-    max-width: 380px;
+    max-width: 440px;
+    ////width: 40%;
+    //height: 440px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 35px;
     @include sm-block {
       width: 100%;
       max-width: 100%;
       order: 2;
+      position: relative;
+      display: block;
+      top: inherit;
+    }
+    @include xs-block{
+      padding: 35px 5px;
+    }
+    &.localisation__slider {
+      & .owl-nav{
+        top: 4px;
+      }
+      & .owl-nav button.owl-prev {
+        left: 10px;
+      }
+      & .owl-nav button.owl-next {
+        right: 10px;
+      }
+      @include xs-block{
+        margin: 0;
+        //width: 80%;
+      }
+      @include mobile-block{
+        & .owl-nav button.owl-prev {
+          left: 0px;
+          & img{
+            width: 50px;
+            height: auto;
+          }
+        }
+        & .owl-nav button.owl-next {
+          right: 0px;
+          & img{
+            width: 50px;
+            height: auto;
+          }
+        }
+        & .owl-nav{
+          top: 25px;
+        }
+      }
     }
   }
-
-  &__map {
+  &__list {
+    //padding-left: 30px;
+    margin-bottom: 30px;
+    & ul {
+      padding-left: 30px;
+      li {
+        span {
+          line-height: 22px;
+          font-size: 15px;
+          letter-spacing: 1.05px;
+          font-family: 'HelveticaLight';
+        }
+      }
+    }
+  }
+  &__title {
+    text-align: center;
+    font-family: $bold-font;
+    font-size: 26px;
+    line-height: 30px;
+    margin-bottom: 40px;
+    letter-spacing: 1.82px;
+  }
+  &__status {
+    display: block;
+    color: #6AC259;
+    font-size: 20px;
+    letter-spacing: 1.4px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    background-position: top 2px left 0px;
+    background-repeat: no-repeat;
+    background-image: url("/img/checked.png");
+    &-planned {
+      background-image: url("/img/progress.png");
+      color: #F8E92B;
+    }
+  }
+  &__item{
+    display: block;
     width: 100%;
+    margin: 0 10px;
+    @include xs-block{
+    //margin: 0;
+    }
+  }
+  &__map {
+    //width: 100%;
+    //width: 60%;
     height: auto;
     text-align: center;
-    //margin-left: -60px;
-    & svg {
-      width: 100%;
-    }
+    margin-left: -60px;
+    //& svg {
+    //  width: 100%;
+    //}
     @include sm-block {
       width: 100%;
       margin-left: 0;
@@ -1388,7 +1523,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         font-size: 50px;
       }
     }
-    @include mobile-block{
+    @include mobile-block {
       & ul {
         font-size: 20px;
       }
@@ -1406,13 +1541,14 @@ li.flipster__nav__item.flipster__nav__item--current {
           margin-bottom: 14px;
         }
       }
-      @include mobile-block{
+      @include mobile-block {
         & p {
           font-size: 20px;
         }
       }
     }
     & img {
+      max-width: 100%;
       @include lg-block {
         width: 100%;
       }

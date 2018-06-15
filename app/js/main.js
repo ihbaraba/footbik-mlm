@@ -205,22 +205,22 @@ $(document).ready(function () {
 
     // tabs + owl and tabs + reps
 
-    $('.tab-content > .tab-pane.fade').each(function () {
-
-        if ($(this).hasClass('active')) {
-            $(this).addClass('firstt');
-            $(this).closest('.tab-content').find('.tab-pane').addClass('active');
-            $('.clubs__slider').owlCarousel({
-                items: 1,
-                nav: true,
-                margin: 0,
-                navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
-                dots: false
-            });
-            $(this).closest('.tab-content').find('.tab-pane').removeClass('active');
-            $(this).closest('.tab-content').find('.tab-pane.firstt').addClass('active in');
-        }
-    });
+    // $('.tab-content > .tab-pane.fade').each(function () {
+    //
+    //     if ($(this).hasClass('active')) {
+    //         $(this).addClass('firstt');
+    //         $(this).closest('.tab-content').find('.tab-pane').addClass('active');
+    //         $('.clubs__slider').owlCarousel({
+    //             items: 1,
+    //             nav: true,
+    //             margin: 0,
+    //             navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
+    //             dots: false
+    //         });
+    //         $(this).closest('.tab-content').find('.tab-pane').removeClass('active');
+    //         $(this).closest('.tab-content').find('.tab-pane.firstt').addClass('active in');
+    //     }
+    // });
 
 
 // tabs resp end
@@ -245,6 +245,31 @@ $(document).ready(function () {
             }
         }
     });
+
+
+    $('.localisation__slider').owlCarousel({
+        items: 1,
+        nav: true,
+        navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+        dots: false,
+        margin:0,
+        loop: true,
+        responsive: {
+            320: {
+                items: 1
+            },
+            500: {
+                items: 1
+            },
+            769: {
+                items: 1
+            },
+            1200: {
+                items: 1
+            }
+        }
+    });
+
 
     $('.news__slider').owlCarousel({
         items: 3,
