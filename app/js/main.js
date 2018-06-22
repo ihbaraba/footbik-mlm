@@ -370,43 +370,45 @@ $(document).ready(function () {
 
     }
 
-    $(document).on('click', '.mail__form button', function (e) {
-
-        e.preventDefault();
-
-        var url = $(this).data('url');
-
-        var value = $(this).closest('form').find('input').val();
-
-        var pattern = new RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$');
-
-        if (pattern.test(value)) {
-            $.ajax({
-                url: url,
-                method: 'GET',
-                dataType: 'html',
-                async: false,
-                success: function (result) {
-                    $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
-                    $('.mail-popup').show(300);
-                    $('.mail-popup__success').show(300);
-                },
-                error: function (result) {
-                    $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
-                    $('.mail-popup').show(300);
-                    $('.mail-popup__error').show(300);
-                }
-            });
-        } else {
-            $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
-            $('.mail-popup').show(300);
-            $('.mail-popup__error').show(300);
-        }
-
-        setTimeout(removePopup, 3000);
-
-
-    });
+    // $(document).on('submit', '.mail__form form', function (e) {
+    //
+    //     e.preventDefault();
+    //
+    //     var url = $(this).data('url');
+    //
+    //     var value = $(this).closest('form').find('input').val();
+    //
+    //     var pattern = new RegExp('[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$');
+    //
+    //     if (pattern.test(value)) {
+    //         $.ajax({
+    //             url: url,
+    //             method: 'GET',
+    //             dataType: 'html',
+    //             async: false,
+    //             success: function (result) {
+    //                 $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
+    //                 $('.mail-popup').show(300);
+    //                 $('.mail-popup__success').show(300);
+    //                 console.log(this);
+    //                 e.prevent
+    //             },
+    //             error: function (result) {
+    //                 $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
+    //                 $('.mail-popup').show(300);
+    //                 $('.mail-popup__error').show(300);
+    //             }
+    //         });
+    //     } else {
+    //         $('.mail-popup__wrapper').css('display', 'flex').addClass('visible error');
+    //         $('.mail-popup').show(300);
+    //         $('.mail-popup__error').show(300);
+    //     }
+    //
+    //     setTimeout(removePopup, 3000);
+    //
+    //
+    // });
 
 
     // =================================================== form ===================================================
