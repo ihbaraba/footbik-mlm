@@ -1552,7 +1552,8 @@ Ufa, Tolyatti. </span>
         <label for="MERGE1">Your wallet <span class="req asterisk">*</span></label>
         <input type="text" name="MERGE1" id="MERGE1" size="25" value="" required pattern="[a-zA-Z0-9]+">
         <label for="MERGE0">Email Address <span class="req asterisk">*</span></label>
-        <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+        <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25"
+               pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
                value="" required>
         <div class="whitelist__checkbox">
             <label for="group_1"><input type="checkbox"
@@ -1570,6 +1571,15 @@ Ufa, Tolyatti. </span>
 @import "footer.html"
 
 <script>
+
+
+    function removePopup() {
+
+        $('.mail-popup__wrapper').hide(300).removeClass('visible error success');
+        $('.mail-popup__error').hide(300);
+        $('.mail-popup__success').hide(300);
+
+    }
 
 
     $(document).ready(function () {
@@ -1623,5 +1633,18 @@ Ufa, Tolyatti. </span>
         });
 
         // =================================================== timer ===================================================
+
+
+        if (window.location.href === "http://footbic.io/#success") {
+
+            $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
+            $('.mail-popup').show(300);
+            $('.mail-popup__success').show(300);
+
+            setTimeout(removePopup, 3000);
+
+        }
+
+
     });
 </script>

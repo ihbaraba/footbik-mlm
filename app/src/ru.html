@@ -1660,6 +1660,14 @@
     @import "foot.html"
     @import "footer.html"
     <script>
+
+        function removePopup() {
+
+            $('.mail-popup__wrapper').hide(300).removeClass('visible error success');
+            $('.mail-popup__error').hide(300);
+            $('.mail-popup__success').hide(300);
+
+        }
         $(document).ready(function () {
             // =================================================== timer ===================================================
 
@@ -1705,5 +1713,19 @@
             });
 
             // =================================================== timer ===================================================
+
+            if (window.location.href === "http://footbic.io/#success") {
+
+                $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
+                $('.mail-popup').show(300);
+                $('.mail-popup__success').show(300);
+
+                setTimeout(removePopup, 3000);
+
+            }
+
         });
+
+
+
     </script>
