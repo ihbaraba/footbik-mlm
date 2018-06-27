@@ -1629,35 +1629,30 @@
         </div>
     </div>
     <div class="whitelist__form__wrapper">
-        <form id="test" class="whitelist__form contact__form" method="POST"
-              action="https://footbic.us18.list-manage.com/subscribe/post">
-            <input type="hidden" name="u" value="8fa1119b6e4edfc73e5e68b64">
-            <input type="hidden" name="id" value="64fbe5bca7">
-            <input type="hidden" name="orig-lang" value="1">
-
-            <span class="whitelist__cross">
-            x
+        <form action="https://footbic.us18.list-manage.com/subscribe/post" method="POST"
+              class="whitelist__form contact__form">
+        <span class="whitelist__cross">
+        x
         </span>
-
-
-            <input type="text" placeholder="Ваш кошелёк" required="required" name="MERGE1" id="MERGE1" size="25"
-                   value="">
-            <input type="email" placeholder="Ваш Email" required="required" autocapitalize="off" autocorrect="off"
-                   name="MERGE0" id="MERGE0" size="25" value="">
-
-
+            <input type="hidden" name="u" value="8fa1119b6e4edfc73e5e68b64">
+            <input type="hidden" name="id" value="aab495ce15">
+            <input type="hidden" name="orig-lang" value="1">
+            <label for="MERGE1">Ваш кошелёк<span class="req asterisk">*</span></label>
+            <input type="text" name="MERGE1" id="MERGE1" size="25" value="" required pattern="[a-zA-Z0-9]+">
+            <label for="MERGE0">Email<span class="req asterisk">*</span></label>
+            <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                   value="" required>
             <div class="whitelist__checkbox">
-
-                <input type="checkbox" required="required"  data-dojo-type="dijit/form/CheckBox" id="group_1" name="group[2091][1]" value="1">
-
-                <label for="group_1">Я не с США</label>
+                <label for="group_1"><input type="checkbox"
+                                            data-dojo-type="dijit/form/CheckBox"
+                                            id="group_1"
+                                            name="group[2175][1]"
+                                            value="1"
+                                            class="av-checkbox">
+                    <span>Я не из США</span></label>
             </div>
             <button type="submit" class="button-invite">Отправить</button>
-            <!--<input type="submit" class="button-invite" name="submit" value="Send">-->
-            <input type="hidden" name="ht" value="510c979446ec1dd0954b6e9ce746b24214ebf48c:MTUyOTY1MTg3Ni44OTM4">
-            <input type="hidden" name="mc_signupsource" value="hosted">
         </form>
-
 
     </div>
 

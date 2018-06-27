@@ -800,7 +800,7 @@ html {
   &__number {
     border: 1px solid #ffffff;
     border-radius: 12px;
-    padding: 15px 12px 5px 12px;
+    padding: 15px 12px 15px 12px;
     font-size: 60px;
     margin-bottom: 20px;
     //line-height: $big-height;
@@ -3123,6 +3123,7 @@ span.cd-label {
   }
   &__form {
     &.contact__form {
+      margin-top: 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
