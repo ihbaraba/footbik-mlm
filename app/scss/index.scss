@@ -1891,6 +1891,9 @@ li.flipster__nav__item.flipster__nav__item--current {
   background: url(../img/bg_green.png);
   background-size: inherit;
   background-repeat: no-repeat;
+  @include md-block{
+    background-size: cover;
+  }
   & .wrapper{
     overflow: hidden;
   }
@@ -1909,6 +1912,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     flex-wrap: wrap;
     position: relative;
     transition: 0.3s;
+    @include md-block{
+      padding: 0 2px;
+    }
     &:before {
       transition: 0.3s;
       opacity: 0;
@@ -1934,11 +1940,17 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 73px;
       background-size: contain;
       z-index: -2;
+      @include sm-block{
+        width: 103px;
+      }
     }
     &:hover {
       &:before {
         opacity: 1;
         transition: 0.3s;
+        @include sm-block{
+          left: 18px;
+        }
       }
     }
     &.active {
@@ -1954,10 +1966,16 @@ li.flipster__nav__item.flipster__nav__item--current {
         position: absolute;
         top: -70px;
         left: 52px;
+        @include sm-block{
+          left: 18px;
+        }
       }
     }
     &:nth-child(even) {
       margin-top: 65px;
+      @include md-block{
+        margin-top: 85px;
+      }
       &:before {
         transition: 0.3s;
         opacity: 0;
@@ -1972,6 +1990,10 @@ li.flipster__nav__item.flipster__nav__item--current {
         top: -70px;
         right: 88px;
         left: inherit;
+        @include sm-block{
+          right: 28px;
+          left: inherit;
+        }
       }
       &.active {
         &:before {
@@ -1987,6 +2009,10 @@ li.flipster__nav__item.flipster__nav__item--current {
           right: 88px;
           opacity: 1;
           left: inherit;
+          @include sm-block{
+            right: 28px;
+            left: inherit;
+          }
         }
       }
       &:hover {
@@ -2014,6 +2040,9 @@ li.flipster__nav__item.flipster__nav__item--current {
         background-size: contain;
         bottom: -20px;
         transform: rotateY(180deg);
+        @include sm-block{
+          width: 103px;
+        }
       }
       &:last-child{
         &:after{
@@ -2098,6 +2127,16 @@ li.flipster__nav__item.flipster__nav__item--current {
       color: #000000;
       font-size: 30px;
       font-family: $bold-font;
+      @include sm-block{
+        top: 63px;
+        left: 63px;
+      }
+    }
+    @include sm-block{
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 137px;
+      height: 175px;
     }
   }
   &__year {
@@ -2111,6 +2150,12 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__text-wrapper {
     order: 2;
     width: 60%;
+    @include md-block{
+      width: 50%;
+    }
+    @include sm-block{
+      width: 56%;
+    }
   }
 }
 
