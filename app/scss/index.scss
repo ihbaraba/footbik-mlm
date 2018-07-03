@@ -1478,6 +1478,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     & ul {
       padding-left: 30px;
       li {
+        @include xs-block{
+          width: 90%;
+        }
         span {
           line-height: 22px;
           font-size: 15px;
@@ -1929,7 +1932,6 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__item {
-
     cursor: pointer;
     padding: 0 20px;
     @include col();
@@ -1946,6 +1948,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include xs-block {
       margin-top: 30px;
       margin-bottom: 30px;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      padding-bottom: 20px;
     }
     &:before {
       transition: 0.3s;
@@ -2196,8 +2201,12 @@ li.flipster__nav__item.flipster__nav__item--current {
         left: 63px;
       }
       @include xs-block {
-        top: 123px;
-        left: 123px;
+        top: 100px;
+        left: 95px;
+      }
+      @include mobile-block{
+        top: 84px;
+        left: 82px;
       }
     }
     @include sm-block {
@@ -2207,8 +2216,8 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 175px;
     }
     @include xs-block {
-      width: 250px;
-      height: 300px;
+      width: 175px;
+      height: 225px;
       margin: 0 auto;
     }
   }
@@ -2240,7 +2249,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       max-width: 80%;
       text-align: center;
       margin: 0 auto;
-      line-height: 30px;
+      line-height: 26px;
     }
   }
 }
@@ -2439,6 +2448,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include xs-block {
       padding: 40px 15px;
     }
+    @include mobile-block{
+      padding: 2px 15px 30px;
+    }
     &__wrapper {
       width: 25%;
       text-align: center;
@@ -2475,6 +2487,12 @@ li.flipster__nav__item.flipster__nav__item--current {
     width: 100%;
     height: auto;
     max-width: 220px;
+    @include xs-block{
+      max-width: 220px;
+    }
+    @include xs-block{
+      max-width: 100px;
+    }
   }
   &__wrapper {
     display: flex;
