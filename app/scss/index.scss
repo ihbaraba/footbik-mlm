@@ -196,6 +196,24 @@ body, a, p, div {
   display: block;
   z-index: 2;
   position: relative;
+  &-team {
+    max-width: 1350px;
+    padding-left: 125px;
+    background-color: rgba(34, 42, 67, 0.77);
+    border-radius: 8px;
+    padding-top: 30px;
+    & .section__text {
+      margin-left: -125px;
+      @include lg-block {
+        margin-left: 0;
+      }
+    }
+    @include lg-block {
+      max-width: 1170px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
 }
 
 .rowz {
@@ -1821,11 +1839,12 @@ li.flipster__nav__item.flipster__nav__item--current {
       background: linear-gradient(217.38deg, #D33245 0%, #F75160 100%);
     }
     @include sm-block {
-      width: 33%;
+      width: 40%;
+
     }
     @include mobile-block {
-      width: 50%;
-      margin: 0 0 30px 0;
+      width: 45%;
+      margin: 2%;
     }
   }
   &__wrapper {
@@ -1847,6 +1866,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     @include size-sm(12);
     @include sm-block {
       margin-bottom: 20px;
+      justify-content: center;
     }
     @include xs-block {
       margin-top: 20px;
@@ -1891,29 +1911,41 @@ li.flipster__nav__item.flipster__nav__item--current {
   background: url(../img/bg_green.png);
   background-size: inherit;
   background-repeat: no-repeat;
-  @include md-block{
+  @include md-block {
     background-size: cover;
   }
-  & .wrapper{
+  @include xs-block{
+    background: linear-gradient(60.57deg, #006837 0%, #3CBA4A 100%);
+  }
+  & .wrapper {
     overflow: hidden;
   }
   &__wrapper {
     @include row-flex();
     justify-content: space-between;
     align-items: flex-start;
+    @include xs-block{
+      margin-top: 20px;
+    }
   }
   &__item {
+
     cursor: pointer;
     padding: 0 20px;
     @include col();
     @include size(6);
+    @include size-xs(12);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
     transition: 0.3s;
-    @include md-block{
+    @include md-block {
       padding: 0 2px;
+    }
+    @include xs-block {
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
     &:before {
       transition: 0.3s;
@@ -1928,8 +1960,12 @@ li.flipster__nav__item.flipster__nav__item--current {
       position: absolute;
       top: -70px;
       left: 52px;
+      @include xs-block {
+        left: calc(50% - 105px / 2);
+        top: -50px;
+      }
     }
-    &:after{
+    &:after {
       position: absolute;
       content: '';
       left: calc(100% - 70px);
@@ -1940,16 +1976,23 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 73px;
       background-size: contain;
       z-index: -2;
-      @include sm-block{
+      @include sm-block {
         width: 103px;
+      }
+      @include xs-block{
+        display: none;
       }
     }
     &:hover {
       &:before {
         opacity: 1;
         transition: 0.3s;
-        @include sm-block{
+        @include sm-block {
           left: 18px;
+        }
+        @include xs-block {
+          left: calc(50% - 105px / 2);
+          top: -50px;
         }
       }
     }
@@ -1966,15 +2009,22 @@ li.flipster__nav__item.flipster__nav__item--current {
         position: absolute;
         top: -70px;
         left: 52px;
-        @include sm-block{
+        @include sm-block {
           left: 18px;
+        }
+        @include xs-block {
+          left: calc(50% - 105px / 2);
+          top: -50px;
         }
       }
     }
     &:nth-child(even) {
       margin-top: 65px;
-      @include md-block{
+      @include md-block {
         margin-top: 85px;
+      }
+      @include xs-block{
+        margin-top: 30px;
       }
       &:before {
         transition: 0.3s;
@@ -1990,9 +2040,13 @@ li.flipster__nav__item.flipster__nav__item--current {
         top: -70px;
         right: 88px;
         left: inherit;
-        @include sm-block{
+        @include sm-block {
           right: 28px;
           left: inherit;
+        }
+        @include xs-block {
+          right: calc(50% - 105px / 2);
+          top: -50px;
         }
       }
       &.active {
@@ -2009,9 +2063,13 @@ li.flipster__nav__item.flipster__nav__item--current {
           right: 88px;
           opacity: 1;
           left: inherit;
-          @include sm-block{
+          @include sm-block {
             right: 28px;
             left: inherit;
+          }
+          @include xs-block {
+            right: calc(50% - 105px / 2);
+            top: -50px;
           }
         }
       }
@@ -2023,11 +2081,17 @@ li.flipster__nav__item.flipster__nav__item--current {
       }
       & .roadmap__img {
         order: 2;
+        @include xs-block{
+          order:1;
+        }
       }
       & .roadmap__text-wrapper {
         order: 1;
+        @include xs-block{
+          order:2;
+        }
       }
-      &:after{
+      &:after {
         position: absolute;
         content: '';
         left: inherit;
@@ -2040,12 +2104,12 @@ li.flipster__nav__item.flipster__nav__item--current {
         background-size: contain;
         bottom: -20px;
         transform: rotateY(180deg);
-        @include sm-block{
+        @include sm-block {
           width: 103px;
         }
       }
-      &:last-child{
-        &:after{
+      &:last-child {
+        &:after {
           display: none;
         }
       }
@@ -2127,16 +2191,25 @@ li.flipster__nav__item.flipster__nav__item--current {
       color: #000000;
       font-size: 30px;
       font-family: $bold-font;
-      @include sm-block{
+      @include sm-block {
         top: 63px;
         left: 63px;
       }
+      @include xs-block {
+        top: 123px;
+        left: 123px;
+      }
     }
-    @include sm-block{
+    @include sm-block {
       background-repeat: no-repeat;
       background-size: contain;
       width: 137px;
       height: 175px;
+    }
+    @include xs-block {
+      width: 250px;
+      height: 300px;
+      margin: 0 auto;
     }
   }
   &__year {
@@ -2150,11 +2223,24 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__text-wrapper {
     order: 2;
     width: 60%;
-    @include md-block{
+    @include md-block {
       width: 50%;
     }
-    @include sm-block{
+    @include sm-block {
       width: 56%;
+    }
+    @include xs-block {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &__text {
+    @include xs-block {
+      font-size: 24px;
+      max-width: 80%;
+      text-align: center;
+      margin: 0 auto;
+      line-height: 30px;
     }
   }
 }
@@ -2167,8 +2253,8 @@ li.flipster__nav__item.flipster__nav__item--current {
   padding-top: 30px;
   &__progress {
     margin-top: 65px;
-    margin-left: -70px;
-    margin-right: -70px;
+    margin-left: -30px;
+    margin-right: -30px;
     padding-bottom: 100px;
     & img {
       width: 100%;
@@ -2231,7 +2317,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     letter-spacing: 1.76px;
     //margin-bottom: 30px;
   }
-  &__curs{
+  &__curs {
     font-size: 20px;
     line-height: 22px;
     letter-spacing: 1.76px;
@@ -2329,224 +2415,288 @@ li.flipster__nav__item.flipster__nav__item--current {
 //==================================================owl=====================================================================
 
 .team {
-  padding-top: 95px;
-  padding-bottom: 100px;
-  background: url("/img/Futbolnoe-pole-nochyu.png");
-  background-repeat: no-repeat;
+  background: url(/img/stadium.png);
+  padding: 50px 0;
   background-size: inherit;
   background-position: bottom;
+  background-repeat: no-repeat;
   @include sm-block {
-    padding-top: 40px;
-    padding-bottom: 20px;
-  }
-  @include xs-block {
-    background-position: bottom;
+    background: url(/img/stadium.png);
+    padding: 50px 0;
     background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
   }
-  //background-position: bottom 40px right;
-  &__wrapper {
-    @include row-flex();
-    align-items: flex-start;
-    margin-top: 40px;
-  }
-  &__img {
-    border-radius: 200px;
-    width: 65px;
-    height: 65px;
-    margin: 0 auto;
-    display: block;
+  &__big {
+    padding: 0 75px 0 0;
+    display: none;
+    @include lg-block {
+      padding-right: 20px;
+    }
     @include sm-block {
-      width: 75px;
-      height: 75px;
-    }
-    &-wrapper {
-      background-color: rgba(0, 0, 0, 0.21);
-      padding: 15px;
-      position: relative;
-      border-radius: 4px;
-      transition: 0.2s;
-      border-bottom-left-radius: 2px;
-      border-bottom-right-radius: 2px;
-      @include sm-block {
-        padding: 25px;
-      }
-      @include xs-block {
-        padding: 20px 35px;
-        max-width: 230px;
-        margin: auto;
-      }
-      @include mobile-block {
-        padding: 20px 15px;
-        max-width: 100%;
-
-      }
-      &:hover {
-        transition: 0.2s;
-        background-color: rgba(248, 231, 28, 0.11);
-        &:before {
-          transition: 0.2s;
-          border-top: solid 15px rgba(248, 231, 28, 0.11);
-          @include sm-block {
-            border-top: solid 15px rgba(248, 231, 28, .21);
-          }
-        }
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 0px;
-        background-color: rgba(0, 0, 0, 0);
-        z-index: 1;
-        //border-top-right-radius: 8px;
-        border-top: solid 15px rgba(0, 0, 0, 0.21);
-        border-left: solid 55px transparent;
-        border-right: solid 55px transparent;
-        transition: 0.2s;
-        @include md-block {
-          //display: none;
-          border-left: solid 75px transparent;
-          border-right: solid 75px transparent;
-        }
-        @include sm-block {
-          border-left: solid 110px transparent;
-          border-right: solid 110px transparent;
-
-        }
-        @include xs-block {
-          display: none;
-
-          border-left: solid 105px transparent;
-          border-right: solid 105px transparent;
-        }
-      }
-    }
-    &-big {
-      width: 140px;
-      height: 140px;
-      border: 20px solid rgba(0, 0, 0, 0.13);
-      box-sizing: content-box;
-      @include sm-block {
-        width: 100px;
-        height: auto;
-      }
-    }
-
-  }
-
-  &__link {
-    margin: 0 auto;
-    margin: 12px 0px 20px 0px;
-    display: block;
-  }
-  &__description {
-    letter-spacing: 0.88px;
-    font-size: 14px;
-    line-height: 18px;
-
-  }
-  &__title {
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: 1.18px;
-    margin-top: 35px;
-    margin-bottom: 10px;
-    @include sm-block {
-      font-size: 18px;
+      padding: 0 40px 0 0;
     }
     @include xs-block {
-      margin-top: 20px;
-    }
-    &-big {
-      font-size: 20px;
-      line-height: 24px;
-      letter-spacing: 1.18px;
-    }
-  }
-  &__prof {
-    font-size: 12px;
-    //margin-top: auto;
-    line-height: 18px;
-    &-big {
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-  }
-  &__human {
-    &_all {
-      @include col();
-      @include size(6);
-      @include size-md(5);
-      @include size-sm(12);
+      padding: 40px 15px;
     }
     &__wrapper {
-      background-color: rgba(0, 0, 0, 0.44);
-      border: 2px solid rgba(255, 255, 255, 0.11);
-      border-radius: 8px;
-      padding: 40px 100px;
+      width: 25%;
       text-align: center;
-      @include md-block {
-        padding: 40px 30px;
-      }
       @include sm-block {
-        padding: 0 20px 20px 20px;
+        width: 100%;
       }
     }
-    display: none;
-    opacity: 0;
-    transition: 0.9s;
-    &.active {
-      display: block;
-      opacity: 1;
-      transition: 0.9s;
-    }
   }
-  &__list {
-    @include col();
-    @include size(6);
-    @include size-md(7);
-    @include size-sm(12);
-    &__panel {
-      @include row-flex();
-    }
-    @include sm-block {
-      margin-top: 20px;
-    }
+  &__name {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: 0.98px;
+    margin-top: 40px;
+    display: block;
+
   }
-  &__item {
-    &.active {
-      .team__img-wrapper {
-        background-color: rgba(248, 231, 28, 0.21);
-        position: relative;
-        border-radius: 4px;
-        transition: 0.2s;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-        &:before {
-          transition: 0.2s;
-          border-top: solid 15px rgba(248, 231, 28, 0.21);
-        }
-      }
-    }
-    @include size(3);
-    @include size-md(4);
-    @include col();
-    @include size-xs(6);
-    margin-bottom: 20px;
-    text-align: center;
-    cursor: pointer;
+  &__position {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 1.31px;
+    font-family: $bold-font;
+    margin-top: 10px;
+    display: block;
+  }
+  &__text {
+    font-size: 15px;
+    line-height: 21px;
+    letter-spacing: 0.23px;
+    display: block;
+    margin-top: 20px;
+  }
+  &__avatar {
+    border-radius: 600px;
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+  }
+  &__wrapper {
     display: flex;
-    //flex-wrap: wrap;
-    //justify-content: space-between;
-    flex-direction: column;
-    @include md-block {
-      margin-bottom: 40px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  &__slider {
+    width: 75%;
+    border-left: 2px solid rgba(216, 216, 216, 0.22);
+    margin-top: 60px;
+    @include sm-block {
+      width: 100%;
+      border-left: none;
     }
     @include xs-block {
-      margin-bottom: 30px;
+      display: none !important;
+    }
+  }
+  &__slide {
+    width: 100%;
+    height: auto;
+    &__title {
+      text-align: center;
+      display: block;
+      font-size: 35px;
+      line-height: 72px;
+      letter-spacing: 1.15px;
+      font-family: $bold-font;
+      margin-bottom: 70px;
+    }
+  }
+  &__player {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    cursor: pointer;
+    //max-width: 112px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 49px;
+      top: -14px;
+      background-image: url("/img/pointer.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 35px;
+      height: 55px;
+      opacity: 0;
+      transition: 0.3s;
+    }
+    &:hover {
+      &:before {
+        opacity: 0.5;
+        transition: 0.3s;
+      }
+    }
+    &.active {
+      &:before {
+        opacity: 1;
+        transition: 0.3s;
+      }
+      & .team__player__img {
+        //background-image: url("/img/tshirt-active.png");
+      }
+      & .team__player__name {
+        font-family: $bold-font;
+        padding: 10px 18px;
+        background-color: rgba(208, 2, 27, 0.69);
+        border: 1px solid #ffffff;
+      }
+    }
+    &__img {
+      display: block;
+      width: 133px;
+      height: 152px;
+      max-width: 100%;
+      background-image: url("/img/tshirt_y.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      &-white {
+        background-image: url("/img/tshirt-active.png");
+      }
+    }
+    &__name {
+      display: inline-block;
+      text-align: center;
+      font-size: 15px;
+      line-height: 18px;
+      letter-spacing: 0.5px;
+      padding: 6px 18px;
+      background-color: rgba(13, 63, 37, 0.75);
+      border-radius: 6px;
+      top: -36px;
+      max-width: 112px;
+      position: relative;
+    }
+    //1st item = 2!!!
+    &:nth-child(2) {
+      left: 180px;
+      top: 90px;
+      @include md-block {
+        left: 130px;
+        top: 80px;
+      }
+    }
+    &:nth-child(3) {
+      left: 130px;
+      top: 240px;
+      @include md-block {
+        left: 130px;
+        top: 230px;
+      }
+    }
+    &:nth-child(4) {
+      left: 300px;
+      top: 190px;
+      @include md-block {
+        left: 240px;
+        top: 170px;
+      }
+    }
+    &:nth-child(5) {
+      left: 460px;
+      top: 190px;
+      @include md-block {
+        left: 360px;
+        top: 170px;
+      }
+    }
+    &:nth-child(6) {
+      left: 540px;
+      top: 90px;
+      @include md-block {
+        left: 440px;
+        top: 70px;
+      }
+    }
+    &:nth-child(7) {
+      left: 570px;
+      top: 240px;
+      @include md-block {
+        left: 460px;
+        top: 240px;
+      }
+    }
+    &:nth-child(8) {
+      left: 670px;
+      top: 150px;
+      @include md-block {
+        left: 540px;
+        top: 130px;
+      }
+    }
+  }
+
+  //owl
+  .owl-carousel button.owl-dot.active {
+    background-color: #ffec00;
+  }
+  .owl-carousel button.owl-dot {
+    height: 14px;
+    width: 14px;
+    margin: 0 10px;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+  .owl-dots {
+    margin: 0;
+    z-index: 2;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+  }
+
+  .owl-nav {
+    top: -8px;
+  }
+  .owl-carousel .owl-nav button.owl-next {
+    &:focus, &:active {
+      outline: none;
+    }
+    right: 20px;
+    cursor: pointer;
+    @include xs-block {
+      right: 5px;
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  .owl-carousel .owl-nav button.owl-prev {
+    &:focus, &:active {
+      outline: none;
+    }
+    left: 20px;
+    cursor: pointer;
+    @include xs-block {
+      left: 5px;
+    }
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+  @include xs-block {
+    .owl-carousel .owl-item img {
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .owl-nav {
+      top: 50%;
+    }
+  }
+  @include mobile-block {
+    .owl-nav {
+      top: inherit;
+      bottom: 40px;
     }
   }
 }
@@ -2561,6 +2711,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   @include md-block {
     padding-top: 20px;
     padding-bottom: 30px;
+    background: #232b43;
   }
   &__wrapper {
     margin-top: 30px;
@@ -2569,14 +2720,17 @@ li.flipster__nav__item.flipster__nav__item--current {
 
   }
   &__item {
-    margin: 20px 0px;
+    margin: 60px 0;
     @include col();
-    @include size(2);
-
-    @include size-sm(3);
+    @include size(4);
+    @include size-sm(6);
     justify-content: center;
     & img {
       max-width: 100%;
+    }
+    @include xs-block {
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 }
