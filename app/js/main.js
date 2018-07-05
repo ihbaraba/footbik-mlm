@@ -1122,7 +1122,7 @@ $(document).ready(function () {
 
     // =================================================== team logic ===================================================
 
-    var human = $('.team__player');
+    var human = $('.team__player').not('.disabled');
 
     var humanSingle = $('.team__big');
 
