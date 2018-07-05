@@ -214,7 +214,7 @@ body, a, p, div {
       padding-left: 15px;
       padding-right: 15px;
     }
-    @include md-block{
+    @include md-block {
       border-radius: 0;
     }
   }
@@ -1170,7 +1170,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     background: red;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 2px 20px 6px 0 rgba(0,0,0,.14);
+    box-shadow: 2px 20px 6px 0 rgba(0, 0, 0, .14);
     @include md-block {
       padding: 35px 20px 25px 20px;
       //max-width: 280px;
@@ -1814,7 +1814,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 
 .sell {
   margin-top: 65px;
-  @include md-block{
+  @include md-block {
     padding-top: 65px;
   }
   &__item {
@@ -1830,8 +1830,8 @@ li.flipster__nav__item.flipster__nav__item--current {
     flex-direction: column;
     cursor: pointer;
     transition: 0.3s;
-    @include md-block{
-      margin:10px;
+    @include md-block {
+      margin: 10px;
     }
     &:hover {
       box-shadow: 1px 13px 34px 0 rgba(255, 255, 255, 0.5);
@@ -2439,11 +2439,11 @@ li.flipster__nav__item.flipster__nav__item--current {
 
 .team {
   background: url(/img/stadium.png);
-  padding: 50px 0;
+  padding-top: 25px;
   background-size: inherit;
   background-position: bottom;
   background-repeat: no-repeat;
-  @include md-block{
+  @include md-block {
     background-size: cover;
   }
   @include sm-block {
@@ -2482,7 +2482,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     letter-spacing: 0.98px;
     margin-top: 40px;
     display: block;
-    @include mobile-block{
+    @include mobile-block {
       margin-top: 10px;
     }
 
@@ -2494,7 +2494,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     font-family: $bold-font;
     margin-top: 10px;
     display: block;
-    @include mobile-block{
+    @include mobile-block {
       font-size: 36px;
       line-height: 36px;
     }
@@ -2591,7 +2591,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         border: 1px solid #ffffff;
       }
     }
-    &.disabled{
+    &.disabled {
       pointer-events: none !important;
       opacity: 0.5 !important;
     }
@@ -3187,16 +3187,16 @@ li.flipster__nav__item.flipster__nav__item--current {
 .contact {
 
   .form {
-    &__wrapper > input::-webkit-input-placeholder{
+    &__wrapper > input::-webkit-input-placeholder {
       color: #222A43;
     }
-    &__wrapper > input::-moz-placeholder{
+    &__wrapper > input::-moz-placeholder {
       color: #222A43;
     }
-    &__wrapper > input:-ms-input-placeholder{
+    &__wrapper > input:-ms-input-placeholder {
       color: #222A43;
     }
-    &__wrapper > input:-moz-placeholder{
+    &__wrapper > input:-moz-placeholder {
       color: #222A43;
     }
   }
@@ -3293,6 +3293,7 @@ nav {
       border-radius: 100px;
     }
   }
+
   & a {
     display: flex;
     padding: 7px 0px;
@@ -3368,9 +3369,6 @@ span.cd-label {
 }
 
 .mail-popup {
-  & p {
-    //color: #2f2f2f;
-  }
   display: block;
   border-radius: 12px;
   color: #000000;
@@ -3458,7 +3456,78 @@ span.cd-label {
   }
 
 }
+.mail-popup-second {
+  display: block;
+  border-radius: 12px;
+  color: #000000;
+  padding: 40px 60px;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.79);
+  border: 1px solid #fff;
+  &__error, &__success {
+    display: none;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  &-buttons {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  &-btn {
+    display: inline-block;
+    vertical-align: middle;
+    background: #ffec00;
+    padding: 15px 20px;
+    margin: 0 20px;
+    min-width: 150px;
+    text-align: center;
+    color: #000000;
+    font-size: 20px;
+    border-radius: 12px;
+    & img {
+      margin-left: 5px;
+      width: 20px;
+      height: 15px;
+      display: inline-block;
+      vertical-align: middle;
+      display: none;
+    }
+    &:hover {
+      color: #000000;
+      background-color: #ffc200;
+    }
+  }
+  &__wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 999999999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    @include sm-block {
+      left: 10px;
+      right: 10px;
+      width: auto;
+    }
+    &.visible {
+      & .mail-popup-second {
+        opacity: 1;
+      }
+      display: flex;
+    }
+  }
 
+}
 .whitelist {
   &__cross {
     cursor: pointer;

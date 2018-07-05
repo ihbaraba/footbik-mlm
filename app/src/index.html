@@ -780,8 +780,8 @@ Ufa, Tolyatti. </span>
         </div>
     </div>
 </section>
-<section class="team cd-section" id="section8">
-    <div class="wrapper-team">
+<section class="team clearfix">
+    <div class="wrapper-team cd-section" id="section8">
         <p class="section__text">
             OUR TEAM
         </p>
@@ -1410,7 +1410,9 @@ Ufa, Tolyatti. </span>
         </li>
     </ul>
 </nav>
+
 <div class="mail-popup__wrapper">
+    <!--reg-->
     <div class="mail-popup">
         <div class="mail-popup-success">
             <p class="mail-popup__success">
@@ -1425,7 +1427,31 @@ Ufa, Tolyatti. </span>
             <a class="mail-popup-btn" href="/ru.html">Продолжить<img src="/img/ru.png"></a>
         </div>
     </div>
+    <!--reg-->
 </div>
+
+
+<!--mailreg-->
+<div class="mail-popup-second__wrapper">
+    <!--reg-->
+    <div class="mail-popup-second">
+        <div class="mail-popup-second-success">
+            <p class="mail-popup-second__success">
+                Спасибо, мы обязательно свяжемся с Вами!
+            </p>
+            <p class="mail-popup-second__success">
+                Thank you, we will contact you!
+            </p>
+        </div>
+        <div class="mail-popup-second-buttons">
+            <a class="mail-popup-second-btn" href="/">Continue<img src="/img/uk.png"></a>
+            <a class="mail-popup-second-btn" href="/ru.html">Продолжить<img src="/img/ru.png"></a>
+        </div>
+    </div>
+    <!--reg-->
+</div>
+<!--mailreg-->
+
 <div class="whitelist__form__wrapper">
     <form action="https://footbic.us18.list-manage.com/subscribe/post" method="POST"
           class="whitelist__form contact__form">
@@ -1516,6 +1542,16 @@ Ufa, Tolyatti. </span>
             $('.mail-popup__wrapper').css('display', 'flex').addClass('visible success');
             $('.mail-popup').show(300);
             $('.mail-popup__success').show(300);
+
+        }
+
+        if (window.location.href === "http://footbic.io/#email") {
+
+
+            $('body').addClass('modal-open');
+            $('.mail-popup-second__wrapper').css('display', 'flex').addClass('visible success');
+            $('.mail-popup-second').show(300);
+            $('.mail-popup-second__success').show(300);
 
         }
 
