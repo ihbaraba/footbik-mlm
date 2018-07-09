@@ -146,12 +146,7 @@ $(document).ready(function () {
     document.addEventListener("click", closeAllSelect);
 
     // =================================================== select language ===================================================
-
-    // =================================================== progressbar ===================================================
-    // on page load...
-    moveProgressBar($('.custom__progress-wrap'));
-    // on browser resize...
-    $(window).resize(function () {
+    $( window ).on( "orientationchange", function( event ) {
         moveProgressBar($('.custom__progress-wrap'));
 
         $('.first-block').css('padding-top', $('header').outerHeight());
@@ -167,7 +162,7 @@ $(document).ready(function () {
             }
         });
 
-    //    team block resize
+        //    team block resize
 
         if ($(window).width() < 769) {
 
@@ -196,7 +191,7 @@ $(document).ready(function () {
                     }
                 }
             });
-        }else{
+        } else {
             $('.team__big__wrapper-slider').owlCarousel('destroy');
             $('.team__big__wrapper').removeClass('owl-theme owl-carousel team__big__wrapper-slider');
             humanSingle.css('display', 'none');
@@ -210,11 +205,84 @@ $(document).ready(function () {
 
             $('.team__big[data-id="' + item.data('id') + '"]').css('display', 'block');
 
+            getFieldCoordinates();
 
 
         }
 
         //    team block resize
+    });
+    // =================================================== progressbar ===================================================
+    // on page load...
+    moveProgressBar($('.custom__progress-wrap'));
+    // on browser resize...
+    $(window).resize(function () {
+
+        moveProgressBar($('.custom__progress-wrap'));
+
+        $('.first-block').css('padding-top', $('header').outerHeight());
+
+        $(document).on('click', '.team__item', function (e) {
+            if ($(window).width() < 501) {
+
+                $('body,html').stop().animate(
+                    {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
+                    400
+                );
+                500
+            }
+        });
+
+        //    team block resize
+
+        if ($(window).width() < 769) {
+
+            $('.team__big__wrapper').addClass('owl-theme owl-carousel team__big__wrapper-slider');
+
+            humanSingle.css('display', 'block');
+
+            $('.team__big__wrapper-slider').owlCarousel({
+                items: 1,
+                nav: true,
+                arrows: true,
+                margin: 0,
+                dotsEach: true,
+                dots: false,
+                navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+                mouseDrag: true,
+                responsive: {
+                    320: {
+                        items: 1
+                    },
+                    769: {
+                        items: 1
+                    },
+                    1200: {
+                        items: 1
+                    }
+                }
+            });
+        } else {
+            $('.team__big__wrapper-slider').owlCarousel('destroy');
+            $('.team__big__wrapper').removeClass('owl-theme owl-carousel team__big__wrapper-slider');
+            humanSingle.css('display', 'none');
+
+            human.removeClass('active');
+            humanSingle.css('display', 'none');
+
+            var item = $('.owl-item.active').find('.team__player');
+
+            item.first().addClass('active');
+
+            $('.team__big[data-id="' + item.data('id') + '"]').css('display', 'block');
+
+            getFieldCoordinates();
+
+
+        }
+
+        //    team block resize
+
 
     });
 
@@ -1064,7 +1132,10 @@ $(document).ready(function () {
             769: {
                 items: 2
             },
-            1200: {
+            993: {
+                items: 3
+            },
+            1201: {
                 items: 4
             }
         }
@@ -1116,7 +1187,6 @@ $(document).ready(function () {
     });
 
 
-
     // =================================================== owl carousel ===================================================
 
 
@@ -1160,7 +1230,7 @@ $(document).ready(function () {
 
         $('.team__player[data-id="' + index + '"]').addClass('active');
 
-        if ($(window).width() < 993) {
+        if ($(window).width() < 769) {
 
             $('body,html').stop().animate(
                 {'scrollTop': $('.team').offset().top - $('header').outerHeight()},
@@ -1194,6 +1264,7 @@ $(document).ready(function () {
         navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
         onTranslated: callback,
         mouseDrag: false,
+
         responsive: {
             320: {
                 items: 1
@@ -1237,7 +1308,6 @@ $(document).ready(function () {
 
 
     }
-
 
 
     // =================================================== team logic ===================================================
@@ -1461,12 +1531,215 @@ $(document).ready(function () {
     );
 
 
-
     if ($(window).width() > 768) {
         wow.init();
 
     }
     // =================================================== animate css ===================================================
+
+
+    // =============================     // position of our team items ===================================================
+
+
+    function setPlayersCoordinates(playersPosition) {
+
+        $('.team__player[data-id="0"]').css({
+            top: parseInt(playersPosition.attackCenter.top),
+            left: parseInt(playersPosition.attackCenter.left)
+        });
+
+        $('.team__player[data-id="1"]').css({
+            top: parseInt(playersPosition.attackTop.top),
+            left: parseInt(playersPosition.attackTop.left)
+        });
+
+        $('.team__player[data-id="2"]').css({
+            top: parseInt(playersPosition.attackBottom.top),
+            left: parseInt(playersPosition.attackBottom.left)
+        });
+
+        $('.team__player[data-id="3"]').css({
+            top: parseInt(playersPosition.middleTop.top),
+            left: parseInt(playersPosition.middleTop.left)
+        });
+
+        $('.team__player[data-id="4"]').css({
+            top: parseInt(playersPosition.middleCenter.top),
+            left: parseInt(playersPosition.middleCenter.left)
+        });
+
+        $('.team__player[data-id="5"]').css({
+            top: parseInt(playersPosition.middleBottom.top),
+            left: parseInt(playersPosition.middleBottom.left)
+        });
+
+        $('.team__player[data-id="6"]').css({
+            top: parseInt(playersPosition.backTop.top),
+            left: parseInt(playersPosition.backTop.left)
+        });
+
+        $('.team__player[data-id="7"]').css({
+            top: parseInt(playersPosition.backFrontCenter.top),
+            left: parseInt(playersPosition.backFrontCenter.left)
+        });
+
+        $('.team__player[data-id="8"]').css({
+            top: parseInt(playersPosition.backBackCenter.top),
+            left: parseInt(playersPosition.backBackCenter.left)
+        });
+
+        $('.team__player[data-id="9"]').css({
+            top: parseInt(playersPosition.backBottom.top),
+            left: parseInt(playersPosition.backBottom.left)
+        });
+
+        $('.team__player[data-id="10"]').css({
+            top: parseInt(playersPosition.goalKeeper.top),
+            left: parseInt(playersPosition.goalKeeper.left)
+        });
+
+        $('.team__player[data-id="11"]').css({
+            top: parseInt(playersPosition.attackCenter.top),
+            left: parseInt(playersPosition.attackCenter.left)
+        });
+
+        $('.team__player[data-id="12"]').css({
+            top: parseInt(playersPosition.middleCenter.top),
+            left: parseInt(playersPosition.middleCenter.left)
+        });
+
+        $('.team__player[data-id="13"]').css({
+            top: parseInt(playersPosition.backFrontCenter.top),
+            left: parseInt(playersPosition.backFrontCenter.left)
+        });
+
+        $('.team__player[data-id="14"]').css({
+            top: parseInt(playersPosition.goalKeeper.top),
+            left: parseInt(playersPosition.goalKeeper.left)
+        });
+    }
+
+
+    function getFieldCoordinates() {
+
+        var fieldCoords = {};
+
+        var attackBlock = $('#XMLID_27_');
+        var middleBlock = $('#XMLID_28_');
+        var backBlock = $('#XMLID_29_');
+        var goalKeeperBlock = $('#XMLID_30_');
+
+        // console.log(attackBlock[0].getBoundingClientRect().top, attackBlock.closest('.team__slide__field').offset().top);
+
+        if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+
+            fieldCoords.attackLine = {
+                top: attackBlock[0].getBoundingClientRect().top - attackBlock.closest('.team__slide__field').offset().top,
+                left: attackBlock[0].getBoundingClientRect().left - attackBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.middleLine = {
+                top: middleBlock[0].getBoundingClientRect().top - middleBlock.closest('.team__slide__field').offset().top,
+                left: middleBlock[0].getBoundingClientRect().left - middleBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.backLine = {
+                top: backBlock[0].getBoundingClientRect().top - backBlock.closest('.team__slide__field').offset().top,
+                left: backBlock[0].getBoundingClientRect().left - backBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.goalKeeperLine = {
+                top: goalKeeperBlock[0].getBoundingClientRect().top - goalKeeperBlock.closest('.team__slide__field').offset().top,
+                left: goalKeeperBlock[0].getBoundingClientRect().left - goalKeeperBlock.closest('.team__slide__field').offset().left
+            };
+
+        } else {
+
+            fieldCoords.attackLine = {
+                top: attackBlock.offset().top - attackBlock.closest('.team__slide__field').offset().top,
+                left: attackBlock.offset().left - attackBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.middleLine = {
+                top: middleBlock.offset().top - middleBlock.closest('.team__slide__field').offset().top,
+                left: middleBlock.offset().left - middleBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.backLine = {
+                top: backBlock.offset().top - backBlock.closest('.team__slide__field').offset().top,
+                left: backBlock.offset().left - backBlock.closest('.team__slide__field').offset().left
+            };
+
+            fieldCoords.goalKeeperLine = {
+                top: goalKeeperBlock.offset().top - goalKeeperBlock.closest('.team__slide__field').offset().top,
+                left: goalKeeperBlock.offset().left - goalKeeperBlock.closest('.team__slide__field').offset().left
+            };
+
+        }
+        var tshirtGabarites = {
+            height: $('.team__player').css('height'),
+            width: $('.team__player').css('width')
+        };
+
+        var playersPosition = {
+            attackTop: {
+                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height),
+                left: parseInt(fieldCoords.attackLine.left)
+            },
+            attackCenter: {
+                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height) * 2,
+                left: parseInt(fieldCoords.attackLine.left) + parseInt(tshirtGabarites.width)
+            },
+            attackBottom: {
+                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height) * 3,
+                left: parseInt(fieldCoords.attackLine.left) + parseInt(tshirtGabarites.width) / 3
+            },
+            middleTop: {
+                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height),
+                left: parseInt(fieldCoords.middleLine.left) + parseInt(tshirtGabarites.width)
+            },
+            middleCenter: {
+                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height) * 2,
+                left: parseInt(fieldCoords.middleLine.left)
+            },
+            middleBottom: {
+                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height) * 3,
+                left: parseInt(fieldCoords.middleLine.left) + parseInt(tshirtGabarites.width)
+            }
+            ,
+            backTop: {
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height),
+                left: parseInt(fieldCoords.backLine.left) + parseInt(tshirtGabarites.width) / 2
+            },
+            backFrontCenter: {
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 2,
+                left: parseInt(fieldCoords.backLine.left) + parseInt(tshirtGabarites.width) * 1.5
+            },
+            backBackCenter: {
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 2,
+                left: parseInt(fieldCoords.backLine.left) - parseInt(tshirtGabarites.width) / 2
+            },
+            backBottom: {
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 3,
+                left: parseInt(fieldCoords.backLine.left)
+            },
+            goalKeeper: {
+                top: parseInt(fieldCoords.goalKeeperLine.top) + parseInt(tshirtGabarites.height) * 2,
+                left: parseInt(fieldCoords.goalKeeperLine.left) + parseInt(tshirtGabarites.width)
+            }
+        };
+
+        setPlayersCoordinates(playersPosition);
+
+
+    }
+
+    getFieldCoordinates();
+
+    //
+
+
+    // =============================     // position of our team items ===================================================
 
 
 });

@@ -1261,6 +1261,29 @@
             </div>
         </div>
     </div>
+
+
+    <!--mailreg-->
+    <div class="mail-popup-second__wrapper">
+        <!--reg-->
+        <div class="mail-popup-second">
+            <div class="mail-popup-second-success">
+                <p class="mail-popup-second__success">
+                    Спасибо, мы обязательно свяжемся с Вами!
+                </p>
+                <p class="mail-popup-second__success">
+                    Thank you, we will contact you!
+                </p>
+            </div>
+            <div class="mail-popup-second-buttons">
+                <a class="mail-popup-second-btn" href="/">Continue<img src="/img/uk.png"></a>
+                <a class="mail-popup-second-btn" href="/ru.html">Продолжить<img src="/img/ru.png"></a>
+            </div>
+        </div>
+        <!--reg-->
+    </div>
+    <!--mailreg-->
+
     <div class="whitelist__form__wrapper">
         <form action="https://footbic.us18.list-manage.com/subscribe/post" method="POST"
               class="whitelist__form contact__form">
@@ -1359,6 +1382,16 @@
                 $('.mail-popup').show(300);
                 $('.mail-popup__success').show(300);
 
+
+            }
+
+            if (window.location.href === "http://footbic.io/#email") {
+
+
+                $('body').addClass('modal-open');
+                $('.mail-popup-second__wrapper').css('display', 'flex').addClass('visible success');
+                $('.mail-popup-second').show(300);
+                $('.mail-popup-second__success').show(300);
 
             }
 

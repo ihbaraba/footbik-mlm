@@ -1985,7 +1985,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       position: absolute;
       content: '';
       left: calc(100% - 70px);
-      top: 30px;
+      top: 10px;
       background-image: url(/img/arrow_r.png);
       background-repeat: no-repeat;
       width: 173px;
@@ -2257,11 +2257,11 @@ li.flipster__nav__item.flipster__nav__item--current {
   &__text {
     line-height: 20px;
     @include xs-block {
-      font-size: 24px;
+      font-size: 15px;
       max-width: 80%;
       text-align: center;
       margin: 0 auto;
-      line-height: 26px;
+      line-height: 20px;
     }
   }
 }
@@ -2439,8 +2439,9 @@ li.flipster__nav__item.flipster__nav__item--current {
 
 .team {
   background: url(/img/stadium.png);
-  padding-top: 25px;
-  background-size: inherit;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
   @include md-block {
@@ -2529,6 +2530,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     border-left: 2px solid rgba(216, 216, 216, 0.22);
     margin-top: 60px;
     //padding-bottom: 50px;
+    & svg{
+      width: 100%;
+    }
     @include sm-block {
       width: 100%;
       border-left: none;
@@ -2552,23 +2556,26 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   &__player {
     position: absolute;
-    left: 0;
-    top: 0;
     text-align: center;
     cursor: pointer;
+    z-index: 3;
+    opacity: 1;
     //max-width: 112px;
+    &.active{
+      opacity: 1;
+    }
     &:before {
       content: '';
       position: absolute;
-      left: 49px;
-      top: -14px;
-      background-image: url("/img/pointer.png");
+      left: calc(50% - 48px / 2);
+      top: -40px;
+      background-image: url(/img/ball.png);
       background-size: cover;
       background-repeat: no-repeat;
-      width: 35px;
-      height: 55px;
+      width: 45px;
+      height: 45px;
+      z-index: -2;
       opacity: 0;
-      transition: 0.3s;
     }
     &:hover {
       &:before {
@@ -2597,88 +2604,84 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
     &__img {
       display: block;
-      width: 133px;
-      height: 152px;
+      width: 45px;
+      height: 50px;
       max-width: 100%;
-      background-image: url("/img/tshirt_y.png");
+      margin: 0 auto;
+      background-image: url(/img/tshirt_y.png);
       background-size: contain;
       background-repeat: no-repeat;
+      text-align: center;
       &-white {
-        background-image: url("/img/tshirt-active.png");
+        background-image: url("/img/tshirt_white.png");
       }
     }
     &__name {
-      display: inline-block;
+      display: block;
       text-align: center;
+      margin: 0 auto;
       font-size: 15px;
       line-height: 18px;
       letter-spacing: 0.5px;
       padding: 6px 18px;
       background-color: rgba(13, 63, 37, 0.75);
       border-radius: 6px;
-      top: -36px;
       max-width: 150px;
+      margin-top: 10px;
       position: relative;
     }
     //1st item = 2!!!
-    &:nth-child(2) {
-      left: 190px;
-      top: 110px;
-      @include md-block {
-        left: 180px;
-        top: 110px;
-      }
-    }
-    &:nth-child(3) {
-      left: 300px;
-      top: 240px;
-      @include md-block {
-        left: 290px;
-        top: 230px;
-      }
-    }
-    &:nth-child(4) {
-      left: inherit;
-      top: 160px;
-      right: 230px;
-      @include md-block {
-        left: inherit;
-        top: 170px;
-        right: 150px;
-      }
-    }
-    &:nth-child(5) {
-      left: 460px;
-      top: 190px;
-      @include md-block {
-        left: 360px;
-        top: 170px;
-      }
-    }
-    &:nth-child(6) {
-      left: 540px;
-      top: 90px;
-      @include md-block {
-        left: 440px;
-        top: 70px;
-      }
-    }
-    &:nth-child(7) {
-      left: 570px;
-      top: 240px;
-      @include md-block {
-        left: 460px;
-        top: 240px;
-      }
-    }
-    &:nth-child(8) {
-      left: 670px;
-      top: 150px;
-      @include md-block {
-        left: 540px;
-        top: 130px;
-      }
-    }
+    //&:nth-child(2) {
+    //  right: 160px;
+    //  top: 163px;
+    //  @include md-block {
+    //
+    //  }
+    //}
+    //&:nth-child(3) {
+    //  right: 260px;
+    //  top: 90px;
+    //  @include md-block {
+    //
+    //  }
+    //}
+    //&:nth-child(4) {
+    //  right: 350px;
+    //  top: 261px;
+    //  @include md-block {
+    //
+    //  }
+    //}
+    //&:nth-child(5) {
+    //  right: 350px;
+    //  top: 160px;
+    //  @include md-block {
+    //
+    //  }
+    //}
+    //&:nth-child(6) {
+    //  right: 350px;
+    //  top: 100px;
+    //  @include md-block {
+    //
+    //  }
+    //}
+    //&:nth-child(7) {
+    //  left: 570px;
+    //  top: 240px;
+    //  @include md-block {
+    //    left: 460px;
+    //    top: 240px;
+    //  }
+    //}
+    //&:nth-child(8) {
+    //  left: 670px;
+    //  top: 150px;
+    //  @include md-block {
+    //    left: 540px;
+    //    top: 130px;
+    //  }
+    //}
   }
 
   //owl
@@ -3810,5 +3813,11 @@ span.cd-label {
   margin: -1em 2em;
   &:focus, &:active {
     outline: none;
+  }
+}
+#BOARD{
+  position: relative;
+  & * {
+    position: relative;
   }
 }
