@@ -146,72 +146,7 @@ $(document).ready(function () {
     document.addEventListener("click", closeAllSelect);
 
     // =================================================== select language ===================================================
-    $( window ).on( "orientationchange", function( event ) {
-        moveProgressBar($('.custom__progress-wrap'));
 
-        $('.first-block').css('padding-top', $('header').outerHeight());
-
-        $(document).on('click', '.team__item', function (e) {
-            if ($(window).width() < 501) {
-
-                $('body,html').stop().animate(
-                    {'scrollTop': $('.team__human_all').offset().top - $('header').outerHeight()},
-                    400
-                );
-                500
-            }
-        });
-
-        //    team block resize
-
-        if ($(window).width() < 769) {
-
-            $('.team__big__wrapper').addClass('owl-theme owl-carousel team__big__wrapper-slider');
-
-            humanSingle.css('display', 'block');
-
-            $('.team__big__wrapper-slider').owlCarousel({
-                items: 1,
-                nav: true,
-                arrows: true,
-                margin: 0,
-                dotsEach: true,
-                dots: false,
-                navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
-                mouseDrag: true,
-                responsive: {
-                    320: {
-                        items: 1
-                    },
-                    769: {
-                        items: 1
-                    },
-                    1200: {
-                        items: 1
-                    }
-                }
-            });
-        } else {
-            $('.team__big__wrapper-slider').owlCarousel('destroy');
-            $('.team__big__wrapper').removeClass('owl-theme owl-carousel team__big__wrapper-slider');
-            humanSingle.css('display', 'none');
-
-            human.removeClass('active');
-            humanSingle.css('display', 'none');
-
-            var item = $('.owl-item.active').find('.team__player');
-
-            item.first().addClass('active');
-
-            $('.team__big[data-id="' + item.data('id') + '"]').css('display', 'block');
-
-            getFieldCoordinates();
-
-
-        }
-
-        //    team block resize
-    });
     // =================================================== progressbar ===================================================
     // on page load...
     moveProgressBar($('.custom__progress-wrap'));
@@ -1683,7 +1618,7 @@ $(document).ready(function () {
 
         var playersPosition = {
             attackTop: {
-                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height),
+                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height) * 1.2,
                 left: parseInt(fieldCoords.attackLine.left)
             },
             attackCenter: {
@@ -1691,11 +1626,11 @@ $(document).ready(function () {
                 left: parseInt(fieldCoords.attackLine.left) + parseInt(tshirtGabarites.width)
             },
             attackBottom: {
-                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height) * 3,
+                top: parseInt(fieldCoords.attackLine.top) + parseInt(tshirtGabarites.height) * 3.2,
                 left: parseInt(fieldCoords.attackLine.left) + parseInt(tshirtGabarites.width) / 3
             },
             middleTop: {
-                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height),
+                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height) * 1.2,
                 left: parseInt(fieldCoords.middleLine.left) + parseInt(tshirtGabarites.width)
             },
             middleCenter: {
@@ -1703,12 +1638,12 @@ $(document).ready(function () {
                 left: parseInt(fieldCoords.middleLine.left)
             },
             middleBottom: {
-                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height) * 3,
+                top: parseInt(fieldCoords.middleLine.top) + parseInt(tshirtGabarites.height) * 3.2,
                 left: parseInt(fieldCoords.middleLine.left) + parseInt(tshirtGabarites.width)
             }
             ,
             backTop: {
-                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height),
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 1.2,
                 left: parseInt(fieldCoords.backLine.left) + parseInt(tshirtGabarites.width) / 2
             },
             backFrontCenter: {
@@ -1720,7 +1655,7 @@ $(document).ready(function () {
                 left: parseInt(fieldCoords.backLine.left) - parseInt(tshirtGabarites.width) / 2
             },
             backBottom: {
-                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 3,
+                top: parseInt(fieldCoords.backLine.top) + parseInt(tshirtGabarites.height) * 3.2,
                 left: parseInt(fieldCoords.backLine.left)
             },
             goalKeeper: {
@@ -1739,7 +1674,16 @@ $(document).ready(function () {
     //
 
 
+    $( window ).on( "orientationchange", function( event ) {
+            getFieldCoordinates();
+    });
+
+
+
+
     // =============================     // position of our team items ===================================================
+
+
 
 
 });
