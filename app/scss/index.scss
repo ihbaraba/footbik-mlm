@@ -694,7 +694,7 @@ html {
     }
     @include xs-block {
       padding: 20px 10px;
-      margin-top: -10px;
+      margin-top: 0px;
     }
     @include mobile-block {
       margin-top: 10px;
@@ -2485,11 +2485,8 @@ li.flipster__nav__item.flipster__nav__item--current {
     font-size: 30px;
     line-height: 36px;
     letter-spacing: 0.98px;
-    margin-top: 40px;
+    margin-top: 10px;
     display: block;
-    @include mobile-block {
-      margin-top: 10px;
-    }
 
   }
   &__position {
@@ -3813,4 +3810,16 @@ span.cd-label {
   & * {
     position: relative;
   }
+}
+.slogan{
+  & p {
+    font-family: $bold-font;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+}
+.linkedIn{
+  display: block;
+  text-align: center;
+  margin-top: 20px;
 }
