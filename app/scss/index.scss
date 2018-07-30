@@ -3822,4 +3822,8 @@ span.cd-label {
   display: block;
   text-align: center;
   margin-top: 20px;
+  & img{
+    max-width: 28px;
+    max-height: 28px;
+  }
 }
