@@ -1001,23 +1001,11 @@ $(document).ready(function () {
         flipItemContainer = flipContainer.find('.flip-items'),
         flipItem = flipContainer.find('li');
 
-    // flipContainer.flipster({
-    //     itemContainer: flipItemContainer,
-    //     itemSelector: flipItem,
-    //     loop: 1,
-    //     start: 2,
-    //     style: 'infinite-carousel',
-    //     spacing: 0,
-    //     scrollwheel: false,
-    //     //nav: 'after',
-    //     buttons: true
-    // });
-
     flipContainer.flipster({
         itemContainer: flipItemContainer,
         itemSelector: flipItem,
         loop: 1,
-        start: 2,
+        start: 1,
         style: 'infinite-carousel',
         spacing: 0,
         scrollwheel: false,
