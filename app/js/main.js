@@ -183,7 +183,7 @@ $(document).ready(function () {
                 margin: 0,
                 dotsEach: true,
                 dots: false,
-                navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+                navText: ["<img src='img/arl.png'>", "<img src='img/arr.png'>"],
                 mouseDrag: true,
                 responsive: {
                     320: {
@@ -1029,7 +1029,7 @@ $(document).ready(function () {
     //             items: 1,
     //             nav: true,
     //             margin: 0,
-    //             navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
+    //             navText: ["<img src='img/ar2.png'>", "<img src='img/ar.png'>"],
     //             dots: false
     //         });
     //         $(this).closest('.tab-content').find('.tab-pane').removeClass('active');
@@ -1043,7 +1043,7 @@ $(document).ready(function () {
     $('.stages__slider').owlCarousel({
         items: 5,
         nav: true,
-        navText: ["<img src='../img/ar2.png'>", "<img src='../img/ar.png'>"],
+        navText: ["<img src='img/ar2.png'>", "<img src='img/ar.png'>"],
         dots: false,
         responsive: {
             320: {
@@ -1068,7 +1068,7 @@ $(document).ready(function () {
     $('.localisation__slider').owlCarousel({
         items: 1,
         nav: true,
-        navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+        navText: ["<img src='img/arl.png'>", "<img src='img/arr.png'>"],
         dots: false,
         margin: 0,
         loop: true,
@@ -1184,7 +1184,7 @@ $(document).ready(function () {
         margin: 0,
         dotsEach: true,
         dots: true,
-        navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+        navText: ["<img src='img/arl.png'>", "<img src='img/arr.png'>"],
         onTranslated: callback,
         mouseDrag: false,
 
@@ -1214,7 +1214,7 @@ $(document).ready(function () {
             margin: 0,
             dotsEach: true,
             dots: false,
-            navText: ["<img src='../img/arl.png'>", "<img src='../img/arr.png'>"],
+            navText: ["<img src='img/arl.png'>", "<img src='img/arr.png'>"],
             mouseDrag: true,
             responsive: {
                 320: {

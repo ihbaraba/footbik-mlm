@@ -334,21 +334,21 @@ body, a, p, div {
 //  &[lang="en"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("../img/uk.png");
+//        background-image: url("..../img/uk.png");
 //      }
 //    }
 //  }
 //  &[lang="ua"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("../img/ua.png");
+//        background-image: url("..../img/ua.png");
 //      }
 //    }
 //  }
 //  &[lang="ru"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("../img/ru.png");
+//        background-image: url("..../img/ru.png");
 //      }
 //    }
 //  }
@@ -358,7 +358,7 @@ body, a, p, div {
   width: 100%;
   background-color: transparent;
   //&:before {
-  //  background-image: url("../img/ru.png");
+  //  background-image: url("..../img/ru.png");
   //  background-repeat: no-repeat;
   //  width: 17px;
   //  height: 12px;
@@ -371,7 +371,7 @@ body, a, p, div {
   //}
   //&[data-language="0"] {
   //  &:before {
-  //    background-image: url("../img/ru.png");
+  //    background-image: url("..../img/ru.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -385,7 +385,7 @@ body, a, p, div {
   //}
   //&[data-language="1"] {
   //  &:before {
-  //    background-image: url("../img/uk.png");
+  //    background-image: url("..../img/uk.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -399,7 +399,7 @@ body, a, p, div {
   //}
   //&[data-language="2"] {
   //  &:before {
-  //    background-image: url("../img/ua.png");
+  //    background-image: url("..../img/ua.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -479,7 +479,7 @@ body, a, p, div {
   & > a[href="/ru.html"] {
     //position: relative;
     //&:after {
-    //  background-image: url("../img/ru.png");
+    //  background-image: url("..../img/ru.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -494,7 +494,7 @@ body, a, p, div {
   & > a[href="/"] {
     //position: relative;
     //&:after {
-    //  background-image: url("../img/uk.png");
+    //  background-image: url("..../img/uk.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -509,7 +509,7 @@ body, a, p, div {
   & > a[href="/ua.html"] {
     //position: relative;
     //&:after {
-    //  background-image: url("../img/ua.png");
+    //  background-image: url("..../img/ua.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -531,13 +531,13 @@ body, a, p, div {
 .first-block {
   background-repeat: no-repeat;
   background-position: right top -10px;
-  background-image: url(../img/bg_footb.png);
+  background-image: url(..../img/bg_footb.png);
   position: relative;
   background-size: inherit;
   @include md-block {
     background-repeat: no-repeat;
     background-position: right top 0px;
-    background-image: url(../img/bg_footb.png);
+    background-image: url(..../img/bg_footb.png);
     position: relative;
     background-size: cover;
   }
@@ -552,14 +552,14 @@ body, a, p, div {
     background-repeat: no-repeat;
     background-position: right bottom -10px;
     z-index: -1;
-    background-image: url("../img/gamma-bg-1.png");
+    background-image: url("..../img/gamma-bg-1.png");
   }
 }
 
 #ru {
   //&:after {
   //  content: '';
-  //  background-image: url("../img/ru.png");
+  //  background-image: url("..../img/ru.png");
   //  background-size: cover;
   //  background-repeat: no-repeat;
   //  display: block;
@@ -591,7 +591,7 @@ body, a, p, div {
 .tokens {
   &__badge {
     display: none !important;
-    background-image: url("../img/bouble.svg");
+    background-image: url("..../img/bouble.svg");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -1017,7 +1017,7 @@ body, a, p, div {
 
 .video {
   position: relative;
-  background-image: url("../img/gamma-galax.png");
+  background-image: url("..../img/gamma-galax.png");
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: left top;
@@ -1132,7 +1132,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &:after {
-    background-image: url("../img/gamma-bg-2.png");
+    background-image: url("..../img/gamma-bg-2.png");
     position: absolute;
     content: '';
     bottom: 0;
@@ -1149,7 +1149,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-repeat: no-repeat;
   background-position: top;
   padding-top: 45px;
-  background: #263b5d url(../img/img_gress.png);
+  background: #263b5d url(..../img../img_gress.png);
   background-position: bottom;
   background-repeat: no-repeat;
 
@@ -1402,7 +1402,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   @include xs-block {
     padding-top: 40px;
-    //background: url("/img/map.svg");
+    //background: url("../img/map.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1541,9 +1541,9 @@ li.flipster__nav__item.flipster__nav__item--current {
     padding-left: 30px;
     background-position: top 2px left 0px;
     background-repeat: no-repeat;
-    background-image: url("/img/checked.png");
+    background-image: url("../img/checked.png");
     &-planned {
-      background-image: url("/img/progress.png");
+      background-image: url("../img/progress.png");
       color: #F8E92B;
     }
   }
@@ -1610,7 +1610,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 40px;
       cursor: pointer;
       width: 30px;
-      background-image: url(/img/marker.png);
+      background-image: url(../img/marker.png);
       display: block;
       position: absolute;
       background-size: contain;
@@ -1754,7 +1754,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   padding-top: 65px;
   padding-bottom: 85px;
   margin: 0 auto;
-  background: #253A5D url("../img/bg_1.png");
+  background: #253A5D url("..../img/bg_1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom right -5px;
@@ -1824,7 +1824,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   position: relative;
   padding-top: 290px;
   padding-bottom: 140px;
-  background: #2A324D url("../img/gamma-galaxx.png");
+  background: #2A324D url("..../img/gamma-galaxx.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom 40px right;
@@ -1969,7 +1969,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 .roadmap {
   padding-top: 60px;
   padding-bottom: 40px;
-  background: url(../img/bg_green.png);
+  background: url(..../img/bg_green.png);
   background-size: inherit;
   background-repeat: no-repeat;
   @include md-block {
@@ -2016,7 +2016,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       content: '';
       width: 105px;
       height: 103px;
-      background: url("/img/ball.png");
+      background: url("../img/ball.png");
       background-repeat: no-repeat;
       background-size: inherit;
       z-index: 1;
@@ -2033,7 +2033,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       content: '';
       left: calc(100% - 70px);
       top: 10px;
-      background-image: url(/img/arrow_r.png);
+      background-image: url(../img/arrow_r.png);
       background-repeat: no-repeat;
       width: 173px;
       height: 73px;
@@ -2064,7 +2064,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         content: '';
         width: 105px;
         height: 103px;
-        background: url("/img/ball.png");
+        background: url("../img/ball.png");
         background-repeat: no-repeat;
         background-size: inherit;
         z-index: 1;
@@ -2095,7 +2095,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         content: '';
         width: 105px;
         height: 103px;
-        background: url("/img/ball.png");
+        background: url("../img/ball.png");
         background-repeat: no-repeat;
         background-size: inherit;
         z-index: 1;
@@ -2117,7 +2117,7 @@ li.flipster__nav__item.flipster__nav__item--current {
           content: '';
           width: 105px;
           height: 103px;
-          background: url("/img/ball.png");
+          background: url("../img/ball.png");
           background-repeat: no-repeat;
           background-size: inherit;
           z-index: 1;
@@ -2160,7 +2160,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         left: inherit;
         top: inherit;
         right: calc(100% + 20px);
-        background-image: url(/img/arrow_r.png);
+        background-image: url(../img/arrow_r.png);
         background-repeat: no-repeat;
         width: 173px;
         height: 73px;
@@ -2240,7 +2240,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__img {
-    background-image: url("/img/tshirt.png");
+    background-image: url("../img/tshirt.png");
     height: 195px;
     width: 167px;
     position: relative;
@@ -2314,7 +2314,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 }
 
 .stages {
-  background-image: url("../img/gamma-earth-bg-1.png");
+  background-image: url("..../img/gamma-earth-bg-1.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: top -40px right 200px;
@@ -2485,7 +2485,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 //==================================================owl=====================================================================
 
 .team {
-  background: url(/img/stadium.png);
+  background: url(../img/stadium.png);
   padding-top: 30px;
   padding-bottom: 30px;
   background-size: cover;
@@ -2495,7 +2495,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     background-size: cover;
   }
   @include sm-block {
-    background: url(/img/stadium.png);
+    background: url(../img/stadium.png);
     padding: 50px 0;
     background-size: cover;
     background-position: bottom;
@@ -2613,7 +2613,7 @@ li.flipster__nav__item.flipster__nav__item--current {
       position: absolute;
       left: calc(50% - 48px / 2);
       top: -40px;
-      background-image: url(/img/ball.png);
+      background-image: url(../img/ball.png);
       background-size: cover;
       background-repeat: no-repeat;
       width: 45px;
@@ -2633,7 +2633,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         transition: 0.3s;
       }
       & .team__player__img {
-        //background-image: url("/img/tshirt-active.png");
+        //background-image: url("../img/tshirt-active.png");
       }
       & .team__player__name {
         font-family: $bold-font;
@@ -2652,12 +2652,12 @@ li.flipster__nav__item.flipster__nav__item--current {
       height: 50px;
       max-width: 100%;
       margin: 0 auto;
-      background-image: url(/img/tshirt_y.png);
+      background-image: url(../img/tshirt_y.png);
       background-size: contain;
       background-repeat: no-repeat;
       text-align: center;
       &-white {
-        background-image: url("/img/tshirt_white.png");
+        background-image: url("../img/tshirt_white.png");
       }
     }
     &__name {
@@ -2799,7 +2799,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 }
 
 .partners {
-  background: url("/img/partnersbg.png");
+  background: url("../img/partnersbg.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom right;
@@ -2840,7 +2840,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   }
   padding-top: 70px;
   padding-bottom: 60px;
-  background: url("/img/blockchain.png");
+  background: url("../img/blockchain.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom right;
@@ -2995,7 +2995,7 @@ li.flipster__nav__item.flipster__nav__item--current {
         }
       }
       & .faq__question {
-        background: #2b334d url("/img/ar2w.svg") center right 20px;
+        background: #2b334d url("../img/ar2w.svg") center right 20px;
         background-repeat: no-repeat;
         //padding-bottom: 10px;
         border-bottom-left-radius: 0px;
@@ -3010,7 +3010,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &__question {
-    background: #ffffff url("/img/ar2 .svg") center right 20px;
+    background: #ffffff url("../img/ar2 .svg") center right 20px;
     background-repeat: no-repeat;
     border-radius: 8px;
     transition: 0.2s;
@@ -3061,7 +3061,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 .contact {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: url("/img/background_footer.png");
+  background: url("../img/background_footer.png");
   background-repeat: no-repeat;
   background-size: inherit;
   display: block;
@@ -3371,7 +3371,7 @@ nav {
       font-family: $bold-font;
       color: #ffffff;
       & .cd-dot {
-        background-image: url("/img/ball.png");
+        background-image: url("../img/ball.png");
         background-size: cover;
         background-position: 0px -4px;
         background-repeat: no-repeat;
@@ -3382,7 +3382,7 @@ nav {
       font-family: $bold-font;
       color: #ffffff;
       & .cd-dot {
-        background-image: url("/img/ball.png");
+        background-image: url("../img/ball.png");
         background-size: cover;
         background-position: 0px -4px;
         background-repeat: no-repeat;
@@ -3589,7 +3589,7 @@ span.cd-label {
       & > input[type="checkbox"]:checked {
         & + span {
           &:before {
-            background: #feec02 url(/img/checkbox.svg);
+            background: #feec02 url(../img/checkbox.svg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 14px 14px;
