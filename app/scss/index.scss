@@ -334,21 +334,21 @@ body, a, p, div {
 //  &[lang="en"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("..../img/uk.png");
+//        background-image: url("../img/uk.png");
 //      }
 //    }
 //  }
 //  &[lang="ua"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("..../img/ua.png");
+//        background-image: url("../img/ua.png");
 //      }
 //    }
 //  }
 //  &[lang="ru"] {
 //    .select-selected {
 //      &:before {
-//        background-image: url("..../img/ru.png");
+//        background-image: url("../img/ru.png");
 //      }
 //    }
 //  }
@@ -358,7 +358,7 @@ body, a, p, div {
   width: 100%;
   background-color: transparent;
   //&:before {
-  //  background-image: url("..../img/ru.png");
+  //  background-image: url("../img/ru.png");
   //  background-repeat: no-repeat;
   //  width: 17px;
   //  height: 12px;
@@ -371,7 +371,7 @@ body, a, p, div {
   //}
   //&[data-language="0"] {
   //  &:before {
-  //    background-image: url("..../img/ru.png");
+  //    background-image: url("../img/ru.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -385,7 +385,7 @@ body, a, p, div {
   //}
   //&[data-language="1"] {
   //  &:before {
-  //    background-image: url("..../img/uk.png");
+  //    background-image: url("../img/uk.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -399,7 +399,7 @@ body, a, p, div {
   //}
   //&[data-language="2"] {
   //  &:before {
-  //    background-image: url("..../img/ua.png");
+  //    background-image: url("../img/ua.png");
   //    background-repeat: no-repeat;
   //    width: 17px;
   //    height: 12px;
@@ -479,7 +479,7 @@ body, a, p, div {
   & > a[href="/ru.html"] {
     //position: relative;
     //&:after {
-    //  background-image: url("..../img/ru.png");
+    //  background-image: url("../img/ru.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -494,7 +494,7 @@ body, a, p, div {
   & > a[href="/"] {
     //position: relative;
     //&:after {
-    //  background-image: url("..../img/uk.png");
+    //  background-image: url("../img/uk.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -509,7 +509,7 @@ body, a, p, div {
   & > a[href="/ua.html"] {
     //position: relative;
     //&:after {
-    //  background-image: url("..../img/ua.png");
+    //  background-image: url("../img/ua.png");
     //  background-repeat: no-repeat;
     //  width: 17px;
     //  height: 12px;
@@ -531,13 +531,13 @@ body, a, p, div {
 .first-block {
   background-repeat: no-repeat;
   background-position: right top -10px;
-  background-image: url(..../img/bg_footb.png);
+  background-image: url(../img/bg_footb.png);
   position: relative;
   background-size: inherit;
   @include md-block {
     background-repeat: no-repeat;
     background-position: right top 0px;
-    background-image: url(..../img/bg_footb.png);
+    background-image: url(../img/bg_footb.png);
     position: relative;
     background-size: cover;
   }
@@ -552,14 +552,14 @@ body, a, p, div {
     background-repeat: no-repeat;
     background-position: right bottom -10px;
     z-index: -1;
-    background-image: url("..../img/gamma-bg-1.png");
+    background-image: url("../img/gamma-bg-1.png");
   }
 }
 
 #ru {
   //&:after {
   //  content: '';
-  //  background-image: url("..../img/ru.png");
+  //  background-image: url("../img/ru.png");
   //  background-size: cover;
   //  background-repeat: no-repeat;
   //  display: block;
@@ -591,7 +591,7 @@ body, a, p, div {
 .tokens {
   &__badge {
     display: none !important;
-    background-image: url("..../img/bouble.svg");
+    background-image: url("../img/bouble.svg");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -1017,7 +1017,7 @@ body, a, p, div {
 
 .video {
   position: relative;
-  background-image: url("..../img/gamma-galax.png");
+  background-image: url("../img/gamma-galax.png");
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: left top;
@@ -1132,7 +1132,7 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
   &:after {
-    background-image: url("..../img/gamma-bg-2.png");
+    background-image: url("../img/gamma-bg-2.png");
     position: absolute;
     content: '';
     bottom: 0;
@@ -1149,7 +1149,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   background-repeat: no-repeat;
   background-position: top;
   padding-top: 45px;
-  background: #263b5d url(..../img../img_gress.png);
+  background: #263b5d url(../img/img_gress.png);
   background-position: bottom;
   background-repeat: no-repeat;
 
@@ -1754,7 +1754,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   padding-top: 65px;
   padding-bottom: 85px;
   margin: 0 auto;
-  background: #253A5D url("..../img/bg_1.png");
+  background: #253A5D url("../img/bg_1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom right -5px;
@@ -1824,7 +1824,7 @@ li.flipster__nav__item.flipster__nav__item--current {
   position: relative;
   padding-top: 290px;
   padding-bottom: 140px;
-  background: #2A324D url("..../img/gamma-galaxx.png");
+  background: #2A324D url("../img/gamma-galaxx.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: bottom 40px right;
@@ -1969,7 +1969,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 .roadmap {
   padding-top: 60px;
   padding-bottom: 40px;
-  background: url(..../img/bg_green.png);
+  background: url(../img/bg_green.png);
   background-size: inherit;
   background-repeat: no-repeat;
   @include md-block {
@@ -2314,7 +2314,7 @@ li.flipster__nav__item.flipster__nav__item--current {
 }
 
 .stages {
-  background-image: url("..../img/gamma-earth-bg-1.png");
+  background-image: url("../img/gamma-earth-bg-1.png");
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: top -40px right 200px;
@@ -3892,4 +3892,31 @@ span.cd-label {
     padding: 21px 70px;
     font-family: $bold-font;
   }
+}
+.arl{
+  display: block;
+  width: 91px;
+  height: 91px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/arl.png");
+  @include mobile-block {
+    width: 50px;
+    height: 50px;
+  }
+}
+.arr{
+  display: block;
+  width: 91px;
+  height: 91px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../img/arr.png");
+  @include mobile-block {
+    width: 50px;
+    height: 50px;
+  }
+}
+*{
+  outline: none !important;
 }
