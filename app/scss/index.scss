@@ -929,6 +929,14 @@ body, a, p, div {
     & .social__item {
       margin-right: 0px;
       margin: 0 27px;
+      @include sm-block {
+        margin: 0 8px;
+        margin-bottom: 20px;
+      }
+    }
+    @include sm-block {
+      display: flex;
+      justify-content: center;
     }
   }
   &__item {
