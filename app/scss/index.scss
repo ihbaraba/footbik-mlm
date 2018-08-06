@@ -3137,6 +3137,9 @@ li.flipster__nav__item.flipster__nav__item--current {
       }
     }
   }
+
+
+
   &__mail {
     margin-top: 80px;
     margin-bottom: 40px;
@@ -3927,4 +3930,23 @@ span.cd-label {
 }
 *{
   outline: none !important;
+}
+
+.btn-invest {
+  margin-top: 25px;
+  color: #000;
+  font-size: 19px;
+  letter-spacing: .26px;
+  background-color: #ffec00;
+  padding: 21px 24px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: inset -1px 1px 15px 0 rgba(255,255,255,.5), -1px 7px 8px 0 rgba(0,0,0,.15);
+  border-radius: 9px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn-invest:hover {
+  color:#000;
 }
