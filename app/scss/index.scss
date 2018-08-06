@@ -616,7 +616,7 @@ body, a, p, div {
       top: -70px;
     }
     &__text {
-      font-size: 15px;
+      font-size: 15px;la
       text-align: right;
       padding-right: 10px;
     }
@@ -631,7 +631,7 @@ body, a, p, div {
   &__wrapper {
     order: 1;
     position: relative;
-    @include size(7);
+    @include size(6);
     @include col();
     @include size-md(12);
     @include md-block {
@@ -714,7 +714,7 @@ body, a, p, div {
     &-new{
       position: relative;
       order: 2;
-      @include size(5);
+      @include size(6);
       @include col();
       @include size-md(12);
     }
@@ -1064,11 +1064,11 @@ body, a, p, div {
 
 .relation {
   position: relative;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0 2px 37px 0 rgba(0,0,0,0.5);
-  width: 400px;
+  width: 800px;
   @include mobile-block {
     width: 300px;
     max-width: 300px;
@@ -1082,7 +1082,7 @@ body, a, p, div {
 .relation__content {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 400px;
   top: 0;
   left: 0;
   //background: red;
@@ -1973,6 +1973,31 @@ li.flipster__nav__item.flipster__nav__item--current {
     }
   }
 }
+
+.btn-invest {
+  margin-top: 25px;
+  color: #000;
+  font-size: 19px;
+  letter-spacing: .26px;
+  background-color: #ffec00;
+  padding: 21px 24px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: inset -1px 1px 15px 0 rgba(255,255,255,.5), -1px 7px 8px 0 rgba(0,0,0,.15);
+  border-radius: 9px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.btn-invest:hover {
+  color:#000;
+}
+
+
+
+
+
+
 
 .roadmap {
   padding-top: 60px;
@@ -3932,21 +3957,4 @@ span.cd-label {
   outline: none !important;
 }
 
-.btn-invest {
-  margin-top: 25px;
-  color: #000;
-  font-size: 19px;
-  letter-spacing: .26px;
-  background-color: #ffec00;
-  padding: 21px 24px;
-  display: inline-block;
-  text-align: center;
-  box-shadow: inset -1px 1px 15px 0 rgba(255,255,255,.5), -1px 7px 8px 0 rgba(0,0,0,.15);
-  border-radius: 9px;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
 
-.btn-invest:hover {
-  color:#000;
-}
