@@ -616,7 +616,7 @@ body, a, p, div {
       top: -70px;
     }
     &__text {
-      font-size: 15px;la
+      font-size: 15px;
       text-align: right;
       padding-right: 10px;
     }
@@ -631,7 +631,7 @@ body, a, p, div {
   &__wrapper {
     order: 1;
     position: relative;
-    @include size(6);
+    @include size(5);
     @include col();
     @include size-md(12);
     @include md-block {
@@ -647,7 +647,7 @@ body, a, p, div {
     font-size: $big-size;
     line-height: $big-height;
     margin-bottom: 30px;
-    letter-spacing: 1.77px;
+    letter-spacing: 0.77px;
     //margin: 20px 0 15px 0;
     @include md-block {
       text-align: center;
@@ -714,7 +714,7 @@ body, a, p, div {
     &-new{
       position: relative;
       order: 2;
-      @include size(6);
+      @include size(7);
       @include col();
       @include size-md(12);
     }
@@ -1062,13 +1062,14 @@ body, a, p, div {
   }
 }
 
+
 .relation {
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 10px;
   box-shadow: 0 2px 37px 0 rgba(0,0,0,0.5);
-  width: 800px;
+  width: 600px;
   @include mobile-block {
     width: 300px;
     max-width: 300px;
@@ -1082,7 +1083,7 @@ body, a, p, div {
 .relation__content {
   position: absolute;
   width: 100%;
-  height: 400px;
+  height: 100%;
   top: 0;
   left: 0;
   //background: red;
