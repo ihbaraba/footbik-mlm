@@ -82,8 +82,8 @@
                            <!--href="https://bitcointalk.org/index.php?action=profile">-->
                             <!--BOUNTY-->
                         <!--</a>-->
-                        <a class="custom__btn registration whitelist" href="https://fbt.world/dashboard/accounts/login/?next=/dashboard/">
-                            КАБИНЕТ
+                        <a class="custom__btn registration whitelist">
+                            РЕГИСТРАЦИЯ
                         </a>
                         <!--<div class="custom-select">-->
                         <!--<select>-->
@@ -170,7 +170,7 @@
     </main>
 </div>
 <div class="main-button">
-    <a class="button-invite whitelist" href="https://fbt.world/dashboard/accounts/login/?next=/dashboard/">
+    <a class="button-invite whitelist" href="#">
         РЕГИСТРАЦИЯ
     </a>
 </div>
@@ -369,7 +369,7 @@
                                         $<span class="amount">300</span>
                                     </span>
                             <span class="sell__price__text">
-                                <span class="amount-to-btc">0.036911776 BTC</span>
+                                        <span class="amount-to-btc">0.036911776</span> BTC
                                     </span>
                         </div>
                         <ul class="sell__list">
@@ -463,8 +463,8 @@
                                         $<span class="amount">5000</span>
                                     </span>
                             <span class="sell__price__text">
-                                        <span class="amount-to-btc">0.036911776</span> BTC
-                                    </span>
+                                <span class="amount-to-btc">0.036911776</span> BTC
+                            </span>
                         </div>
                         <ul class="sell__list">
                             <li class="sell__list__item">
@@ -503,7 +503,7 @@
                     </div>
                 </div>
                  <div class="main-button">
-                     <a href="https://fbt.world/dashboard/accounts/login/?next=/dashboard/" class="btn-invest">
+                     <a href="#" class="btn-invest">
                          ИНВЕСТИРОВАТЬ
                      </a>
                  </div>
@@ -1719,10 +1719,10 @@
                         “Вадим Кулик о проекте football global net plc”
                     </p>
                     <div class="news__author__wrapper">
-                        <a class="news__author" href="https://people.in.ua/2018/07/sport/vadim-kulik-o-proekte-football-global-net-llc/" target="_blank">
+                        <a class="news__author" href="https://people.in.ua/2018/07/sport/vadim-kulik-o-proekte-football-global-net-llc/">
                             <img src="/img/logonews.png">
                         </a>
-                        <a class="news__link" href="https://people.in.ua/2018/07/sport/vadim-kulik-o-proekte-football-global-net-llc/" target="_blank">
+                        <a class="news__link" href="#">
                             Читать
                         </a>
                     </div>
@@ -1734,10 +1734,10 @@
                         Журнал PEOPLE IN
                     </p>
                     <div class="news__author__wrapper">
-                        <a class="news__author" href="https://people.in.ua/wp-content/uploads/2018/07/peoplein-summer_2018_final.pdf" target="_blank">
+                        <a class="news__author" href="https://people.in.ua/wp-content/uploads/2018/07/peoplein-summer_2018_final.pdf">
                             <img src="/img/logonews.png">
                         </a>
-                        <a class="news__link" href="https://people.in.ua/wp-content/uploads/2018/07/peoplein-summer_2018_final.pdf" target="_blank">
+                        <a class="news__link" href="#">
                             Читать
                         </a>
                     </div>
@@ -1862,12 +1862,21 @@
                    href="https://www.linkedin.com/in/football-global-net-plc-185811167/">
                     <img src="/img/ic_linked.png">
                 </a>
-
+                <a class="social__item" target="_blank" href="https://medium.com/@footballglobalnetplc">
+                    <img src="/img/Medium-logo.png">
+                </a>
+                <a class="social__item" target="_blank" href="#">
+                    <img src="/img/ic_z.png">
+                </a>
                 <a class="social__item" target="_blank" href="https://t.me/footballglobalnet">
                     <img src="/img/telegram-logo.svg">
                 </a>
-
-
+                <a class="social__item" target="_blank" href="https://bitcointalk.org/index.php?action=profile">
+                    <img src="/img/ic_b.svg">
+                </a>
+                <a class="social__item" target="_blank" href="https://github.com/footballglobalnet">
+                    <img src="/img/ic_cAT.png">
+                </a>
             </div>
 
         </div>
@@ -2060,16 +2069,17 @@
         }
 
         $('.sell__price').each(function(ind, el) {
-            var amount = $(el).find('.amount').text();
-            $.ajax({
-                url: 'https://blockchain.info/tobtc?currency=USD&value='+amount,
-                method: 'get',
-                success: function(response) {
-                    $(el).find('.amount-to-btc').text(response);
-                },
-                error: function(e) {},
-            })
-        });
+                var amount = $(el).find('.amount').text();
+                $.ajax({
+                    url: 'https://blockchain.info/tobtc?currency=USD&value='+amount,
+                    method: 'get',
+                    success: function(response) {
+                        $(el).find('.amount-to-btc').text(response);
+                    },
+                    error: function(e) {},
+                })
+            });
+
 
 
 

@@ -271,10 +271,10 @@
                         </p>
                         <div class="sell__price">
                                     <span class="sell__price__value">
-                                        $300
+                                        $<span class="amount">300</span>
                                     </span>
                             <span class="sell__price__text">
-                                        0.036911776 BTC
+                                        <span class="amount-to-btc">0.036911776</span> BTC
                                     </span>
                         </div>
                         <ul class="sell__list">
@@ -318,10 +318,10 @@
                         </p>
                         <div class="sell__price">
                                     <span class="sell__price__value">
-                                        $1000
+                                        $<span class="amount">1000</span>
                                     </span>
                             <span class="sell__price__text">
-                                        0.036911776 BTC
+                                <span class="amount-to-btc">0.036911776</span> BTC
                                     </span>
                         </div>
                         <ul class="sell__list">
@@ -365,11 +365,11 @@
                         </p>
                         <div class="sell__price">
                                     <span class="sell__price__value">
-                                        $5000
+                                        $<span class="amount">5000</span>
                                     </span>
                             <span class="sell__price__text">
-                                        0.036911776 BTC
-                                    </span>
+                                <span class="amount-to-btc">0.036911776</span> BTC
+                            </span>
                         </div>
                         <ul class="sell__list">
                             <li class="sell__list__item">
@@ -1959,6 +1959,21 @@
             $('.mail-popup-second__success').show(300);
 
         }
+
+        $('.sell__price').each(function(ind, el) {
+                var amount = $(el).find('.amount').text();
+                $.ajax({
+                    url: 'https://blockchain.info/tobtc?currency=USD&value='+amount,
+                    method: 'get',
+                    success: function(response) {
+                        $(el).find('.amount-to-btc').text(response);
+                    },
+                    error: function(e) {},
+                })
+            });
+
+
+
 
     });
 
